@@ -1,0 +1,1551 @@
+{
+  "tag": "document",
+  "metadata": {
+    "depth": 0,
+    "page_id": null,
+    "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116742",
+    "node_type": null,
+    "document_name": "0e94b4197b10096b1f4c699701570fbf.pdf",
+    "page_count": 15,
+    "source_type": "pdf_json"
+  },
+  "children": [
+    {
+      "tag": "figure",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116743",
+        "node_type": null,
+        "original_index": 0,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "figure",
+        "page_number": 0,
+        "bbox": [
+          284.0,
+          49.5,
+          698.5,
+          245.0
+        ],
+        "image_extracted": true,
+        "description_method": "full_page_region",
+        "ai_description": "**Summary**: The target region contains a diagram illustrating the Gestalt principles of perception, with arrows pointing to the letters in the word \"GESTALT\" and labels for each principle.\n\n**Content Details**:\n- **Gestalt Principles**: Segregação, Proximidade, Semelhança, Fechamento, Continuidade, Pregnância, Unidade.\n- **Word \"GESTALT\"**: The letters are arranged in a way that visually represents the principles.\n- **Arrows**: Pointing from the principles to the letters, indicating their application.\n\n**Visual Features**:\n- **Colors**: Black text on a light background.\n- **Layout**: Diagram with arrows and labels, organized in a flow from left to right.\n- **Text**: Bold and clear, with arrows and labels in a contrasting color for emphasis.\n\n**Context Integration**:\nThe target region is part of a data presentation slide, likely used to explain the principles of Gestalt perception in a visual and educational manner. The surrounding context of \"Data Presentation\" suggests that this slide is part of a larger presentation aimed at explaining data visualization or perception principles.\n\n**Purpose**:\nThe purpose of this content is to visually demonstrate the Gestalt principles of perception, using the word \"GESTALT\" as a mnemonic device to help remember and understand these principles. The arrows and labels serve to guide the viewer's attention and reinforce the connection between the principles and their application in the word."
+      },
+      "children": [
+        {
+          "tag": "img",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116744",
+            "node_type": null
+          },
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_1_figure_0.png"
+        }
+      ],
+      "src": "0e94b4197b10096b1f4c699701570fbf/page_1_figure_0.png",
+      "data-page": "0"
+    },
+    {
+      "tag": "h1",
+      "text": "Data  Presentation",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116745",
+        "node_type": null,
+        "original_index": 1,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          42.0,
+          204.0,
+          397.0,
+          347.0
+        ],
+        "heading_level": 1
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "h1",
+      "text": "Gestalt Principles of Visual Perception",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116746",
+        "node_type": null,
+        "original_index": 2,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 1,
+        "bbox": [
+          29.5,
+          40.5,
+          600.5,
+          76.0
+        ],
+        "heading_level": 1
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "Gestalt psychology was conceived in the Berlin School of Experimental Psychology,  and tries to understand the laws of our ability to acquire and maintain meaningful  perceptions.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116747",
+            "node_type": null,
+            "original_index": 3,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              28.5,
+              100.0,
+              679.5,
+              170.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "p",
+          "text": "● (German: Gestalt [ɡəˈʃtalt] \"shape, form\")",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116748",
+            "node_type": null,
+            "original_index": 4,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              36.5,
+              172.0,
+              394.0,
+              194.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "p",
+          "text": "Key principle: when the human mind perceives a form, the whole has a reality of its own, independent of the parts.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116749",
+            "node_type": null,
+            "original_index": 5,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              30.5,
+              213.5,
+              669.5,
+              257.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "p",
+          "text": "This allowed the development of 8 Gestalt Laws of Grouping. Here we are highlighting only the most relevant 5 for data presentation. You can read more details about them on Wikipedia: https://en.wikipedia.org/wiki/Gestalt_psychology",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116750",
+            "node_type": null,
+            "original_index": 6,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              28.5,
+              284.5,
+              689.5,
+              368.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "p",
+          "text": "Gestalt Principles of Visual Perception",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116751",
+            "node_type": null,
+            "original_index": 7,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              29.5,
+              39.5,
+              600.5,
+              76.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "Proximity. We tend to see objects that are visually close  together as belonging to part of a group.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116752",
+            "node_type": null,
+            "original_index": 8,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              28.0,
+              98.5,
+              332.0,
+              137.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "Similarity. Objects that are similar in shape and color as  belonging to part of a group.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116753",
+            "node_type": null,
+            "original_index": 9,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              366.0,
+              100.0,
+              664.0,
+              135.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "figure",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116754",
+            "node_type": null,
+            "original_index": 10,
+            "parent_chapter": 2,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 2,
+            "bbox": [
+              450.0,
+              156.5,
+              606.0,
+              311.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region explains the Gestalt principle of Similarity, showing objects that are similar in shape and color as belonging to part of a group.\n\n**Content Details**:\n- **Text**: \"Similarity. Objects that are similar in shape and color as belonging to part of a group.\"\n- **Graphics**: Two sets of circles, one set of white circles and another set of black circles, arranged in a grid-like pattern.\n\n**Visual Features**:\n- **Colors**: White and black circles.\n- **Layout**: Two sets of circles arranged in a grid, with the white circles on the left and the black circles on the right.\n- **Text Color**: Red.\n\n**Context Integration**:\nThe target region is part of a larger explanation of the Gestalt principles of visual perception, specifically focusing on the principle of Similarity. The visual examples of white and black circles help illustrate how similar objects are perceived as belonging to a group.\n\n**Purpose**:\nThe purpose of this content is to demonstrate the Gestalt principle of Similarity through visual examples, aiding in the understanding of how objects are grouped based on their similarity in shape and color."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116755",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_3_figure_10.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_3_figure_10.png",
+          "data-page": "2"
+        }
+      ],
+      "data-page": "1"
+    },
+    {
+      "tag": "h1",
+      "text": "US SPACE TRAVEL",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116756",
+        "node_type": null,
+        "original_index": 11,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          65.0,
+          24.0,
+          198.5,
+          49.5
+        ],
+        "heading_level": 1
+      },
+      "data-page": "3"
+    },
+    {
+      "tag": "h2",
+      "text": "A TIMELINE OF MANN EDNA SAFLIGHHTS",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116757",
+        "node_type": null,
+        "original_index": 12,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          66.0,
+          50.5,
+          238.0,
+          64.5
+        ],
+        "heading_level": 2
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "OnJuly21,2011,thelastSpace Shutttefightlanded,ending60yearsofmannedNASA fights.The UUSspace program beganin1961 andresutedin166nearlycontinuousmissions,costnganeatmatedS7biion per year.Spacetr velcontinuesthoughinterrationalpartnershipsandunmannedmiesions,butitremmainstobeseen whatisnextforAmericanspaceeplorationn",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116758",
+            "node_type": null,
+            "original_index": 13,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              63.0,
+              80.0,
+              233.5,
+              102.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "MERCCURY",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116759",
+            "node_type": null,
+            "original_index": 14,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              67.5,
+              107.0,
+              83.0,
+              113.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "MarcuyRad s e4 LbetyBal7),J3y241061",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116760",
+            "node_type": null,
+            "original_index": 15,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.3,
+              117.8,
+              140.7,
+              120.9
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "MMrcuyAras 6(Fendahp77 Fabru y20 1962",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116761",
+            "node_type": null,
+            "original_index": 16,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.4,
+              122.0,
+              142.5,
+              124.9
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Mecuy Ats7 Auor7, May 24,1962",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116762",
+            "node_type": null,
+            "original_index": 17,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.4,
+              126.1,
+              128.8,
+              128.8
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Morour Atas 8ISgma7)Ootooer3 1962",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116763",
+            "node_type": null,
+            "original_index": 18,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.4,
+              130.2,
+              132.4,
+              132.8
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "MerounAras9(Fath 7,MMay15-16,1963",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116764",
+            "node_type": null,
+            "original_index": 19,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.4,
+              134.3,
+              131.9,
+              137.2
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "EEMINI",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116765",
+            "node_type": null,
+            "original_index": 20,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              67.5,
+              142.0,
+              80.0,
+              147.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "AP0L10",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116766",
+            "node_type": null,
+            "original_index": 21,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              67.5,
+              192.5,
+              80.0,
+              198.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Apcoo12,Novemoet14-24 1969",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116767",
+            "node_type": null,
+            "original_index": 22,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.7,
+              219.5,
+              119.6,
+              221.9
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Apcto 15,AJy26-A guut71971",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116768",
+            "node_type": null,
+            "original_index": 23,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.5,
+              231.6,
+              117.8,
+              234.3
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Apofo16 A nl16 27 1972",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116769",
+            "node_type": null,
+            "original_index": 24,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.5,
+              235.7,
+              110.3,
+              238.7
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "SKLA",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116770",
+            "node_type": null,
+            "original_index": 25,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              67.5,
+              247.5,
+              80.0,
+              253.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        },
+        {
+          "tag": "p",
+          "text": "Skbe2My25-M e221973",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116771",
+            "node_type": null,
+            "original_index": 26,
+            "parent_chapter": 12,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 3,
+            "bbox": [
+              68.5,
+              257.9,
+              116.0,
+              260.7
+            ],
+            "heading_level": null
+          },
+          "data-page": "3"
+        }
+      ],
+      "data-page": "3"
+    },
+    {
+      "tag": "h1",
+      "text": "Skytan3,Jly28 Saprember75,1973",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116772",
+        "node_type": null,
+        "original_index": 27,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          68.5,
+          262.0,
+          124.0,
+          265.3
+        ],
+        "heading_level": 1
+      },
+      "data-page": "3"
+    },
+    {
+      "tag": "h1",
+      "text": "secoods Siyab4rmansthe ongen USepace fghttodaee",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116773",
+        "node_type": null,
+        "original_index": 28,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          68.5,
+          270.0,
+          159.3,
+          273.1
+        ],
+        "heading_level": 1
+      },
+      "data-page": "3"
+    },
+    {
+      "tag": "h2",
+      "text": "APOLLD/SOYUZTESTPROJECT",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116774",
+        "node_type": null,
+        "original_index": 29,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          68.4,
+          279.2,
+          111.6,
+          283.2
+        ],
+        "heading_level": 2
+      },
+      "data-page": "3"
+    },
+    {
+      "tag": "h2",
+      "text": "SPACESHUTTLE",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116775",
+        "node_type": null,
+        "original_index": 30,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 3,
+        "bbox": [
+          68.4,
+          294.5,
+          90.9,
+          298.2
+        ],
+        "heading_level": 2
+      },
+      "children": [
+        {
+          "tag": "figure",
+          "text": "L SA FLIGHHTS ASA fights.The UUSspace atmatedS7biion per ns,butitremmainstobeseen SoaceShteAtte Apcto 131961Festlandng onthe TheemplySy pacecoat redso EatonJy11,1979d 31 scanngde sowe ted Oceeind tesoeseysted gonofW nAa ss SSS1B 1L/1988STS.3683/129320,ST5-6919979STS 105econdaheihol 200820Mercuy Gemin Apolo Skyab Apofo/Soyuz Space TestProject Shutle",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116776",
+            "node_type": null,
+            "original_index": 31,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 3,
+            "bbox": [
+              191.0,
+              21.5,
+              652.5,
+              405.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a detailed timeline of manned NASA flights, focusing on the US space program's history from 1961 to 1979.\n\n**Content Details**:\n- **Timeline**: A circular timeline with rockets and astronauts representing each mission.\n- **Missions**: Missions are listed in chronological order, with each mission marked by a rocket and astronaut icon.\n- **Dates**: Specific dates for each mission are provided, ranging from 1961 to 1979.\n- **Astronauts**: Names of astronauts are listed alongside the missions they participated in.\n- **Rockets**: Different types of rockets are depicted, indicating the evolution of space travel technology.\n\n**Visual Features**:\n- **Colors**: Predominantly blue and white, with red highlights for key events.\n- **Layout**: Circular design with a central focus on the timeline, making it easy to follow the progression of missions.\n- **Text**: Clear and concise, with dates and mission names prominently displayed.\n- **Graphics**: Rocket and astronaut icons, providing a visual representation of each mission.\n\n**Context Integration**:\nThe target region is part of a larger infographic that provides a comprehensive overview of the US space program's manned missions. It fits within the overall layout, which includes a title, a brief introduction, and a list of references at the bottom.\n\n**Purpose**:\nThe purpose of this content is to educate readers about the historical milestones of the US space program, highlighting the evolution of space travel technology and the achievements of astronauts over a critical period."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116777",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_4_figure_31.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_4_figure_31.png",
+          "data-page": "3"
+        },
+        {
+          "tag": "figure",
+          "text": "706050403020100June July August October Decembe",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116778",
+            "node_type": null,
+            "original_index": 32,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 4,
+            "bbox": [
+              181.0,
+              103.0,
+              530.5,
+              312.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a line graph with multiple colored lines and data points, representing data trends over months from June to December.\n\n**Content Details**:\n- **Lines**: Multiple colored lines (red, blue, green, yellow, purple, and gray) representing different data series.\n- **Data Points**: Circles at the end of each line, indicating specific data values.\n- **Axes**: The x-axis labels months from June to December, and the y-axis ranges from 0 to 70.\n- **Grid Lines**: Dashed lines on the y-axis for visual reference.\n\n**Visual Features**:\n- **Colors**: Diverse colors for each line, aiding in distinguishing between data series.\n- **Layout**: The graph is centered within the coordinates, with a white background.\n- **Text**: Month labels on the x-axis and numerical values on the y-axis.\n\n**Context Integration**:\n- The graph is likely part of a report or presentation, showing trends over time.\n- The presence of multiple lines suggests comparisons between different categories or variables.\n\n**Purpose**:\n- The graph's purpose is to visually represent and compare data trends over a specific time period, aiding in the analysis and interpretation of the data."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116779",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_5_figure_32.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_5_figure_32.png",
+          "data-page": "4"
+        },
+        {
+          "tag": "figure",
+          "text": "U.K's first hydrogen bomb test R-7SAC starts 2447 nuke bomber alert SPUTNIK Sputrik2 Ats (contnuousunttl1991) (Vannguardfallliro)USSR unilateral nuke test moratorium Exporer (followed by US and UK)Thor IRBMs deployed in the UK Eisenhower creates NASA Castro overthrows Batista in Cuba LunProne SSBN George Washingtonlaunched Hawaii becomes fftieth state ..-France's first nuclear bomb test 8Jupiter IRBMs deployed in Italy U-2 Pilot Gary Powers shot down Nedelin Sino-Soviet Split LaunchPad Disaster(kept secret)JFK proposes Bay ofPigs Fiasco commitment to landon the Moon Fallout Shelters/Beriin Wall constructed Jupiter IRBMs 50MT Tsar Bomba deployedin Turkey detonated Rancer Telstar relays first live TV by satellite CUBAN MISSILE CRISIS Nuclear Test Ban signed by US,USSR&UK JFK proposes cooperation on Apollo M (UN speech) JFK Assassinatedn U.S. Civil Rights Acts China'sffrst nuclear bomb test (oinsU.S.,U.S.S.R.,U.K.&France)Winston Churchill dies(stroke)U.S.invades Dominican Republic Malcom XAssassinated Sergei Korolev dies after surgery FRANCE ColorTV becomes popular< Lurne 3Crbiter First SuperBowl Staln's daughter defects to the U.S.•Interracialmarriage legalized for U.S Czech reform(stopped by Warsaw Pactinvasion&occupation thru 1990)-MLK Assassinated Trousers RFK Assassinated ZoNc accepted for Women’s everyday wearB 5Eisenhower dies(heart failure) 9R-36FOBSdeployedChappaquiddick N-1fa -Mylai Massacre Nuclear Non-Proliferation Treatye JAPAN 3 Jets bound for NYHHjacked CHINA 64 Kent State war protesters killed- Luna Lnoll2(heartfailure)Intel4004 N-1fal Khruschev dies ffrst microprocessor HP-35,frst scientfc pocket calculator u...Nixon visits China and Russia Lura20SALTI marks beginning of DETENTE Fischer beats Spasskyin Chess Match Munich Olympic Terrorism 1fa LBJ dies(heart failure) Oil Crisis Lurkhhod2Tu-144 crashes atParis AirShow Billie Jean King beats Bobbie Riggs PPoneer10Solzhenitsyn exiled Mariner 10India'sffrst nuclear bomb test c Nxon resigns after Watergate Scandal 。 -EllaGrasso elected as female governor - 9Sony markets Betamax Pione 19Atari markets Pong home console - (1983) (Luna 24) (1978)(1976][19",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116780",
+            "node_type": null,
+            "original_index": 33,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 5,
+            "bbox": [
+              7.0,
+              115.0,
+              397.0,
+              603.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region is a timeline chart detailing the Space Race between the United States and the Soviet Union from 1957 to 1975, with a focus on key milestones and achievements in space exploration.\n\n**Content Details**:\n- **Timeline**: The main axis of the chart is a timeline from 1957 to 1975, with years marked at intervals.\n- **Achievements**: Various space missions and milestones are plotted on the timeline, including launches, landings, and orbit achievements.\n- **Competitors**: The chart distinguishes between the United States (red) and the Soviet Union (blue) with corresponding lines and markers.\n- **Context**: The timeline is accompanied by a legend at the top, indicating the significance of various symbols and colors.\n- **Additional Information**: The bottom section of the chart includes a list of significant events related to the Space Race and broader historical context.\n\n**Visual Features**:\n- **Colors**: The United States is represented by red, and the Soviet Union by blue, with corresponding lines and markers.\n- **Layout**: The timeline is linear, with vertical lines representing specific events and achievements.\n- **Text**: The chart includes both numerical and textual data, with years, mission names, and event descriptions.\n- **Graphics**: Symbols and markers are used to denote key events and achievements.\n\n**Context Integration**:\n- The timeline is part of a larger document that likely discusses the Space Race and its implications, given the surrounding context of political and historical events.\n- The chart is positioned within a larger section that includes a title and additional text, suggesting it is an integral part of the document's analysis.\n\n**Purpose**:\n- The purpose of this timeline is to visually represent the chronological progression of the Space Race, highlighting the achievements of both the United States and the Soviet Union in space exploration.\n- It serves as a tool for understanding the competitive nature of the Space Race and the technological advancements made during this period."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116781",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_6_figure_33.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_6_figure_33.png",
+          "data-page": "5"
+        },
+        {
+          "tag": "figure",
+          "text": "U.S. healthcare spending.1960-2007.% ofGDP 2007 162006 15.82005 15.72004 15.62003 15.62002 15.12001 14.32000 13.61999 13.51998 13.41997 13.41996 13.51995 13.61994 13.51993 13.61992 13.31991 12.91990 12.21989 11.51988 11.11987 10.71986 10.41985 10.31984 10.11983 10.21982 10.11981 9.31980 91979 8.51978 8.31977 8.41976 8.21975 81974 7.71973 7.31972 7.41971 7.31970 7.11969 6.61968 6.31967 6.11966 5.71965 5.71964 5.71963 5.51962 5.41961 5.31960 5.20 5 10 15 20",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116782",
+            "node_type": null,
+            "original_index": 34,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 6,
+            "bbox": [
+              259.0,
+              10.0,
+              457.0,
+              394.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region is a bar chart showing U.S. healthcare spending as a percentage of GDP from 1960 to 2007.\n\n**Content Details**:\n- **Title**: U.S. healthcare spending. 1960-2007. % of GDP\n- **X-axis**: Represents the percentage of GDP, ranging from 0 to 20.\n- **Y-axis**: Represents the years from 1960 to 2007.\n- **Bars**: Each bar represents a year, with different colors indicating different data points.\n- **Data Points**: The bars show the percentage of GDP spent on healthcare for each year.\n\n**Visual Features**:\n- **Colors**: Various colors are used to distinguish between different years.\n- **Layout**: Bars are aligned vertically, with each year's bar placed next to the corresponding year on the Y-axis.\n- **Text**: The title and axis labels are clearly visible.\n\n**Context Integration**:\n- The chart is part of a larger document that likely discusses healthcare spending trends over time.\n- The surrounding text and images suggest this is a detailed analysis of healthcare costs in the U.S.\n\n**Purpose**:\n- The chart's purpose is to visually represent and compare the percentage of GDP spent on healthcare across different years, highlighting trends and changes over time."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116783",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_7_figure_34.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_7_figure_34.png",
+          "data-page": "6"
+        },
+        {
+          "tag": "p",
+          "text": "Gestalt Principles of Visual Perception",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116784",
+            "node_type": null,
+            "original_index": 35,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 7,
+            "bbox": [
+              29.5,
+              39.5,
+              599.5,
+              76.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "7"
+        },
+        {
+          "tag": "p",
+          "text": "Closure. We tend to perceive objects such as shapes,  letters, pictures, etc., as being whole when they are not complete.  Specifically, when parts of a whole picture are missing, our  perception fills in the visual gap.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116785",
+            "node_type": null,
+            "original_index": 36,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 7,
+            "bbox": [
+              25.5,
+              95.5,
+              342.0,
+              168.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "7"
+        },
+        {
+          "tag": "figure",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116786",
+            "node_type": null,
+            "original_index": 37,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 7,
+            "bbox": [
+              61.5,
+              205.0,
+              309.5,
+              339.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains two examples illustrating the Gestalt Principle of Continuity, showing how elements of objects are grouped together and perceived as uninterrupted entities.\n\n**Content Details**:\n- Two black and white line drawings\n- Each drawing represents a visual illusion where lines are perceived as continuous despite breaks or intersections\n\n**Visual Features**:\n- Black lines on a white background\n- Simple, clear illustrations\n\n**Context Integration**:\n- The drawings are part of a larger explanation of the Gestalt Principle of Continuity, demonstrating how our visual system tends to perceive continuous forms even when parts are missing or intersecting.\n\n**Purpose**:\n- To visually demonstrate the Gestalt Principle of Continuity, reinforcing the concept that elements of objects are grouped together and perceived as continuous entities, even when they are not actually connected."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116787",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_8_figure_37.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_8_figure_37.png",
+          "data-page": "7"
+        },
+        {
+          "tag": "p",
+          "text": "Continuity. Elements of objects tend to be grouped",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116788",
+            "node_type": null,
+            "original_index": 38,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 7,
+            "bbox": [
+              366.0,
+              101.0,
+              645.5,
+              118.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "7"
+        },
+        {
+          "tag": "p",
+          "text": "together, and therefore integrated into perceptual wholes if they  are aligned within an object. In cases where there is an intersection between objects, individuals tend to perceive the two objects as  two single uninterrupted entities.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116789",
+            "node_type": null,
+            "original_index": 39,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 7,
+            "bbox": [
+              366.0,
+              122.0,
+              685.0,
+              180.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "7"
+        },
+        {
+          "tag": "figure",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116790",
+            "node_type": null,
+            "original_index": 40,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 7,
+            "bbox": [
+              492.0,
+              239.5,
+              563.5,
+              305.0
+            ],
+            "image_extracted": true,
+            "ai_description": "Skipped (disabled or too small)"
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116791",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_8_figure_40.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_8_figure_40.png",
+          "data-page": "7"
+        },
+        {
+          "tag": "figure",
+          "text": "813.Zi xz, p MOSCOU ,000i TABLEAU CRAPH de Reaammmra Fi:248- ak 20.11289. -221140-20 x -30 cX",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116792",
+            "node_type": null,
+            "original_index": 41,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 8,
+            "bbox": [
+              14.0,
+              27.0,
+              704.5,
+              361.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a detailed map and graph depicting the losses of the French Army during the Russian Campaign of 1812-1813, with a focus on the temperature changes during the campaign.\n\n**Content Details**:\n- **Map**: A line graph with a yellow and black line representing the movement and losses of the French Army.\n- **Temperature Graph**: A separate graph at the bottom showing temperature changes in degrees Celsius.\n- **Cities and Locations**: Names of cities and locations along the route of the campaign, such as Moscow, Polotsk, and Wilna.\n- **Numbers**: Specific numbers indicating the number of troops at various points along the route.\n- **Text**: Descriptive text in French explaining the data and the campaign.\n\n**Visual Features**:\n- **Color Coding**: Yellow and black lines for the map, black for the temperature graph.\n- **Graph Layout**: The map and temperature graph are integrated into a single visual, with the map on top and the temperature graph below.\n- **Text**: Black text on a white background for the descriptive text.\n\n**Context Integration**:\n- The map and graph are part of a larger document that provides a comprehensive view of the campaign's losses and environmental conditions.\n- The map and graph are aligned with the timeline of the campaign, showing the progression of the army and the corresponding temperature changes.\n\n**Purpose**:\n- The purpose of this content is to visually represent the losses of the French Army during the Russian Campaign and the impact of the harsh winter conditions on the troops."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116793",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_9_figure_41.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_9_figure_41.png",
+          "data-page": "8"
+        },
+        {
+          "tag": "figure",
+          "text": "rac ng  e West Nile Virus Height is Based on Approximate Distance Number of Confirmed from the Mississippi Human Cases River(miles)Shortest prism=0 0-375Tallest prism=661 375-750750-11251125-1500",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116794",
+            "node_type": null,
+            "original_index": 42,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 9,
+            "bbox": [
+              185.5,
+              94.5,
+              534.5,
+              333.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a map of the United States with a title \"Tracking the West Nile Virus\" and a legend indicating the height is based on the number of confirmed human cases, with the approximate distance from the Mississippi River in miles.\n\n**Content Details**:\n- **Title**: \"Tracking the West Nile Virus\"\n- **Map**: A map of the United States with states colored in various shades of red, orange, and yellow.\n- **Legend**: \n  - \"Height is Based on Number of Confirmed Human Cases\"\n  - \"Shortest prism = 0\"\n  - \"Tallest prism = 661\"\n  - \"Approximate Distance from the Mississippi River (miles)\"\n  - Color scale: Red (0-375), Orange (375-750), Yellow (750-1125), Light Yellow (1125-1500)\n\n**Visual Features**:\n- **Colors**: Red, orange, yellow, light yellow\n- **Layout**: The map is centrally placed with the legend to the right\n- **Text**: Black text on a white background\n\n**Context Integration**: This region is part of a larger document likely discussing the spread and impact of the West Nile Virus in the United States. The map visually represents the number of confirmed human cases and their proximity to the Mississippi River, which is a significant waterway in the country.\n\n**Purpose**: The purpose of this content is to provide a visual representation of the West Nile Virus's spread across the United States, highlighting the number of confirmed cases and their geographical distribution relative to the Mississippi River."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116795",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_10_figure_42.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_10_figure_42.png",
+          "data-page": "9"
+        },
+        {
+          "tag": "p",
+          "text": "Gestalt Principles of Visual Perception",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116796",
+            "node_type": null,
+            "original_index": 43,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 10,
+            "bbox": [
+              29.5,
+              40.5,
+              599.5,
+              76.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "10"
+        },
+        {
+          "tag": "p",
+          "text": "Law of good Gestalt. Elements of objects tend to be",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116797",
+            "node_type": null,
+            "original_index": 44,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 10,
+            "bbox": [
+              30.5,
+              100.0,
+              340.0,
+              119.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "10"
+        },
+        {
+          "tag": "p",
+          "text": "perceptually grouped together if they form a pattern that is regular, simple, and orderly. This law implies that as individuals perceive the world, they eliminate complexity and unfamiliarity so they can  observe a reality in its most simplistic form. Eliminating extraneous  stimuli helps the mind create meaning.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116798",
+            "node_type": null,
+            "original_index": 45,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 10,
+            "bbox": [
+              29.5,
+              122.0,
+              352.0,
+              195.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "10"
+        },
+        {
+          "tag": "p",
+          "text": "This meaning created by perception implies a global regularity,  which is often mentally prioritized over spatial relations. The law of good gestalt focuses on the idea of conciseness, which is what all of  gestalt theory is based on.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116799",
+            "node_type": null,
+            "original_index": 46,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 10,
+            "bbox": [
+              30.5,
+              214.0,
+              350.0,
+              270.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "10"
+        },
+        {
+          "tag": "figure",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116800",
+            "node_type": null,
+            "original_index": 47,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 10,
+            "bbox": [
+              484.0,
+              223.5,
+              627.0,
+              364.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a visual representation of the Law of Good Gestalt, illustrating how elements of objects are perceptually grouped together to form a pattern that is regular, simple, and orderly.\n\n**Content Details**:\n- **Visual Elements**: Three black and white geometric shapes arranged in a circular pattern, demonstrating the concept of grouping.\n- **Text**: Describes the Law of Good Gestalt, explaining how individuals perceive the world by eliminating complexity and focusing on simplicity.\n\n**Visual Features**:\n- **Colors**: Black and white shapes on a white background.\n- **Layout**: The shapes are arranged in a circular pattern, with text to the left providing an explanation.\n\n**Context Integration**:\n- The target region is part of a larger discussion on the Gestalt Principles of Visual Perception, specifically focusing on the Law of Good Gestalt.\n- The visual representation complements the textual explanation, providing a concrete example of how the law applies in real-world perception.\n\n**Purpose**:\n- The purpose of this content is to visually demonstrate the Law of Good Gestalt, reinforcing the textual explanation and helping readers understand the concept through a practical example."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116801",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_11_figure_47.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_11_figure_47.png",
+          "data-page": "10"
+        },
+        {
+          "tag": "figure",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116802",
+            "node_type": null,
+            "original_index": 48,
+            "parent_chapter": 30,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 11,
+            "bbox": [
+              153.0,
+              14.5,
+              565.5,
+              389.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region provides a detailed analysis of Indonesia's entrepreneurship and innovation landscape, including capital and policy, strengths, weaknesses, and specific statistics.\n\n**Content Details**:\n- **Capital and Policy**: Venture Capital and Private Equity Attractiveness Index, Ease of Access to Capital OECD Index, Days Needed to Start a Business.\n- **Entrepreneurship and Innovation**: Agreement levels on statements about innovation, creativity, starting a business, valuing entrepreneurs, and putting good ideas into practice.\n- **Strengths and Weaknesses**: Strengths include a large young and growing middle-income population and more attractive valuations compared to other Asian countries. Weaknesses include inadequate infrastructure in some areas and large companies being family- or state-owned.\n\n**Visual Features**:\n- Dark background with light text and icons.\n- Use of circles and bar charts to represent data.\n- Red and blue colors for contrasting positive and negative aspects.\n\n**Context Integration**:\n- The region is part of a larger infographic that compares Indonesia's entrepreneurial environment to the global average.\n- The data is presented in a clear, visually appealing manner to facilitate easy understanding.\n\n**Purpose**:\n- To provide a comprehensive overview of Indonesia's entrepreneurial and innovation landscape, highlighting both strengths and weaknesses.\n- To inform stakeholders about the country's attractiveness for venture capital and private equity investments.\n- To guide policymakers and entrepreneurs on areas for improvement."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116803",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_12_figure_48.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_12_figure_48.png",
+          "data-page": "11"
+        }
+      ],
+      "data-page": "3"
+    },
+    {
+      "tag": "h2",
+      "text": "ADVANCED SCIENCE COURSE at a glance",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116804",
+        "node_type": null,
+        "original_index": 49,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 12,
+        "bbox": [
+          155.0,
+          24.0,
+          388.0,
+          108.0
+        ],
+        "heading_level": 2
+      },
+      "data-page": "12"
+    },
+    {
+      "tag": "h2",
+      "text": "CTBTO cporempparreahtoernys icvoe mnmuicslseiaor-n tfeosrt -tbhaen",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116805",
+        "node_type": null,
+        "original_index": 50,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 12,
+        "bbox": [
+          452.0,
+          32.8,
+          555.0,
+          44.0
+        ],
+        "heading_level": 2
+      },
+      "data-page": "12"
+    },
+    {
+      "tag": "h2",
+      "text": "comprehensive nuclear-test-ban",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116806",
+        "node_type": null,
+        "original_index": 51,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 12,
+        "bbox": [
+          490.6,
+          38.0,
+          556.0,
+          41.5
+        ],
+        "heading_level": 2
+      },
+      "data-page": "12"
+    },
+    {
+      "tag": "h3",
+      "text": "PREPARATORY COMMISSION treaty organization",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116807",
+        "node_type": null,
+        "original_index": 52,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 12,
+        "bbox": [
+          426.7,
+          42.5,
+          530.0,
+          49.2
+        ],
+        "heading_level": 3
+      },
+      "children": [
+        {
+          "tag": "figure",
+          "text": "minuteswatchedonline 70,000 2.000clickson lecture videos registered institutionalaffiliation42 fpraorrtmicipants105 14182426 3330countries lecturesdelivered TRAIN THE NEXT GENERATION OF CTBT EXPERTS.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116808",
+            "node_type": null,
+            "original_index": 53,
+            "parent_chapter": 52,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 12,
+            "bbox": [
+              136.0,
+              111.0,
+              582.5,
+              387.0
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region provides an overview of the Advanced Science Course, highlighting key statistics such as the number of minutes watched online, registered participants, clicks on lecture videos, and the number of lectures delivered.\n\n**Content Details**:\n- **Minutes watched online**: 70,000\n- **Registered participants**: 425 from 105 countries\n- **Clicks on lecture videos**: 2,000\n- **Lectures delivered**: 33\n- **Institutional affiliation**: Various institutions are listed, including universities, research institutes, and government agencies.\n- **Goal**: Train the next generation of CTBT experts.\n\n**Visual Features**:\n- The region uses a light green background with black and red text for emphasis.\n- Icons and graphics, such as a world map and a graduation cap, are used to visually represent the data.\n- The layout is clean and organized, with clear sections for each statistic.\n\n**Context Integration**:\nThis region is part of a larger infographic that provides a comprehensive overview of the Advanced Science Course, highlighting its reach, engagement, and impact. The statistics and visual elements are designed to convey the course's success and the diversity of its participants.\n\n**Purpose**:\nThe purpose of this content is to showcase the success and reach of the Advanced Science Course, emphasizing its global impact and the number of participants it has attracted. It serves as a summary of the course's key achievements and the number of experts it has trained."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116809",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_13_figure_53.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_13_figure_53.png",
+          "data-page": "12"
+        },
+        {
+          "tag": "figure",
+          "text": "Time spent on weekends 2005 2010Shcpping 10% HH Fnes5% 6%21%Eatingout 10% ◎ l ◎35% 17%Hobbies 2% 4%Netsurrnng 3% 4% 22%10%Travelling 5%(Reading 10%wwatching nims 20%",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116810",
+            "node_type": null,
+            "original_index": 54,
+            "parent_chapter": 52,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 13,
+            "bbox": [
+              169.0,
+              80.5,
+              550.0,
+              327.5
+            ],
+            "image_extracted": true,
+            "description_method": "full_page_region",
+            "ai_description": "**Summary**: The target region contains a pie chart and a smaller clock-like diagram illustrating the time spent on weekends in 2005 and 2010.\n\n**Content Details**:\n- **Pie Chart**: Represents the time spent on various activities such as with family and friends, watching films, reading, and others.\n- **Clock-like Diagram**: Shows the time spent on different activities with a focus on \"With family and friends\" and \"Watching films\" in 2010.\n- **Text**: Labels the activities and their respective percentages.\n- **Icons**: Small icons next to each activity for visual representation.\n\n**Visual Features**:\n- **Colors**: Uses a color scheme with orange, black, and white.\n- **Layout**: The pie chart and clock-like diagram are centrally placed, with text labels and icons surrounding them.\n- **Graphics**: Includes icons for each activity, such as a shopping cart for shopping, a person for fitness, and a film strip for watching films.\n\n**Context Integration**:\n- The pie chart and clock-like diagram are part of a larger infographic that compares the time spent on different activities over two different years.\n- The surrounding text and icons provide context for the activities listed in the pie chart.\n\n**Purpose**:\n- The infographic aims to compare how people spend their weekends in 2005 and 2010, focusing on the time spent with family and friends and watching films."
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116811",
+                "node_type": null
+              },
+              "src": "0e94b4197b10096b1f4c699701570fbf/page_14_figure_54.png"
+            }
+          ],
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_14_figure_54.png",
+          "data-page": "13"
+        },
+        {
+          "tag": "p",
+          "text": "Export von Banane n in Tonne nvon1994-2005",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116812",
+            "node_type": null,
+            "original_index": 55,
+            "parent_chapter": 52,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 14,
+            "bbox": [
+              233.5,
+              12.5,
+              482.0,
+              25.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "14"
+        }
+      ],
+      "data-page": "12"
+    },
+    {
+      "tag": "figure",
+      "text": "□1994□1995□19965,000.000 □19974,500.000 1998□19994,000.000 □2000□20013,500.000 20023,000.000 200320042,500.000 20052,000.0001,500.0001,000.000 20042002500.00020000 199819961994Dr.Hochhaus Banexport 2005DatenZMP",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116813",
+        "node_type": null,
+        "original_index": 56,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "figure",
+        "page_number": 14,
+        "bbox": [
+          174.0,
+          22.5,
+          543.0,
+          395.0
+        ],
+        "image_extracted": true,
+        "description_method": "full_page_region",
+        "ai_description": "**Summary**: The target region contains a 3D bar chart illustrating the export of bananas in tons from 1994 to 2005.\n\n**Content Details**:\n- **Title**: \"Export von Bananen in Tonnen von 1994-2005\"\n- **Axes**: The x-axis lists countries such as Ecuador, Philippines, Costa Rica, Colombia, Guatemala, Belgium/Luxembourg, Honduras, USA, and others, while the y-axis represents the tonnage of banana exports.\n- **Bars**: Each country has multiple bars representing the years 1994 to 2005, with different colors for each year.\n- **Legend**: A legend on the right side of the chart explains the color coding for each year.\n\n**Visual Features**:\n- **Colors**: The bars are colored differently for each year, with a legend indicating the color code.\n- **Layout**: The chart is 3D, giving a visual depth to the data representation.\n- **Background**: The background features a pattern of bananas, reinforcing the theme of banana exports.\n\n**Context Integration**:\nThis region is part of a larger document that focuses on the export of bananas over a decade. The 3D bar chart provides a clear and visually engaging way to compare the export volumes from different countries year by year.\n\n**Purpose**:\nThe purpose of this content is to visually represent and compare the banana export volumes from various countries over the years 1994 to 2005, likely for analytical or informational purposes in the context of the document."
+      },
+      "children": [
+        {
+          "tag": "img",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_0e94b4197b10096b1f4c699701570fbf_116814",
+            "node_type": null
+          },
+          "src": "0e94b4197b10096b1f4c699701570fbf/page_15_figure_56.png"
+        }
+      ],
+      "src": "0e94b4197b10096b1f4c699701570fbf/page_15_figure_56.png",
+      "data-page": "14"
+    }
+  ]
+}

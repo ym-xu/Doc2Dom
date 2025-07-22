@@ -1,0 +1,954 @@
+{
+  "status": "ok",
+  "data": {
+    "document": {
+      "id": "cd934335-dd69-43a7-a4f2-775bfbace0ee",
+      "name": "0e94b4197b10096b1f4c699701570fbf.pdf",
+      "package_type": "elite",
+      "ocr_type": "auto",
+      "page_count": 15,
+      "create_time": 1752850921
+    },
+    "elements": [
+      {
+        "type": "figure",
+        "text": "",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 0,
+        "outline": [
+          284.0,
+          49.5,
+          698.5,
+          245.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Data  Presentation",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 1,
+        "outline": [
+          42.0,
+          204.0,
+          397.0,
+          347.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Gestalt Principles of Visual Perception",
+        "page": 1,
+        "parent_chapter": -1,
+        "index": 2,
+        "outline": [
+          29.5,
+          40.5,
+          600.5,
+          76.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Gestalt psychology was conceived in the Berlin School of Experimental Psychology,  and tries to understand the laws of our ability to acquire and maintain meaningful  perceptions. ",
+        "page": 1,
+        "parent_chapter": 2,
+        "index": 3,
+        "outline": [
+          28.5,
+          100.0,
+          679.5,
+          170.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "● (German: Gestalt [ɡəˈʃtalt] \"shape, form\")",
+        "page": 1,
+        "parent_chapter": 2,
+        "index": 4,
+        "outline": [
+          36.5,
+          172.0,
+          394.0,
+          194.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Key principle: when the human mind perceives a form, the whole has a reality of its own, independent of the parts.",
+        "page": 1,
+        "parent_chapter": 2,
+        "index": 5,
+        "outline": [
+          30.5,
+          213.5,
+          669.5,
+          257.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "This allowed the development of 8 Gestalt Laws of Grouping. Here we are highlighting only the most relevant 5 for data presentation. You can read more details about them on Wikipedia: https://en.wikipedia.org/wiki/Gestalt_psychology",
+        "page": 1,
+        "parent_chapter": 2,
+        "index": 6,
+        "outline": [
+          28.5,
+          284.5,
+          689.5,
+          368.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Gestalt Principles of Visual Perception",
+        "page": 2,
+        "parent_chapter": 2,
+        "index": 7,
+        "outline": [
+          29.5,
+          39.5,
+          600.5,
+          76.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Proximity. We tend to see objects that are visually close  together as belonging to part of a group.",
+        "page": 2,
+        "parent_chapter": 2,
+        "index": 8,
+        "outline": [
+          28.0,
+          98.5,
+          332.0,
+          137.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Similarity. Objects that are similar in shape and color as  belonging to part of a group.",
+        "page": 2,
+        "parent_chapter": 2,
+        "index": 9,
+        "outline": [
+          366.0,
+          100.0,
+          664.0,
+          135.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 2,
+        "parent_chapter": 2,
+        "index": 10,
+        "outline": [
+          450.0,
+          156.5,
+          606.0,
+          311.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "US SPACE TRAVEL",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 11,
+        "outline": [
+          65.0,
+          24.0,
+          198.5,
+          49.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A TIMELINE OF MANN EDNA SAFLIGHHTS",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 12,
+        "outline": [
+          66.0,
+          50.5,
+          238.0,
+          64.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "OnJuly21,2011,thelastSpace Shutttefightlanded,ending60yearsofmannedNASA fights.The UUSspace program beganin1961 andresutedin166nearlycontinuousmissions,costnganeatmatedS7biion per year.Spacetr velcontinuesthoughinterrationalpartnershipsandunmannedmiesions,butitremmainstobeseen whatisnextforAmericanspaceeplorationn",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 13,
+        "outline": [
+          63.0,
+          80.0,
+          233.5,
+          102.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "MERCCURY",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 14,
+        "outline": [
+          67.5,
+          107.0,
+          83.0,
+          113.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "MarcuyRad s e4 LbetyBal7),J3y241061",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 15,
+        "outline": [
+          68.3,
+          117.8,
+          140.7,
+          120.9
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "MMrcuyAras 6(Fendahp77 Fabru y20 1962",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 16,
+        "outline": [
+          68.4,
+          122.0,
+          142.5,
+          124.9
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Mecuy Ats7 Auor7, May 24,1962",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 17,
+        "outline": [
+          68.4,
+          126.1,
+          128.8,
+          128.8
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Morour Atas 8ISgma7)Ootooer3 1962",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 18,
+        "outline": [
+          68.4,
+          130.2,
+          132.4,
+          132.8
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "MerounAras9(Fath 7,MMay15-16,1963",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 19,
+        "outline": [
+          68.4,
+          134.3,
+          131.9,
+          137.2
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "EEMINI",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 20,
+        "outline": [
+          67.5,
+          142.0,
+          80.0,
+          147.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "AP0L10",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 21,
+        "outline": [
+          67.5,
+          192.5,
+          80.0,
+          198.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Apcoo12,Novemoet14-24 1969",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 22,
+        "outline": [
+          68.7,
+          219.5,
+          119.6,
+          221.9
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Apcto 15,AJy26-A guut71971",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 23,
+        "outline": [
+          68.5,
+          231.6,
+          117.8,
+          234.3
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Apofo16 A nl16 27 1972",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 24,
+        "outline": [
+          68.5,
+          235.7,
+          110.3,
+          238.7
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "SKLA",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 25,
+        "outline": [
+          67.5,
+          247.5,
+          80.0,
+          253.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Skbe2My25-M e221973",
+        "page": 3,
+        "parent_chapter": 12,
+        "index": 26,
+        "outline": [
+          68.5,
+          257.9,
+          116.0,
+          260.7
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Skytan3,Jly28 Saprember75,1973",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 27,
+        "outline": [
+          68.5,
+          262.0,
+          124.0,
+          265.3
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "secoods Siyab4rmansthe ongen USepace fghttodaee",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 28,
+        "outline": [
+          68.5,
+          270.0,
+          159.3,
+          273.1
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "APOLLD/SOYUZTESTPROJECT",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 29,
+        "outline": [
+          68.4,
+          279.2,
+          111.6,
+          283.2
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "SPACESHUTTLE",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 30,
+        "outline": [
+          68.4,
+          294.5,
+          90.9,
+          298.2
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "L SA FLIGHHTS ASA fights.The UUSspace atmatedS7biion per ns,butitremmainstobeseen SoaceShteAtte Apcto 131961Festlandng onthe TheemplySy pacecoat redso EatonJy11,1979d 31 scanngde sowe ted Oceeind tesoeseysted gonofW nAa ss SSS1B 1L/1988STS.3683/129320,ST5-6919979STS 105econdaheihol 200820Mercuy Gemin Apolo Skyab Apofo/Soyuz Space TestProject Shutle",
+        "page": 3,
+        "parent_chapter": 30,
+        "index": 31,
+        "outline": [
+          191.0,
+          21.5,
+          652.5,
+          405.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "706050403020100June July August October Decembe",
+        "page": 4,
+        "parent_chapter": 30,
+        "index": 32,
+        "outline": [
+          181.0,
+          103.0,
+          530.5,
+          312.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "U.K's first hydrogen bomb test R-7SAC starts 2447 nuke bomber alert SPUTNIK Sputrik2 Ats (contnuousunttl1991) (Vannguardfallliro)USSR unilateral nuke test moratorium Exporer (followed by US and UK)Thor IRBMs deployed in the UK Eisenhower creates NASA Castro overthrows Batista in Cuba LunProne SSBN George Washingtonlaunched Hawaii becomes fftieth state ..-France's first nuclear bomb test 8Jupiter IRBMs deployed in Italy U-2 Pilot Gary Powers shot down Nedelin Sino-Soviet Split LaunchPad Disaster(kept secret)JFK proposes Bay ofPigs Fiasco commitment to landon the Moon Fallout Shelters/Beriin Wall constructed Jupiter IRBMs 50MT Tsar Bomba deployedin Turkey detonated Rancer Telstar relays first live TV by satellite CUBAN MISSILE CRISIS Nuclear Test Ban signed by US,USSR&UK JFK proposes cooperation on Apollo M (UN speech) JFK Assassinatedn U.S. Civil Rights Acts China'sffrst nuclear bomb test (oinsU.S.,U.S.S.R.,U.K.&France)Winston Churchill dies(stroke)U.S.invades Dominican Republic Malcom XAssassinated Sergei Korolev dies after surgery FRANCE ColorTV becomes popular< Lurne 3Crbiter First SuperBowl Staln's daughter defects to the U.S.•Interracialmarriage legalized for U.S Czech reform(stopped by Warsaw Pactinvasion&occupation thru 1990)-MLK Assassinated Trousers RFK Assassinated ZoNc accepted for Women’s everyday wearB 5Eisenhower dies(heart failure) 9R-36FOBSdeployedChappaquiddick N-1fa -Mylai Massacre Nuclear Non-Proliferation Treatye JAPAN 3 Jets bound for NYHHjacked CHINA 64 Kent State war protesters killed- Luna Lnoll2(heartfailure)Intel4004 N-1fal Khruschev dies ffrst microprocessor HP-35,frst scientfc pocket calculator u...Nixon visits China and Russia Lura20SALTI marks beginning of DETENTE Fischer beats Spasskyin Chess Match Munich Olympic Terrorism 1fa LBJ dies(heart failure) Oil Crisis Lurkhhod2Tu-144 crashes atParis AirShow Billie Jean King beats Bobbie Riggs PPoneer10Solzhenitsyn exiled Mariner 10India'sffrst nuclear bomb test c Nxon resigns after Watergate Scandal 。 -EllaGrasso elected as female governor - 9Sony markets Betamax Pione 19Atari markets Pong home console - (1983) (Luna 24) (1978)(1976][19",
+        "page": 5,
+        "parent_chapter": 30,
+        "index": 33,
+        "outline": [
+          7.0,
+          115.0,
+          397.0,
+          603.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 270.2
+      },
+      {
+        "type": "figure",
+        "text": "U.S. healthcare spending.1960-2007.% ofGDP 2007 162006 15.82005 15.72004 15.62003 15.62002 15.12001 14.32000 13.61999 13.51998 13.41997 13.41996 13.51995 13.61994 13.51993 13.61992 13.31991 12.91990 12.21989 11.51988 11.11987 10.71986 10.41985 10.31984 10.11983 10.21982 10.11981 9.31980 91979 8.51978 8.31977 8.41976 8.21975 81974 7.71973 7.31972 7.41971 7.31970 7.11969 6.61968 6.31967 6.11966 5.71965 5.71964 5.71963 5.51962 5.41961 5.31960 5.20 5 10 15 20",
+        "page": 6,
+        "parent_chapter": 30,
+        "index": 34,
+        "outline": [
+          259.0,
+          10.0,
+          457.0,
+          394.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Gestalt Principles of Visual Perception",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 35,
+        "outline": [
+          29.5,
+          39.5,
+          599.5,
+          76.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Closure. We tend to perceive objects such as shapes,  letters, pictures, etc., as being whole when they are not complete.  Specifically, when parts of a whole picture are missing, our  perception fills in the visual gap. ",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 36,
+        "outline": [
+          25.5,
+          95.5,
+          342.0,
+          168.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 37,
+        "outline": [
+          61.5,
+          205.0,
+          309.5,
+          339.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Continuity. Elements of objects tend to be grouped ",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 38,
+        "outline": [
+          366.0,
+          101.0,
+          645.5,
+          118.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "together, and therefore integrated into perceptual wholes if they  are aligned within an object. In cases where there is an intersection between objects, individuals tend to perceive the two objects as  two single uninterrupted entities. ",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 39,
+        "outline": [
+          366.0,
+          122.0,
+          685.0,
+          180.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 7,
+        "parent_chapter": 30,
+        "index": 40,
+        "outline": [
+          492.0,
+          239.5,
+          563.5,
+          305.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "813.Zi xz, p MOSCOU ,000i TABLEAU CRAPH de Reaammmra Fi:248- ak 20.11289. -221140-20 x -30 cX",
+        "page": 8,
+        "parent_chapter": 30,
+        "index": 41,
+        "outline": [
+          14.0,
+          27.0,
+          704.5,
+          361.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "rac ng  e West Nile Virus Height is Based on Approximate Distance Number of Confirmed from the Mississippi Human Cases River(miles)Shortest prism=0 0-375Tallest prism=661 375-750750-11251125-1500",
+        "page": 9,
+        "parent_chapter": 30,
+        "index": 42,
+        "outline": [
+          185.5,
+          94.5,
+          534.5,
+          333.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Gestalt Principles of Visual Perception",
+        "page": 10,
+        "parent_chapter": 30,
+        "index": 43,
+        "outline": [
+          29.5,
+          40.5,
+          599.5,
+          76.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Law of good Gestalt. Elements of objects tend to be ",
+        "page": 10,
+        "parent_chapter": 30,
+        "index": 44,
+        "outline": [
+          30.5,
+          100.0,
+          340.0,
+          119.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "perceptually grouped together if they form a pattern that is regular, simple, and orderly. This law implies that as individuals perceive the world, they eliminate complexity and unfamiliarity so they can  observe a reality in its most simplistic form. Eliminating extraneous  stimuli helps the mind create meaning. ",
+        "page": 10,
+        "parent_chapter": 30,
+        "index": 45,
+        "outline": [
+          29.5,
+          122.0,
+          352.0,
+          195.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "This meaning created by perception implies a global regularity,  which is often mentally prioritized over spatial relations. The law of good gestalt focuses on the idea of conciseness, which is what all of  gestalt theory is based on. ",
+        "page": 10,
+        "parent_chapter": 30,
+        "index": 46,
+        "outline": [
+          30.5,
+          214.0,
+          350.0,
+          270.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 10,
+        "parent_chapter": 30,
+        "index": 47,
+        "outline": [
+          484.0,
+          223.5,
+          627.0,
+          364.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 11,
+        "parent_chapter": 30,
+        "index": 48,
+        "outline": [
+          153.0,
+          14.5,
+          565.5,
+          389.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "ADVANCED SCIENCE COURSE at a glance",
+        "page": 12,
+        "parent_chapter": -1,
+        "index": 49,
+        "outline": [
+          155.0,
+          24.0,
+          388.0,
+          108.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 359.9,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "CTBTO cporempparreahtoernys icvoe mnmuicslseiaor-n tfeosrt -tbhaen",
+        "page": 12,
+        "parent_chapter": -1,
+        "index": 50,
+        "outline": [
+          452.0,
+          32.8,
+          555.0,
+          44.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 359.9,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "comprehensive nuclear-test-ban",
+        "page": 12,
+        "parent_chapter": -1,
+        "index": 51,
+        "outline": [
+          490.6,
+          38.0,
+          556.0,
+          41.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 359.9,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "PREPARATORY COMMISSION treaty organization",
+        "page": 12,
+        "parent_chapter": -1,
+        "index": 52,
+        "outline": [
+          426.7,
+          42.5,
+          530.0,
+          49.2
+        ],
+        "is_chapter_title": true,
+        "rotation": 359.9,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "minuteswatchedonline 70,000 2.000clickson lecture videos registered institutionalaffiliation42 fpraorrtmicipants105 14182426 3330countries lecturesdelivered TRAIN THE NEXT GENERATION OF CTBT EXPERTS.",
+        "page": 12,
+        "parent_chapter": 52,
+        "index": 53,
+        "outline": [
+          136.0,
+          111.0,
+          582.5,
+          387.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 359.9
+      },
+      {
+        "type": "figure",
+        "text": "Time spent on weekends 2005 2010Shcpping 10% HH Fnes5% 6%21%Eatingout 10% ◎ l ◎35% 17%Hobbies 2% 4%Netsurrnng 3% 4% 22%10%Travelling 5%(Reading 10%wwatching nims 20%",
+        "page": 13,
+        "parent_chapter": 52,
+        "index": 54,
+        "outline": [
+          169.0,
+          80.5,
+          550.0,
+          327.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.3
+      },
+      {
+        "type": "paragraph",
+        "text": "Export von Banane n in Tonne nvon1994-2005",
+        "page": 14,
+        "parent_chapter": 52,
+        "index": 55,
+        "outline": [
+          233.5,
+          12.5,
+          482.0,
+          25.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 359.9,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "□1994□1995□19965,000.000 □19974,500.000 1998□19994,000.000 □2000□20013,500.000 20023,000.000 200320042,500.000 20052,000.0001,500.0001,000.000 20042002500.00020000 199819961994Dr.Hochhaus Banexport 2005DatenZMP",
+        "page": 14,
+        "parent_chapter": -1,
+        "index": 56,
+        "outline": [
+          174.0,
+          22.5,
+          543.0,
+          395.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 359.9
+      }
+    ]
+  }
+}

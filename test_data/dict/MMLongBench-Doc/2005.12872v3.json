@@ -1,0 +1,5229 @@
+{
+  "status": "ok",
+  "data": {
+    "document": {
+      "id": "b783ed15-7d9d-443c-9d5f-374f42ba1a5f",
+      "name": "2005.12872v3.pdf",
+      "package_type": "elite",
+      "ocr_type": "auto",
+      "page_count": 26,
+      "create_time": 1752852427
+    },
+    "elements": [
+      {
+        "type": "paragraph",
+        "text": "0202",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 0,
+        "outline": [
+          17.5,
+          29.0,
+          34.0,
+          66.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "End-to-End Object Detection with Transformers",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 1,
+        "outline": [
+          34.0,
+          31.0,
+          377.5,
+          49.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "y a M 82",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 2,
+        "outline": [
+          16.5,
+          66.5,
+          36.5,
+          135.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "]V C.s c[",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 3,
+        "outline": [
+          16.0,
+          142.5,
+          38.5,
+          209.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "3 v 27821.5002:v i X r a",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 4,
+        "outline": [
+          15.5,
+          212.5,
+          36.5,
+          384.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Nicolas Carion?, Francisco Massa?, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, and Sergey Zagoruyko",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 5,
+        "outline": [
+          51.0,
+          71.0,
+          360.5,
+          93.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Facebook AI",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 6,
+        "outline": [
+          180.5,
+          104.5,
+          232.5,
+          112.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Abstract. We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 7,
+        "outline": [
+          59.5,
+          148.0,
+          352.5,
+          358.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "1 Introduction",
+        "page": 0,
+        "parent_chapter": -1,
+        "index": 8,
+        "outline": [
+          33.0,
+          380.5,
+          128.0,
+          390.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The goal of object detection is to predict a set of bounding boxes and category labels for each object of interest. Modern detectors address this set prediction task in an indirect way, by defining surrogate regression and classification problems on a large set of proposals [37,5], anchors [23], or window centers [53,46].Their performances are significantly influenced by postprocessing steps to collapse near-duplicate predictions, by the design of the anchor sets and by the heuristics that assign target boxes to anchors [52]. To simplify these pipelines, we propose a direct set prediction approach to bypass the surrogate tasks. This end-to-end philosophy has led to significant advances in complex structured prediction tasks such as machine translation or speech recognition, but not yet in object detection: previous attempts [43,16,4,39] either add other forms of prior knowledge, or have not proven to be competitive with strong baselines on challenging benchmarks. This paper aims to bridge this gap.",
+        "page": 0,
+        "parent_chapter": 8,
+        "index": 9,
+        "outline": [
+          32.0,
+          408.0,
+          380.5,
+          563.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "2 Carion et al.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 11,
+        "outline": [
+          33.0,
+          10.5,
+          116.5,
+          18.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "no object (ø) no object (ø)transformer  CNNencoderdecoder set of image featuresset of box predictions bipartite matching loss",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 12,
+        "outline": [
+          32.5,
+          36.0,
+          378.0,
+          95.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 1: DETR directly predicts (in parallel) the final set of detections by combining a common CNN with a transformer architecture. During training, bipartite matching uniquely assigns predictions with ground truth boxes. Prediction with no match should yield a “no object” (\\(\\varnothing\\)) class prediction.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 13,
+        "outline": [
+          32.5,
+          109.5,
+          379.0,
+          152.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We streamline the training pipeline by viewing object detection as a direct set prediction problem. We adopt an encoder-decoder architecture based on transformers [47], a popular architecture for sequence prediction. The self-attention mechanisms of transformers, which explicitly model all pairwise interactions between elements in a sequence, make these architectures particularly suitable for specific constraints of set prediction such as removing duplicate predictions.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 14,
+        "outline": [
+          33.0,
+          179.5,
+          378.5,
+          248.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Our DEtection TRansformer (DETR, see Figure 1) predicts all objects at once, and is trained end-to-end with a set loss function which performs bipartite matching between predicted and ground-truth objects. DETR simplifies the detection pipeline by dropping multiple hand-designed components that encode prior knowledge, like spatial anchors or non-maximal suppression. Unlike most existing detection methods, DETR doesn’t require any customized layers, and thus can be reproduced easily in any framework that contains standard CNN and transformer classes.1.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 15,
+        "outline": [
+          33.0,
+          251.0,
+          379.0,
+          344.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Compared to most previous work on direct set prediction, the main features of DETR are the conjunction of the bipartite matching loss and transformers with (non-autoregressive) parallel decoding [29,12,10,8]. In contrast, previous work focused on autoregressive decoding with RNNs [43,41,30,36,42]. Our matching loss function uniquely assigns a prediction to a ground truth object, and is invariant to a permutation of predicted objects, so we can emit them in parallel.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 16,
+        "outline": [
+          33.0,
+          348.0,
+          380.0,
+          417.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We evaluate DETR on one of the most popular object detection datasets, COCO [24], against a very competitive Faster R-CNN baseline [37]. Faster RCNN has undergone many design iterations and its performance was greatly improved since the original publication. Our experiments show that our new model achieves comparable performances. More precisely, DETR demonstrates significantly better performance on large objects, a result likely enabled by the non-local computations of the transformer. It obtains, however, lower performances on small objects. We expect that future work will improve this aspect in the same way the development of FPN [22] did for Faster R-CNN.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 17,
+        "outline": [
+          33.0,
+          420.0,
+          379.0,
+          525.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Training settings for DETR differ from standard object detectors in multiple ways. The new model requires extra-long training schedule and benefits from auxiliary decoding losses in the transformer. We thoroughly explore what components are crucial for the demonstrated performance.",
+        "page": 1,
+        "parent_chapter": 8,
+        "index": 18,
+        "outline": [
+          33.0,
+          529.0,
+          378.5,
+          550.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            18,
+            21
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 3",
+        "page": 2,
+        "parent_chapter": 8,
+        "index": 20,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "The design ethos of DETR easily extend to more complex tasks. In our experiments, we show that a simple segmentation head trained on top of a pretrained DETR outperfoms competitive baselines on Panoptic Segmentation [19],a challenging pixel-level recognition task that has recently gained popularity.",
+        "page": 2,
+        "parent_chapter": 8,
+        "index": 22,
+        "outline": [
+          33.0,
+          60.5,
+          378.5,
+          106.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "2 Related work",
+        "page": 2,
+        "parent_chapter": -1,
+        "index": 23,
+        "outline": [
+          33.0,
+          128.5,
+          132.5,
+          138.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Our work build on prior work in several domains: bipartite matching losses for set prediction, encoder-decoder architectures based on the transformer, parallel decoding, and object detection methods.",
+        "page": 2,
+        "parent_chapter": 23,
+        "index": 24,
+        "outline": [
+          33.0,
+          155.5,
+          378.5,
+          189.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "2.1 Set Prediction",
+        "page": 2,
+        "parent_chapter": 23,
+        "index": 25,
+        "outline": [
+          32.5,
+          210.0,
+          132.5,
+          220.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "There is no canonical deep learning model to directly predict sets. The basic set prediction task is multilabel classification (see e.g., [40,33] for references in the context of computer vision) for which the baseline approach, one-vs-rest, does not apply to problems such as detection where there is an underlying structure between elements (i.e., near-identical boxes). The first difficulty in these tasks is to avoid near-duplicates. Most current detectors use postprocessings such as non-maximal suppression to address this issue, but direct set prediction are postprocessing-free. They need global inference schemes that model interactions between all predicted elements to avoid redundancy. For constant-size set prediction, dense fully connected networks [9] are sufficient but costly. A general approach is to use auto-regressive sequence models such as recurrent neural networks [48]. In all cases, the loss function should be invariant by a permutation of the predictions. The usual solution is to design a loss based on the Hungarian algorithm [20], to find a bipartite matching between ground-truth and prediction. This enforces permutation-invariance, and guarantees that each target element has a unique match. We follow the bipartite matching loss approach. In contrast to most prior work however, we step away from autoregressive models and use transformers with parallel decoding, which we describe below.",
+        "page": 2,
+        "parent_chapter": 25,
+        "index": 26,
+        "outline": [
+          30.5,
+          230.5,
+          382.0,
+          448.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "2.2 Transformers and Parallel Decoding",
+        "page": 2,
+        "parent_chapter": 23,
+        "index": 27,
+        "outline": [
+          32.5,
+          468.0,
+          240.5,
+          478.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformers were introduced by Vaswani et al. [47] as a new attention-based building block for machine translation. Attention mechanisms [2] are neural network layers that aggregate information from the entire input sequence. Transformers introduced self-attention layers, which, similarly to Non-Local Neural Networks [49], scan through each element of a sequence and update it by aggregating information from the whole sequence. One of the main advantages of attention-based models is their global computations and perfect memory, which makes them more suitable than RNNs on long sequences. Transformers are now replacing RNNs in many problems in natural language processing, speech processing and computer vision [8,27,45,34,31].",
+        "page": 2,
+        "parent_chapter": 27,
+        "index": 28,
+        "outline": [
+          33.0,
+          489.0,
+          380.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            28,
+            30
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "4 Carion et al.",
+        "page": 3,
+        "parent_chapter": 27,
+        "index": 29,
+        "outline": [
+          32.5,
+          10.5,
+          117.5,
+          18.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformers were first used in auto-regressive models, following early sequenceto-sequence models [44], generating output tokens one by one. However, the prohibitive inference cost (proportional to output length, and hard to batch) lead to the development of parallel sequence generation, in the domains of audio [29],machine translation [12,10], word representation learning [8], and more recently speech recognition [6]. We also combine transformers and parallel decoding for their suitable trade-off between computational cost and the ability to perform the global computations required for set prediction.",
+        "page": 3,
+        "parent_chapter": 27,
+        "index": 31,
+        "outline": [
+          33.0,
+          60.5,
+          389.0,
+          153.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "2.3 Object detection",
+        "page": 3,
+        "parent_chapter": 23,
+        "index": 32,
+        "outline": [
+          33.0,
+          171.5,
+          143.5,
+          181.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Most modern object detection methods make predictions relative to some initial guesses. Two-stage detectors [37,5] predict boxes w.r.t. proposals, whereas single-stage methods make predictions w.r.t. anchors [23] or a grid of possible object centers [53,46]. Recent work [52] demonstrate that the final performance of these systems heavily depends on the exact way these initial guesses are set. In our model we are able to remove this hand-crafted process and streamline the detection process by directly predicting the set of detections with absolute box prediction w.r.t. the input image rather than an anchor.",
+        "page": 3,
+        "parent_chapter": 32,
+        "index": 33,
+        "outline": [
+          33.0,
+          189.5,
+          379.5,
+          283.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Set-based loss. Several object detectors [9,25,35] used the bipartite matching loss. However, in these early deep learning models, the relation between different prediction was modeled with convolutional or fully-connected layers only and a hand-designed NMS post-processing can improve their performance. More recent detectors [37,23,53] use non-unique assignment rules between ground truth and predictions together with an NMS.",
+        "page": 3,
+        "parent_chapter": 32,
+        "index": 34,
+        "outline": [
+          33.0,
+          289.5,
+          379.5,
+          360.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Learnable NMS methods [16,4] and relation networks [17] explicitly model relations between different predictions with attention. Using direct set losses, they do not require any post-processing steps. However, these methods employ additional hand-crafted context features like proposal box coordinates to model relations between detections efficiently, while we look for solutions that reduce the prior knowledge encoded in the model.",
+        "page": 3,
+        "parent_chapter": 32,
+        "index": 35,
+        "outline": [
+          33.0,
+          362.0,
+          379.5,
+          431.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Recurrent detectors. Closest to our approach are end-to-end set predictions for object detection [43] and instance segmentation [41,30,36,42]. Similarly to us, they use bipartite-matching losses with encoder-decoder architectures based on CNN activations to directly produce a set of bounding boxes. These approaches, however, were only evaluated on small datasets and not against modern baselines. In particular, they are based on autoregressive models (more precisely RNNs), so they do not leverage the recent transformers with parallel decoding.",
+        "page": 3,
+        "parent_chapter": 32,
+        "index": 36,
+        "outline": [
+          33.0,
+          437.5,
+          379.0,
+          519.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "3 The DETR model",
+        "page": 3,
+        "parent_chapter": -1,
+        "index": 37,
+        "outline": [
+          33.0,
+          537.5,
+          160.0,
+          547.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Two ingredients are essential for direct set predictions in detection: (1) a set prediction loss that forces unique matching between predicted and ground truth boxes; (2) an architecture that predicts (in a single pass) a set of objects and models their relation. We describe our architecture in detail in Figure 2.",
+        "page": 3,
+        "parent_chapter": 37,
+        "index": 38,
+        "outline": [
+          33.0,
+          561.5,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            38,
+            40
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 5",
+        "page": 4,
+        "parent_chapter": 37,
+        "index": 39,
+        "outline": [
+          150.0,
+          10.0,
+          380.5,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "3.1 Object detection set prediction loss",
+        "page": 4,
+        "parent_chapter": 37,
+        "index": 41,
+        "outline": [
+          33.0,
+          78.0,
+          237.5,
+          88.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "DETR infers a fixed-size set of N predictions, in a single pass through the decoder, where N is set to be significantly larger than the typical number of objects in an image. One of the main difficulties of training is to score predicted objects (class, position, size) with respect to the ground truth. Our loss produces an optimal bipartite matching between predicted and ground truth objects, and then optimize object-specific (bounding box) losses.",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 42,
+        "outline": [
+          33.0,
+          98.0,
+          380.5,
+          167.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Let us denote by y the ground truth set of objects, and \\(\\hat{y}\\,=\\,\\{\\hat{y}_{i}\\}_{i=1}^{N}\\) the set of N predictions. Assuming N is larger than the number of objects in the image, we consider y also as a set of size N padded with ∅ (no object). To find a bipartite matching between these two sets we search for a permutation of N elements \\(\\sigma\\in\\mathfrak{S}_{N}\\) with the lowest cost:",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 43,
+        "outline": [
+          33.0,
+          168.5,
+          380.5,
+          227.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\hat{\\sigma}=\\underset{\\sigma\\in\\mathfrak{S}_{N}}{\\arg\\operatorname*{min}}\\sum_{i}^{N}\\mathcal{L}_{\\mathrm{match}}(y_{i},\\hat{y}_{\\sigma(i)}),\\tag{1}\\]",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 44,
+        "outline": [
+          136.0,
+          238.5,
+          379.0,
+          267.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(\\mathcal{L}_{\\mathrm{match}}(y_{i},\\hat{y}_{\\sigma(i)})\\) is a pair-wise matching cost between ground truth \\(y_{i}\\) and a prediction with index \\(\\sigma(i)\\). This optimal assignment is computed efficiently with the Hungarian algorithm, following prior work (e.g. [43]).",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 45,
+        "outline": [
+          32.5,
+          279.0,
+          380.5,
+          313.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The matching cost takes into account both the class prediction and the similarity of predicted and ground truth boxes. Each element i of the ground truth set can be seen as a \\(y_{i}\\ =\\ (c_{i},b_{i})\\) where \\(c_{i}\\) is the target class label (which may be \\(\\boldsymbol{\\mathcal{O}}\\)) and \\(b_{i}\\ \\in\\ [0,1]^{4}\\) is a vector that defines ground truth box center coordinates and its height and width relative to the image size. For the prediction with index \\(\\sigma(i)\\) we define probability of class \\(c_{i}\\) as \\(\\hat{p}_{\\sigma(i)}(c_{i})\\) and the predicted box as \\({\\hat{b}}_{\\sigma(i)}\\). With these notations we define \\(\\mathcal{L}_{\\mathrm{match}}(y_{i},\\hat{y}_{\\sigma(i)})\\) as \\(-\\mathbb{1}_{\\{c_{i}\\neq\\emptyset\\}}\\hat{p}_{\\sigma(i)}(c_{i})+\\mathbb{1}_{\\{c_{i}\\neq\\emptyset\\}}\\) Lbox(bi,ˆbσ(i)).",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 46,
+        "outline": [
+          32.0,
+          315.0,
+          382.5,
+          415.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "This procedure of finding matching plays the same role as the heuristic assignment rules used to match proposal [37] or anchors [22] to ground truth objects in modern detectors. The main difference is that we need to find one-to-one matching for direct set prediction without duplicates.",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 47,
+        "outline": [
+          33.0,
+          415.0,
+          379.0,
+          460.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The second step is to compute the loss function, the Hungarian loss for all pairs matched in the previous step. We define the loss similarly to the losses of common object detectors, i.e. a linear combination of a negative log-likelihood for class prediction and a box loss defined later:",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 48,
+        "outline": [
+          33.0,
+          463.0,
+          380.5,
+          508.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[{\\mathcal{L}}_{\\mathrm{Hungarian}}(y,\\hat{y})=\\sum_{i=1}^{N}\\left[-\\log{\\hat{p}}_{\\hat{\\sigma}(i)}(c_{i})+\\mathbb{1}_{\\{c_{i}\\neq\\hat{\\sigma}\\}}{\\mathcal{L}}_{\\mathrm{box}}(b_{i},\\hat{b}_{\\hat{\\sigma}}(i))\\right]\\,,\\tag{2}\\]  ",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 49,
+        "outline": [
+          68.5,
+          520.0,
+          379.0,
+          549.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(\\hat{\\sigma}\\) is the optimal assignment computed in the first step (1). In practice, we down-weight the log-probability term when \\(c_{i}=\\varnothing\\) by a factor 10 to account for class imbalance. This is analogous to how Faster R-CNN training procedure balances positive/negative proposals by subsampling [37]. Notice that the matching cost between an object and \\(\\mathcal{X}\\) doesn’t depend on the prediction, which means that in that case the cost is a constant. In the matching cost we use probabilities \\(\\hat{p}_{\\hat{\\sigma}(i)}(c_{i})\\) instead of log-probabilities. This makes the class prediction term commensurable to \\(\\mathcal{L}_{\\mathrm{box}}(\\cdot,\\cdot)\\) (described below), and we observed better empirical performances.",
+        "page": 4,
+        "parent_chapter": 41,
+        "index": 50,
+        "outline": [
+          33.0,
+          560.5,
+          379.5,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            50,
+            52
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "6 Carion et al.",
+        "page": 5,
+        "parent_chapter": 41,
+        "index": 51,
+        "outline": [
+          33.0,
+          10.5,
+          117.5,
+          18.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Bounding box loss. The second part of the matching cost and the Hungarian loss is \\(\\mathcal{L}_{\\mathrm{box}}(\\cdot)\\) that scores the bounding boxes. Unlike many detectors that do box predictions as a \\(\\varDelta\\) w.r.t. some initial guesses, we make box predictions directly. While such approach simplify the implementation it poses an issue with relative scaling of the loss. The most commonly-used \\(\\ell_{1}\\) loss will have different scales for small and large boxes even if their relative errors are similar. To mitigate this issue we use a linear combination of the \\(\\ell_{1}\\) loss and the generalized IoU loss [38] \\(\\mathcal{L}_{\\mathrm{iou}}(\\cdot,\\cdot)\\) that is scale-invariant. Overall, our box loss is \\(\\mathcal{L}_{\\mathrm{box}}(b_{i},\\hat{b}_{\\sigma(i)})\\) defined as \\(\\lambda_{\\mathrm{iou}}\\mathcal{L}_{\\mathrm{iou}}(b_{i},\\hat{b}_{\\sigma(i)})+\\lambda_{\\mathrm{L1}}\\vert\\vert b_{i}-\\hat{b}_{\\sigma(i)}\\vert\\vert_{1}\\) where \\(\\lambda_{\\mathrm{iou}},\\lambda_{\\mathrm{L1}}\\in\\mathbb{R}\\) are hyperparameters. These two losses are normalized by the number of objects inside the batch.",
+        "page": 5,
+        "parent_chapter": 41,
+        "index": 53,
+        "outline": [
+          32.0,
+          124.0,
+          381.0,
+          246.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "3.2 DETR architecture",
+        "page": 5,
+        "parent_chapter": 37,
+        "index": 54,
+        "outline": [
+          33.0,
+          264.0,
+          157.5,
+          273.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The overall DETR architecture is surprisingly simple and depicted in Figure 2. It contains three main components, which we describe below: a CNN backbone to extract a compact feature representation, an encoder-decoder transformer, and a simple feed forward network (FFN) that makes the final detection prediction.",
+        "page": 5,
+        "parent_chapter": 54,
+        "index": 55,
+        "outline": [
+          33.0,
+          283.0,
+          379.5,
+          328.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Unlike many modern detectors, DETR can be implemented in any deep learning framework that provides a common CNN backbone and a transformer architecture implementation withj ust a few hundred lines. Inference code for DETR can be implemented in less than 50 lines in PyTorch [32]. We hope that the simplicity of our method will attract new researchers to the detection community.",
+        "page": 5,
+        "parent_chapter": 54,
+        "index": 56,
+        "outline": [
+          33.0,
+          330.5,
+          379.5,
+          388.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Backbone. Starting from the initial image \\(x_{\\mathrm{img}}\\;\\in\\;\\mathbb{R}^{3\\times H_{0}\\times W_{0}}\\) (with 3 color channels2), a conventional CNN backbone generates a lower-resolution activation map \\(f\\in\\mathbb{R}^{C\\times H\\times W}.\\). Typical values we use are \\(C\\)= 2048 and \\(\\begin{array}{r}{H,W=\\frac{H_{0}}{32},\\frac{W_{0}}{32}}\\end{array}\\).",
+        "page": 5,
+        "parent_chapter": 54,
+        "index": 57,
+        "outline": [
+          32.5,
+          393.5,
+          380.5,
+          431.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformer encoder. First, a 1x1 convolution reduces the channel dimension of the high-level activation map f from C to a smaller dimension d. creating a new feature map \\(z_{0}\\in\\mathbb{R}^{d\\times H\\times W}.\\). The encoder expects a sequence as input, hence we collapse the spatial dimensions of \\(z_{0}\\) into one dimension, resulting in a \\(d{\\times}H W\\) feature map. Each encoder layer has a standard architecture and consists of a multi-head self-attention module and a feed forward network (FFN). Since the transformer architecture is permutation-invariant, we supplement it with fixed positional encodings [31,3] that are added to the input of each attention layer. We defer to the supplementary material the detailed definition of the architecture, which follows the one described in [47].",
+        "page": 5,
+        "parent_chapter": 54,
+        "index": 58,
+        "outline": [
+          32.0,
+          436.0,
+          381.0,
+          554.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 7",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 60,
+        "outline": [
+          150.0,
+          10.0,
+          381.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "backbone encoder decoder prediction heads set of image features…FFNclass,box CNN FFNno  transformer transformer object+encoderdecoderFFNclass,box FFNno …object positional encodingobject queries",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 61,
+        "outline": [
+          33.0,
+          34.0,
+          380.5,
+          119.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 2: DETR uses a conventional CNN backbone to learn a 2D representation of an input image. The model flattens it and supplements it with a positional encoding before passing it into a transformer encoder. A transformer decoder then takes as input a small fixed number of learned positional embeddings, which we call object queries, and additionally attends to the encoder output. We pass each output embedding of the decoder to a shared feed forward network (FFN) that predicts either a detection (class and bounding box) or a “no object” class.",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 62,
+        "outline": [
+          32.5,
+          131.0,
+          381.0,
+          208.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformer decoder. The decoder follows the standard architecture of the transformer, transforming N embeddings of size d using multi-headed self- and encoder-decoder attention mechanisms. The difference with the original transformer is that our model decodes the N objects in parallel at each decoder layer, while Vaswani et al. [47] use an autoregressive model that predicts the output sequence one element at a time. We refer the reader unfamiliar with the concepts to the supplementary material. Since the decoder is also permutation-invariant, the N input embeddings must be different to produce different results. These input embeddings are learnt positional encodings that we refer to as object queries, and similarly to the encoder, we add them to the input of each attention layer. The N object queries are transformed into an output embedding by the decoder. They are then independently decoded into box coordinates and class labels by a feed forward network (described in the next subsection), resulting N final predictions. Using self- and encoder-decoder attention over these embeddings, the model globally reasons about all objects together using pair-wise relations between them, while being able to use the whole image as context.",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 63,
+        "outline": [
+          30.5,
+          232.5,
+          381.0,
+          425.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Prediction feed-forward networks (FFNs). The final prediction is computed by a 3-layer perceptron with ReLU activation function and hidden dimension d, and a linear projection layer. The FFN predicts the normalized center coordinates, height and width of the box w.r.t. the input image, and the linear layer predicts the class label using a softmax function. Since we predict a fixed-size set of N bounding boxes, where N is usually much larger than the actual number of objects of interest in an image, an additional special class label \\(\\varnothing\\) is used to represent that no object is detected within a slot. This class plays a similar role to the “background” class in the standard object detection approaches.",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 64,
+        "outline": [
+          32.0,
+          433.0,
+          379.5,
+          551.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Auxiliary decoding losses. We found helpful to use auxiliary losses [1] in decoder during training, especially to help the model output the correct number of objects of each class. We add prediction FFNs and Hungarian loss after each decoder layer. All predictions FFNs share their parameters. We use an additional shared layer-norm to normalize the input to the prediction FFNs from different decoder layers.",
+        "page": 6,
+        "parent_chapter": 54,
+        "index": 65,
+        "outline": [
+          33.0,
+          560.5,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            65,
+            67
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "8 Carion et al.",
+        "page": 7,
+        "parent_chapter": 54,
+        "index": 66,
+        "outline": [
+          32.0,
+          10.0,
+          117.5,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "4 Experiments",
+        "page": 7,
+        "parent_chapter": -1,
+        "index": 68,
+        "outline": [
+          33.0,
+          104.0,
+          128.0,
+          115.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We show that DETR achieves competitive results compared to Faster R-CNN in quantitative evaluation on COCO. Then, we provide a detailed ablation study of the architecture and loss, with insights and qualitative results. Finally, to show that DETR is a versatile and extensible model, we present results on panoptic segmentation, training only a small extension on a fixed DETR model. We provide code and pretrained models to reproduce our experiments at https://github.com/facebookresearch/detr.",
+        "page": 7,
+        "parent_chapter": 68,
+        "index": 69,
+        "outline": [
+          33.0,
+          130.0,
+          379.5,
+          211.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Dataset. We perform experiments on COCO 2017 detection and panoptic segmentation datasets [24,18], containing 118k training images and 5k validation images. Each image is annotated with bounding boxes and panoptic segmentation. There are 7 instances per image on average, up to 63 instances in a single image in training set, ranging from small to large on the same images. If not specified, we report AP as bbox AP, the integral metric over multiple thresholds. For comparison with Faster R-CNN we report validation AP at the last training epoch, for ablations we report median over validation results from the last 10 epochs.",
+        "page": 7,
+        "parent_chapter": 68,
+        "index": 70,
+        "outline": [
+          33.0,
+          220.0,
+          379.5,
+          325.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Technical details. We train DETR with AdamW [26] setting the initial transformer’s learning rate to \\(10^{-4}\\), the backbone’s to \\(10^{-5}\\), and weight decay to \\(10^{-4}\\).All transformer weights are initialized with Xavier init [11], and the backbone is with ImageNet-pretrained ResNet model [15] from torchvision with frozen batchnorm layers. We report results with two different backbones: a ResNet-50 and a ResNet-101. The corresponding models are called respectively DETR and DETR-R101. Following [21], we also increase the feature resolution by adding a dilation to the last stage of the backbone and removing a stride from the first convolution of this stage. The corresponding models are called respectively DETR-DC5 and DETR-DC5-R101 (dilated C5 stage). This modification increases the resolution by a factor of two, thus improving performance for small objects, at the cost of a 16x higher cost in the self-attentions of the encoder, leading to an overall 2x increase in computational cost. A full comparison of FLOPs of these models and Faster R-CNN is given in Table 1.",
+        "page": 7,
+        "parent_chapter": 68,
+        "index": 71,
+        "outline": [
+          32.0,
+          332.0,
+          381.0,
+          499.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We use scale augmentation, resizing the input images such that the shortest side is at least 480 and at most 800 pixels while the longest at most 1333 [50].To help learning global relationships through the self-attention of the encoder, we also apply random crop augmentations during training, improving the performance by approximately 1 AP. Specifically, a train image is cropped with probability 0.5 to a random rectangular patch which is then resized again to 800-1333. The transformer is trained with default dropout of 0.1. At inference",
+        "page": 7,
+        "parent_chapter": 68,
+        "index": 72,
+        "outline": [
+          32.5,
+          501.0,
+          379.5,
+          582.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 9",
+        "page": 8,
+        "parent_chapter": 68,
+        "index": 73,
+        "outline": [
+          150.0,
+          10.0,
+          381.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Table 1: Comparison with Faster R-CNN with a ResNet-50 and ResNet-101 backbones on the COCO validation set. The top section shows results for Faster R-CNN models in Detectron2 [50], the middle section shows results for Faster R-CNN models with GIoU [38], random crops train-time augmentation, and the long 9x training schedule. DETR models achieve comparable results to heavily tuned Faster R-CNN baselines, having lower APS but greatly improved APL. We use torchscript Faster R-CNN and DETR models to measure FLOPS and FPS. Results without R101 in the name correspond to ResNet-50.",
+        "page": 8,
+        "parent_chapter": 68,
+        "index": 74,
+        "outline": [
+          30.0,
+          42.0,
+          381.0,
+          134.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "table",
+        "page": 8,
+        "parent_chapter": 68,
+        "index": 75,
+        "outline": [
+          34.5,
+          132.5,
+          381.0,
+          271.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "title": "Table 1: Comparison with Faster R-CNN with a ResNet-50 and ResNet-101 backbones on the COCO validation set. The top section shows results for Faster R-CNN models in Detectron2 [50], the middle section shows results for Faster R-CNN models with GIoU [38], random crops train-time augmentation, and the long 9x training schedule. DETR models achieve comparable results to heavily tuned Faster R-CNN baselines, having lower APS but greatly improved APL. We use torchscript Faster R-CNN and DETR models to measure FLOPS and FPS. Results without R101 in the name correspond to ResNet-50.",
+        "title_index": 74,
+        "page_merged_table": null,
+        "cells": {
+          "0_0": {
+            "text": "Model"
+          },
+          "0_1": {
+            "text": " GFLOPS/FPS"
+          },
+          "0_2": {
+            "text": " #params"
+          },
+          "0_3": {
+            "text": " AP"
+          },
+          "0_4": {
+            "text": "\\(\\mathrm{AP}_{50}\\)"
+          },
+          "0_5": {
+            "text": " \\(\\mathrm{AP}_{7}\\) 5"
+          },
+          "0_6": {
+            "text": " APS"
+          },
+          "0_7": {
+            "text": " APM"
+          },
+          "0_8": {
+            "text": " APL"
+          },
+          "1_0": {
+            "text": "Faster RCNN-DC5"
+          },
+          "1_1": {
+            "text": " 320/16"
+          },
+          "1_2": {
+            "text": " 166M"
+          },
+          "1_3": {
+            "text": "39.0"
+          },
+          "1_4": {
+            "text": "60.5"
+          },
+          "1_5": {
+            "text": "42.3"
+          },
+          "1_6": {
+            "text": "21.4"
+          },
+          "1_7": {
+            "text": "43.5"
+          },
+          "1_8": {
+            "text": "52.5"
+          },
+          "2_0": {
+            "text": "Faster RCNN-FPN"
+          },
+          "2_1": {
+            "text": " 180/26"
+          },
+          "2_2": {
+            "text": " 42M"
+          },
+          "2_3": {
+            "text": "40.2"
+          },
+          "2_4": {
+            "text": "61.0"
+          },
+          "2_5": {
+            "text": "43.8"
+          },
+          "2_6": {
+            "text": "24.2"
+          },
+          "2_7": {
+            "text": "43.5"
+          },
+          "2_8": {
+            "text": "52.0"
+          },
+          "3_0": {
+            "text": "Faster RCNN-R101-FPN"
+          },
+          "3_1": {
+            "text": " 246/20"
+          },
+          "3_2": {
+            "text": " 60M"
+          },
+          "3_3": {
+            "text": "42.0"
+          },
+          "3_4": {
+            "text": "62.5"
+          },
+          "3_5": {
+            "text": "45.9"
+          },
+          "3_6": {
+            "text": "25.2"
+          },
+          "3_7": {
+            "text": "45.6"
+          },
+          "3_8": {
+            "text": "54.6"
+          },
+          "4_0": {
+            "text": "Faster RCNN-DC5+"
+          },
+          "4_1": {
+            "text": " 320/16"
+          },
+          "4_2": {
+            "text": " 166M"
+          },
+          "4_3": {
+            "text": "41.1"
+          },
+          "4_4": {
+            "text": "61.4"
+          },
+          "4_5": {
+            "text": "44.3"
+          },
+          "4_6": {
+            "text": "22.9"
+          },
+          "4_7": {
+            "text": "45.9"
+          },
+          "4_8": {
+            "text": "55.0"
+          },
+          "5_0": {
+            "text": "Faster RCNN-FPN+"
+          },
+          "5_1": {
+            "text": " 180/26"
+          },
+          "5_2": {
+            "text": " 42M"
+          },
+          "5_3": {
+            "text": "42.0"
+          },
+          "5_4": {
+            "text": "62.1"
+          },
+          "5_5": {
+            "text": "45.5"
+          },
+          "5_6": {
+            "text": "26.6"
+          },
+          "5_7": {
+            "text": "45.4"
+          },
+          "5_8": {
+            "text": "53.4"
+          },
+          "6_0": {
+            "text": "Faster RCNN-R101-FPN+"
+          },
+          "6_1": {
+            "text": " 246/20"
+          },
+          "6_2": {
+            "text": " 60M"
+          },
+          "6_3": {
+            "text": "44.0"
+          },
+          "6_4": {
+            "text": "63.9"
+          },
+          "6_5": {
+            "text": "47.8"
+          },
+          "6_6": {
+            "text": "27.2"
+          },
+          "6_7": {
+            "text": "48.1"
+          },
+          "6_8": {
+            "text": "56.0"
+          },
+          "7_0": {
+            "text": "DETR"
+          },
+          "7_1": {
+            "text": " 86/28"
+          },
+          "7_2": {
+            "text": " 41M"
+          },
+          "7_3": {
+            "text": "42.0"
+          },
+          "7_4": {
+            "text": "62.4"
+          },
+          "7_5": {
+            "text": "44.2"
+          },
+          "7_6": {
+            "text": "20.5"
+          },
+          "7_7": {
+            "text": "45.8"
+          },
+          "7_8": {
+            "text": "61.1"
+          },
+          "8_0": {
+            "text": "DETR-DC5"
+          },
+          "8_1": {
+            "text": " 187/12"
+          },
+          "8_2": {
+            "text": " 41M"
+          },
+          "8_3": {
+            "text": "43.3"
+          },
+          "8_4": {
+            "text": "63.1"
+          },
+          "8_5": {
+            "text": "45.9"
+          },
+          "8_6": {
+            "text": "22.5"
+          },
+          "8_7": {
+            "text": "47.3"
+          },
+          "8_8": {
+            "text": "61.1"
+          },
+          "9_0": {
+            "text": "DETR-R101"
+          },
+          "9_1": {
+            "text": " 152/20"
+          },
+          "9_2": {
+            "text": " 60M"
+          },
+          "9_3": {
+            "text": "43.5"
+          },
+          "9_4": {
+            "text": "63.8"
+          },
+          "9_5": {
+            "text": "46.4"
+          },
+          "9_6": {
+            "text": "21.9"
+          },
+          "9_7": {
+            "text": "48.0"
+          },
+          "9_8": {
+            "text": "61.8"
+          },
+          "10_0": {
+            "text": "DETR-DC5-R101"
+          },
+          "10_1": {
+            "text": " 253/10"
+          },
+          "10_2": {
+            "text": " 60M"
+          },
+          "10_3": {
+            "text": "44.9"
+          },
+          "10_4": {
+            "text": "64.7"
+          },
+          "10_5": {
+            "text": "47.7"
+          },
+          "10_6": {
+            "text": "23.7"
+          },
+          "10_7": {
+            "text": "49.5"
+          },
+          "10_8": {
+            "text": "62.3"
+          }
+        },
+        "merged": [],
+        "grid": {
+          "rows": [
+            15.5,
+            29.0,
+            40.0,
+            53.5,
+            67.0,
+            78.0,
+            91.5,
+            105.0,
+            116.0,
+            127.0
+          ],
+          "columns": [
+            109.0,
+            172.0,
+            212.0,
+            233.0,
+            256.5,
+            280.5,
+            302.0,
+            325.0
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "time, some slots predict empty class. To optimize for AP, we override the prediction of these slots with the second highest scoring class, using the corresponding confidence. This improves AP by 2 points compared to filtering out empty slots. Other training hyperparameters can be found in section A.4. For our ablation experiments we use training schedule of 300 epochs with a learning rate drop by a factor of 10 after 200 epochs, where a single epoch is a pass over all training images once. Training the baseline model for 300 epochs on 16 V100 GPUs takes 3 days, with 4 images per GPU (hence a total batch size of 64). For the longer schedule used to compare with Faster R-CNN we train for 500 epochs with learning rate drop after 400 epochs. This schedule adds 1.5 AP compared to the shorter schedule.",
+        "page": 8,
+        "parent_chapter": 68,
+        "index": 76,
+        "outline": [
+          32.5,
+          297.0,
+          379.5,
+          427.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "4.1 Comparison with Faster R-CNN",
+        "page": 8,
+        "parent_chapter": 68,
+        "index": 77,
+        "outline": [
+          32.5,
+          446.5,
+          223.0,
+          456.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformers are typically trained with Adam or Adagrad optimizers with very long training schedules and dropout, and this is true for DETR as well. Faster R-CNN, however, is trained with SGD with minimal data augmentation and we are not aware of successful applications of Adam or dropout. Despite these differences we attempt to make a Faster R-CNN baseline stronger. To align it with DETR, we add generalized IoU [38] to the box loss, the same random crop augmentation and long training known to improve results [13]. Results are presented in Table 1. In the top section we show Faster R-CNN results from Detectron2 Model Zoo [50] for models trained with the 3x schedule. In the middle section we show results (with a “+”) for the same models but trained",
+        "page": 8,
+        "parent_chapter": 77,
+        "index": 78,
+        "outline": [
+          32.5,
+          465.0,
+          379.5,
+          584.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "10 Carion et al.",
+        "page": 9,
+        "parent_chapter": 77,
+        "index": 79,
+        "outline": [
+          33.0,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Table 2: Effect of encoder size. Each row corresponds to a model with varied number of encoder layers and fixed number of decoder layers. Performance gradually improves with more encoder layers.",
+        "page": 9,
+        "parent_chapter": 77,
+        "index": 80,
+        "outline": [
+          32.5,
+          43.5,
+          379.0,
+          75.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "table",
+        "page": 9,
+        "parent_chapter": 77,
+        "index": 81,
+        "outline": [
+          34.5,
+          77.5,
+          377.0,
+          141.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "title": "Table 2: Effect of encoder size. Each row corresponds to a model with varied number of encoder layers and fixed number of decoder layers. Performance gradually improves with more encoder layers.",
+        "title_index": 80,
+        "page_merged_table": null,
+        "cells": {
+          "0_0": {
+            "text": "#layers"
+          },
+          "0_1": {
+            "text": " GFLOPS/FPS"
+          },
+          "0_2": {
+            "text": " #params"
+          },
+          "0_3": {
+            "text": " AP"
+          },
+          "0_4": {
+            "text": " \\(\\mathrm{AP}_{50}\\)"
+          },
+          "0_5": {
+            "text": "\\(\\mathrm{APs}\\)"
+          },
+          "0_6": {
+            "text": "\\(\\mathrm{APM}\\)"
+          },
+          "0_7": {
+            "text": "\\(\\mathrm{AP_{L}}\\)"
+          },
+          "1_0": {
+            "text": "0"
+          },
+          "1_1": {
+            "text": " 76/28"
+          },
+          "1_2": {
+            "text": " 33.4M"
+          },
+          "1_3": {
+            "text": "36.7"
+          },
+          "1_4": {
+            "text": "57.4"
+          },
+          "1_5": {
+            "text": "16.8"
+          },
+          "1_6": {
+            "text": "39.6"
+          },
+          "1_7": {
+            "text": "54.2"
+          },
+          "2_0": {
+            "text": "3"
+          },
+          "2_1": {
+            "text": " 81/25"
+          },
+          "2_2": {
+            "text": " 37.4M"
+          },
+          "2_3": {
+            "text": "40.1"
+          },
+          "2_4": {
+            "text": "60.6"
+          },
+          "2_5": {
+            "text": "18.5"
+          },
+          "2_6": {
+            "text": "43.8"
+          },
+          "2_7": {
+            "text": "58.6"
+          },
+          "3_0": {
+            "text": "6"
+          },
+          "3_1": {
+            "text": " 86/23"
+          },
+          "3_2": {
+            "text": " 41.3M"
+          },
+          "3_3": {
+            "text": "40.6"
+          },
+          "3_4": {
+            "text": "61.6"
+          },
+          "3_5": {
+            "text": "19.9"
+          },
+          "3_6": {
+            "text": "44.3"
+          },
+          "3_7": {
+            "text": "60.2"
+          },
+          "4_0": {
+            "text": "12"
+          },
+          "4_1": {
+            "text": " 95/20"
+          },
+          "4_2": {
+            "text": " 49.2M"
+          },
+          "4_3": {
+            "text": "41.6"
+          },
+          "4_4": {
+            "text": "62.1"
+          },
+          "4_5": {
+            "text": "19.8"
+          },
+          "4_6": {
+            "text": "44.9"
+          },
+          "4_7": {
+            "text": "61.9"
+          }
+        },
+        "merged": [],
+        "grid": {
+          "rows": [
+            15.5,
+            29.0,
+            40.0,
+            51.0
+          ],
+          "columns": [
+            46.0,
+            120.5,
+            173.5,
+            205.0,
+            241.0,
+            274.0,
+            309.5
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "with the 9x schedule (109 epochs) and the described enhancements, which in total adds 1-2 AP. In the last section of Table 1 we show the results for multiple DETR models. To be comparable in the number of parameters we choose a model with 6 transformer and 6 decoder layers of width 256 with 8 attention heads. Like Faster R-CNN with FPN this model has 41.3M parameters, out of which 23.5M are in ResNet-50, and 17.8M are in the transformer. Even though both Faster R-CNN and DETR are still likely to further improve with longer training, we can conclude that DETR can be competitive with Faster R-CNN with the same number of parameters, achieving 42 AP on the COCO val subset. The way DETR achieves this is by improving APL (+7.8), however note that the model is still lagging behind in APS (-5.5). DETR-DC5 with the same number of parameters and similar FLOP count has higher AP, but is still significantly behind in \\(\\mathrm{AP_{S}}\\) too. Faster R-CNN and DETR with ResNet-101 backbone show comparable results as well.",
+        "page": 9,
+        "parent_chapter": 77,
+        "index": 82,
+        "outline": [
+          32.0,
+          167.0,
+          381.0,
+          334.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "4.2 Ablations",
+        "page": 9,
+        "parent_chapter": 68,
+        "index": 83,
+        "outline": [
+          33.0,
+          352.5,
+          107.5,
+          360.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Attention mechanisms in the transformer decoder are the key components which model relations between feature representations of different detections. In our ablation analysis, we explore how other components of our architecture and loss influence the final performance. For the study we choose ResNet-50-based DETR model with 6 encoder, 6 decoder layers and width 256. The model has 41.3M parameters, achieves 40.6 and 42.0 AP on short and long schedules respectively, and runs at 28 FPS, similarly to Faster R-CNN-FPN with the same backbone.",
+        "page": 9,
+        "parent_chapter": 83,
+        "index": 84,
+        "outline": [
+          33.0,
+          372.5,
+          379.0,
+          453.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Number of encoder layers. We evaluate the importance of global imagelevel self-attention by changing the number of encoder layers (Table 2). Without encoder layers, overall AP drops by 3.9 points, with a more significant drop of 6.0 AP on large objects. We hypothesize that, by using global scene reasoning, the encoder is important for disentangling objects. In Figure 3, we visualize the attention maps of the last encoder layer of a trained model, focusing on a few points in the image. The encoder seems to separate instances already, which likely simplifies object extraction and localization for the decoder.",
+        "page": 9,
+        "parent_chapter": 83,
+        "index": 85,
+        "outline": [
+          33.0,
+          460.5,
+          379.0,
+          554.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Number of decoder layers. We apply auxiliary losses after each decoding layer (see Section 3.2), hence, the prediction FFNs are trained by design to predict objects out of the outputs of every decoder layer. We analyze the importance of each decoder layer by evaluating the objects that would be predicted at each stage of the decoding (Fig. 4). Both AP and \\(\\mathrm{AP}_{50}\\) improve after every layer, totalling into a very significant +8.2/9.5 AP improvement between the first and the last layer. With its set-based loss, DETR does not need NMS by design. To verify this we run a standard NMS procedure with default parameters [50] for the outputs after each decoder. NMS improves performance for the predictions from the first decoder. This can be explained by the fact that a single decoding layer of the transformer is not able to compute any cross-correlations between the output elements, and thus it is prone to making multiple predictions for the same object. In the second and subsequent layers, the self-attention mechanism over the activations allows the model to inhibit duplicate predictions. We observe that the improvement brought by NMS diminishes as depth increases. At the last layers, we observe a small loss in AP as NMS incorrectly removes true positive predictions.",
+        "page": 9,
+        "parent_chapter": 83,
+        "index": 86,
+        "outline": [
+          33.0,
+          561.5,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            86,
+            90
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 11",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 87,
+        "outline": [
+          150.0,
+          10.0,
+          379.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "self-attention(430, 600)self-attention(450, 830) self-attention(520, 450)self-attention(440, 1200)",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 88,
+        "outline": [
+          34.0,
+          34.0,
+          378.5,
+          153.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 3: Encoder self-attention for a set of reference points. The encoder is able to separate individual instances. Predictions are made with baseline DETR model on a validation set image.",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 89,
+        "outline": [
+          33.0,
+          165.0,
+          379.0,
+          196.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Similarly to visualizing encoder attention, we visualize decoder attentions in Fig. 6, coloring attention maps for each predicted object in different colors. We observe that decoder attention is fairly local, meaning that it mostly attends to object extremities such as heads or legs. We hypothesise that after the encoder has separated instances via global attention, the decoder only needs to attend to the extremities to extract the class and object boundaries.",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 91,
+        "outline": [
+          33.0,
+          403.0,
+          379.0,
+          472.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Importance of FFN. FFN inside tranformers can be seen as 1 × 1 convolutional layers, making encoder similar to attention augmented convolutional networks [3]. We attempt to remove it completely leaving only attention in the transformer layers. By reducing the number of network parameters from 41.3M to 28.7M, leaving only 10.8M in the transformer, performance drops by 2.3 AP, we thus conclude that FFN are important for achieving good results.",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 92,
+        "outline": [
+          33.0,
+          482.5,
+          379.0,
+          551.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Importance of positional encodings. There are two kinds of positional encodings in our model: spatial positional encodings and output positional encodings (object queries). We experiment with various combinations of fixed and learned encodings, results can be found in table 3. Output positional encodings are required and cannot be removed, so we experiment with either passing them once at decoder input or adding to queries at every decoder attention layer. In the first experiment we completely remove spatial positional encodings and pass output positional encodings at input and, interestingly, the model still achieves more than 32 AP, losing 7.8 AP to the baseline. Then, we pass fixed sine spatial positional encodings and the output encodings at input once, as in the original transformer [47], and find that this leads to 1.4 AP drop compared to passing the positional encodings directly in attention. Learned spatial encodings passed to the attentions give similar results. Surprisingly, we find that not passing any spatial encodings in the encoder only leads to a minor AP drop of 1.3 AP. When we pass the encodings to the attentions, they are shared across all layers, and the output encodings (object queries) are always learned.",
+        "page": 10,
+        "parent_chapter": 83,
+        "index": 93,
+        "outline": [
+          33.0,
+          561.5,
+          378.5,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            93,
+            99
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "12 Carion et al.",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 94,
+        "outline": [
+          33.0,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "62426040580 AP56P5 3854AAP No NMS 36AP NMS=0.7 AP50 No NMS 34AP50 NMS=0.71 2 3 4 5 6 decoder layer",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 95,
+        "outline": [
+          60.5,
+          32.0,
+          223.5,
+          153.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 4: AP and \\(\\mathrm{AP}_{5}\\) 0 performance after each decoder layer. A single long schedule baseline model is evaluated. DETR does not need NMS by design, which is validated by this figure. NMS lowers AP in the final layers, removing TP predictions, but improves AP in the first decoder layers, removing double predictions, as there is no communication in the first layer, and slightly improves \\(\\mathrm{AP}_{50}\\).",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 96,
+        "outline": [
+          40.0,
+          163.5,
+          239.5,
+          261.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 97,
+        "outline": [
+          249.5,
+          45.0,
+          373.0,
+          153.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 5: Out of distribution generalization for rare classes. Even though no image in the training set has more than 13 giraffes, DETR has no difficulty generalizing to 24 and more instances of the same class.",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 98,
+        "outline": [
+          248.0,
+          167.5,
+          373.0,
+          256.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Given these ablations, we conclude that transformer components: the global self-attention in encoder, FFN, multiple decoder layers, and positional encodings, all significantly contribute to the final object detection performance.",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 100,
+        "outline": [
+          33.0,
+          457.5,
+          378.5,
+          490.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Loss ablations. To evaluate the importance of different components of the matching cost and the loss, we train several models turning them on and off. There are three components to the loss: classification loss, \\(\\ell_{1}\\) bounding box distance loss, and GIoU [38] loss. The classification loss is essential for training and cannot be turned off, so we train a model without bounding box distance loss, and a model without the GIoU loss, and compare with baseline, trained with all three losses. Results are presented in table 4. GIoU loss on its own accounts",
+        "page": 11,
+        "parent_chapter": 83,
+        "index": 101,
+        "outline": [
+          33.0,
+          501.5,
+          379.0,
+          582.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 13",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 102,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 103,
+        "outline": [
+          45.5,
+          32.0,
+          367.5,
+          184.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 6: Visualizing decoder attention for every predicted object (images from COCO val set). Predictions are made with DETR-DC5 model. Attention scores are coded with different colors for different objects. Decoder typically attends to object extremities, such as legs and heads. Best viewed in color.",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 104,
+        "outline": [
+          32.5,
+          193.5,
+          380.0,
+          235.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Table 3: Results for different positional encodings compared to the baseline (last row), which has fixed sine pos. encodings passed at every attention layer in both the encoder and the decoder. Learned embeddings are shared between all layers. Not using spatial positional encodings leads to a significant drop in AP. Interestingly, passing them in decoder only leads to a minor AP drop. All these models use learned output positional encodings.",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 105,
+        "outline": [
+          32.5,
+          262.5,
+          380.0,
+          328.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "table",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 106,
+        "outline": [
+          34.0,
+          330.5,
+          378.5,
+          416.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "title": "Table 3: Results for different positional encodings compared to the baseline (last row), which has fixed sine pos. encodings passed at every attention layer in both the encoder and the decoder. Learned embeddings are shared between all layers. Not using spatial positional encodings leads to a significant drop in AP. Interestingly, passing them in decoder only leads to a minor AP drop. All these models use learned output positional encodings.",
+        "title_index": 105,
+        "page_merged_table": null,
+        "cells": {
+          "0_0": {
+            "text": "spatial pos. enc."
+          },
+          "0_2": {
+            "text": " output pos. enc."
+          },
+          "0_3": {
+            "text": "AP"
+          },
+          "0_4": {
+            "text": "\\(\\varDelta\\) "
+          },
+          "0_5": {
+            "text": "\\(\\mathrm{AP}_{50}\\)"
+          },
+          "0_6": {
+            "text": "\\(\\varDelta\\)"
+          },
+          "1_0": {
+            "text": "encoder"
+          },
+          "1_1": {
+            "text": " decoder"
+          },
+          "1_2": {
+            "text": " decoder"
+          },
+          "2_0": {
+            "text": "none"
+          },
+          "2_1": {
+            "text": " none"
+          },
+          "2_2": {
+            "text": " learned at input"
+          },
+          "2_3": {
+            "text": "32.8"
+          },
+          "2_4": {
+            "text": "-7.8"
+          },
+          "2_5": {
+            "text": "55.2"
+          },
+          "2_6": {
+            "text": "-6.5"
+          },
+          "3_0": {
+            "text": "sine at input"
+          },
+          "3_1": {
+            "text": " sine at input"
+          },
+          "3_2": {
+            "text": " learned at input"
+          },
+          "3_3": {
+            "text": "39.2"
+          },
+          "3_4": {
+            "text": "-1.4"
+          },
+          "3_5": {
+            "text": "60.0"
+          },
+          "3_6": {
+            "text": "-1.6"
+          },
+          "4_0": {
+            "text": "learned at attn."
+          },
+          "4_1": {
+            "text": " learned at attn."
+          },
+          "4_2": {
+            "text": " learned at attn."
+          },
+          "4_3": {
+            "text": "39.6"
+          },
+          "4_4": {
+            "text": "-1.0"
+          },
+          "4_5": {
+            "text": "60.7"
+          },
+          "4_6": {
+            "text": "-0.9"
+          },
+          "5_0": {
+            "text": "none"
+          },
+          "5_1": {
+            "text": " sine at attn."
+          },
+          "5_2": {
+            "text": " learned at attn."
+          },
+          "5_3": {
+            "text": "39.3"
+          },
+          "5_4": {
+            "text": "-1.3"
+          },
+          "5_5": {
+            "text": "60.3"
+          },
+          "5_6": {
+            "text": "-1.4"
+          },
+          "6_0": {
+            "text": "sine at attn."
+          },
+          "6_1": {
+            "text": " sine at attn."
+          },
+          "6_2": {
+            "text": " learned at attn."
+          },
+          "6_3": {
+            "text": "40.6"
+          },
+          "6_4": {
+            "text": "- "
+          },
+          "6_5": {
+            "text": "61.6"
+          },
+          "6_6": {
+            "text": "-"
+          }
+        },
+        "merged": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ]
+          ]
+        ],
+        "grid": {
+          "rows": [
+            12.5,
+            25.5,
+            39.5,
+            50.5,
+            60.5,
+            71.5
+          ],
+          "columns": [
+            75.5,
+            149.5,
+            227.5,
+            257.5,
+            284.5,
+            317.0
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "Table 4: Effect of loss components on AP. We train two models turning off \\(\\ell_{1}\\) loss, and GIoU loss, and observe that \\(\\ell_{1}\\) gives poor results on its own, but when combined with GIoU improves \\(\\mathrm{AP_{M}}\\) and \\(\\mathrm{AP_{L}}\\). Our baseline (last row) combines both losses.",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 107,
+        "outline": [
+          33.0,
+          444.0,
+          379.0,
+          475.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "table",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 108,
+        "outline": [
+          39.0,
+          478.5,
+          369.0,
+          529.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "title": "Table 4: Effect of loss components on AP. We train two models turning off `1 loss, and GIoU loss, and observe that `1 gives poor results on its own, but when combined with GIoU improvesAPM  andAPL . Our baseline (last row) combines both losses.",
+        "title_index": 107,
+        "page_merged_table": null,
+        "cells": {
+          "0_0": {
+            "text": "class"
+          },
+          "0_1": {
+            "text": "\\(\\ell_{1}\\)"
+          },
+          "0_2": {
+            "text": "GIoU"
+          },
+          "0_3": {
+            "text": "AP"
+          },
+          "0_4": {
+            "text": "\\(\\varDelta\\) "
+          },
+          "0_5": {
+            "text": "\\(\\mathrm{AP}_{50}\\)"
+          },
+          "0_6": {
+            "text": "\\(\\varDelta\\) "
+          },
+          "0_7": {
+            "text": "\\(\\mathrm{AP}\\!\\le\\) S"
+          },
+          "0_8": {
+            "text": "\\(\\mathrm{AP_{M}}\\)"
+          },
+          "0_9": {
+            "text": "\\(\\mathrm{AP_{I}}\\) L"
+          },
+          "1_0": {
+            "text": "X"
+          },
+          "1_1": {
+            "text": " X"
+          },
+          "1_2": {
+            "text": ""
+          },
+          "1_3": {
+            "text": "35.8"
+          },
+          "1_4": {
+            "text": "-4.8"
+          },
+          "1_5": {
+            "text": "57.3"
+          },
+          "1_6": {
+            "text": "-4.4"
+          },
+          "1_7": {
+            "text": "13.7"
+          },
+          "1_8": {
+            "text": "39.8"
+          },
+          "1_9": {
+            "text": "57.9"
+          },
+          "2_0": {
+            "text": "X"
+          },
+          "2_1": {
+            "text": ""
+          },
+          "2_2": {
+            "text": " X"
+          },
+          "2_3": {
+            "text": "39.9"
+          },
+          "2_4": {
+            "text": "-0.7"
+          },
+          "2_5": {
+            "text": "61.6"
+          },
+          "2_6": {
+            "text": "0 "
+          },
+          "2_7": {
+            "text": "19.9"
+          },
+          "2_8": {
+            "text": "43.2"
+          },
+          "2_9": {
+            "text": "57.9"
+          },
+          "3_0": {
+            "text": "X"
+          },
+          "3_1": {
+            "text": " X"
+          },
+          "3_2": {
+            "text": " X"
+          },
+          "3_3": {
+            "text": "40.6"
+          },
+          "3_4": {
+            "text": "- "
+          },
+          "3_5": {
+            "text": "61.6"
+          },
+          "3_6": {
+            "text": "- "
+          },
+          "3_7": {
+            "text": "19.9"
+          },
+          "3_8": {
+            "text": "44.3"
+          },
+          "3_9": {
+            "text": "60.2"
+          }
+        },
+        "merged": [],
+        "grid": {
+          "rows": [
+            14.5,
+            27.0,
+            38.0
+          ],
+          "columns": [
+            34.0,
+            57.5,
+            95.0,
+            129.0,
+            159.5,
+            196.0,
+            227.0,
+            260.5,
+            296.0
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "for most of the model performance, losing only 0.7 AP to the baseline with combined losses. Using \\(\\ell_{1}\\) without GIoU shows poor results. We only studied simple ablations of different losses (using the same weighting every time), but other means of combining them may achieve different results.",
+        "page": 12,
+        "parent_chapter": 83,
+        "index": 109,
+        "outline": [
+          33.0,
+          561.5,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            109,
+            113
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "14 Carion et al.",
+        "page": 13,
+        "parent_chapter": 83,
+        "index": 110,
+        "outline": [
+          33.0,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 13,
+        "parent_chapter": 83,
+        "index": 111,
+        "outline": [
+          34.0,
+          32.5,
+          381.0,
+          102.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 7: Visualization of all box predictions on all images from COCO 2017 val set for 20 out of total \\(N\\) = 100 prediction slots in DETR decoder. Each box prediction is represented as a point with the coordinates of its center in the 1-by-1 square normalized by each image size. The points are color-coded so that green color corresponds to small boxes, red to large horizontal boxes and blue to large vertical boxes. We observe that each slot learns to specialize on certain areas and box sizes with several operating modes. We note that almost all slots have a mode of predicting large image-wide boxes that are common in COCO dataset.",
+        "page": 13,
+        "parent_chapter": 83,
+        "index": 112,
+        "outline": [
+          32.0,
+          111.5,
+          379.0,
+          197.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "4.3 Analysis",
+        "page": 13,
+        "parent_chapter": 68,
+        "index": 114,
+        "outline": [
+          34.0,
+          268.5,
+          101.5,
+          277.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Decoder output slot analysis In Fig. 7 we visualize the boxes predicted by different slots for all images in COCO 2017 val set. DETR learns different specialization for each query slot. We observe that each slot has several modes of operation focusing on different areas and box sizes. In particular, all slots have the mode for predicting image-wide boxes (visible as the red dots aligned in the middle of the plot). We hypothesize that this is related to the distribution of objects in COCO.",
+        "page": 13,
+        "parent_chapter": 114,
+        "index": 115,
+        "outline": [
+          33.0,
+          289.5,
+          380.0,
+          371.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Generalization to unseen numbers of instances. Some classes in COCO are not well represented with many instances of the same class in the same image. For example, there is no image with more than 13 giraffes in the training set. We create a synthetic image3to verify the generalization ability of DETR (see Figure 5). Our model is able to find all 24 giraffes on the image which is clearly out of distribution. This experiment confirms that there is no strong class-specialization in each object query.",
+        "page": 13,
+        "parent_chapter": 114,
+        "index": 116,
+        "outline": [
+          33.0,
+          380.5,
+          379.0,
+          461.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "4.4 DETR for panoptic segmentation",
+        "page": 13,
+        "parent_chapter": 68,
+        "index": 117,
+        "outline": [
+          33.0,
+          483.0,
+          227.5,
+          493.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Panoptic segmentation [19] has recently attracted a lot of attention from the computer vision community. Similarly to the extension of Faster R-CNN [37] to Mask R-CNN [14], DETR can be naturally extended by adding a mask head on top of the decoder outputs. In this section we demonstrate that such a head can be used to produce panoptic segmentation [19] by treating stuff and thing classes in a unified way. We perform our experiments on the panoptic annotations of the COCO dataset that has 53 stuff categories in addition to 80 things categories.",
+        "page": 13,
+        "parent_chapter": 117,
+        "index": 118,
+        "outline": [
+          33.0,
+          505.0,
+          379.0,
+          562.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": true,
+        "page_merged_paragraph": {
+          "paragraph_indices": [
+            118,
+            125
+          ]
+        }
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 15 ",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 120,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "Encoded imageResnet features (d x H/32 x W/32)Res5 Res4 Res3 Res2 C M2onP ux(oCoCv3xi t l oCnnx3e i nvv+l ehoCv3x2x3x2x3x2Gwacnxu3u3uNsi da3p+p+p+e et++G+G+eR a tan tNGadNadNadULa ete+d+d+d+gr nReReRCm otieLULULvona Input imagen)Ux3x3 (3 x H x W) Box embeddingsAttention mapsFPN-style CNNMasks logits (d x N)(N x M x H/32 x W/32)(N x H/4 x W/4)",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 121,
+        "outline": [
+          33.0,
+          32.5,
+          380.0,
+          140.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 8: Illustration of the panoptic head. A binary mask is generated in parallel for each detected object, then the masks are merged using pixel-wise argmax.",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 122,
+        "outline": [
+          33.0,
+          151.0,
+          379.0,
+          171.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 123,
+        "outline": [
+          34.5,
+          191.5,
+          378.0,
+          286.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 9: Qualitative results for panoptic segmentation generated by DETR-R101. DETR produces aligned mask predictions in a unified manner for things and stuff.",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 124,
+        "outline": [
+          33.0,
+          296.0,
+          379.0,
+          317.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We train DETR to predict boxes around both stuff and things classes on COCO, using the same recipe. Predicting boxes is required for the training to be possible, since the Hungarian matching is computed using distances between boxes. We also add a mask head which predicts a binary mask for each of the predicted boxes, see Figure 8. It takes as input the output of transformer decoder for each object and computes multi-head (with M heads) attention scores of this embedding over the output of the encoder, generating M attention heatmaps per object in a small resolution. To make the final prediction and increase the resolution, an FPN-like architecture is used. We describe the architecture in more details in the supplement. The final resolution of the masks has stride 4 and each mask is supervised independently using the DICE/F-1 loss [28] and Focal loss [23].",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 126,
+        "outline": [
+          32.0,
+          377.0,
+          380.5,
+          521.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The mask head can be trained eitherj ointly, or in a two steps process, where we train DETR for boxes only, then freeze all the weights and train only the mask head for 25 epochs. Experimentally, these two approaches give similar results, we report results using the latter method since it results in a shorter total wall-clock time training.",
+        "page": 14,
+        "parent_chapter": 117,
+        "index": 127,
+        "outline": [
+          33.0,
+          525.0,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "16 Carion et al.",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 128,
+        "outline": [
+          33.0,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Table 5: Comparison with the state-of-the-art methods UPSNet [51] and Panoptic FPN [18] on the COCO val dataset We retrained PanopticFPN with the same dataaugmentation as DETR, on a 18x schedule for fair comparison. UPSNet uses the 1 \\(\\texttt{x}\\) schedule, UPSNet-M is the version with multiscale test-time augmentations.",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 129,
+        "outline": [
+          32.0,
+          42.5,
+          380.0,
+          87.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "table",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 130,
+        "outline": [
+          36.5,
+          88.0,
+          375.0,
+          175.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "title": "Table 5: Comparison with the state-of-the-art methods UPSNet [51] and Panoptic FPN [18] on the COCO val dataset We retrained PanopticFPN with the same dataaugmentation as DETR, on a 18x schedule for fair comparison. UPSNet uses the 1x schedule, UPSNet-M is the version with multiscale test-time augmentations.",
+        "title_index": 129,
+        "page_merged_table": null,
+        "cells": {
+          "0_0": {
+            "text": "Model"
+          },
+          "0_1": {
+            "text": " Backbone"
+          },
+          "0_2": {
+            "text": "PQ"
+          },
+          "0_3": {
+            "text": " SQ"
+          },
+          "0_4": {
+            "text": " RQ"
+          },
+          "0_5": {
+            "text": "\\(\\mathrm{PQ}^{\\mathrm{th}}\\)"
+          },
+          "0_6": {
+            "text": "\\(\\mathrm{SQ^{th}}\\)"
+          },
+          "0_7": {
+            "text": "\\(\\mathrm{RQ}^{\\mathrm{th}}\\)"
+          },
+          "0_8": {
+            "text": "\\(\\mathrm{PQ^{st}}\\)"
+          },
+          "0_9": {
+            "text": "\\(\\mathrm{SQ^{st}}\\)"
+          },
+          "1_0": {
+            "text": "PanopticFPN++"
+          },
+          "1_1": {
+            "text": " R50"
+          },
+          "1_2": {
+            "text": "42.4"
+          },
+          "1_3": {
+            "text": "79.3"
+          },
+          "1_4": {
+            "text": "51.6"
+          },
+          "1_5": {
+            "text": "49.2"
+          },
+          "1_6": {
+            "text": "82.4"
+          },
+          "1_7": {
+            "text": "58.8"
+          },
+          "1_8": {
+            "text": "32.3"
+          },
+          "1_9": {
+            "text": "74.8"
+          },
+          "2_0": {
+            "text": "UPSnet"
+          },
+          "2_1": {
+            "text": " R50"
+          },
+          "2_2": {
+            "text": "42.5"
+          },
+          "2_3": {
+            "text": "78.0"
+          },
+          "2_4": {
+            "text": "52.5"
+          },
+          "2_5": {
+            "text": "48.6"
+          },
+          "2_6": {
+            "text": "79.4"
+          },
+          "2_7": {
+            "text": "59.6"
+          },
+          "2_8": {
+            "text": "33.4"
+          },
+          "2_9": {
+            "text": "75.9"
+          },
+          "3_0": {
+            "text": "UPSnet-M"
+          },
+          "3_1": {
+            "text": " R50"
+          },
+          "3_2": {
+            "text": "43.0"
+          },
+          "3_3": {
+            "text": "79.1"
+          },
+          "3_4": {
+            "text": "52.8"
+          },
+          "3_5": {
+            "text": "48.9"
+          },
+          "3_6": {
+            "text": "79.7"
+          },
+          "3_7": {
+            "text": "59.7"
+          },
+          "3_8": {
+            "text": "34.1"
+          },
+          "3_9": {
+            "text": "78.2"
+          },
+          "4_0": {
+            "text": "PanopticFPN++"
+          },
+          "4_1": {
+            "text": " R101"
+          },
+          "4_2": {
+            "text": "44.1"
+          },
+          "4_3": {
+            "text": "79.5"
+          },
+          "4_4": {
+            "text": "53.3"
+          },
+          "4_5": {
+            "text": "51.0"
+          },
+          "4_6": {
+            "text": "83.2"
+          },
+          "4_7": {
+            "text": "60.6"
+          },
+          "4_8": {
+            "text": "33.6"
+          },
+          "4_9": {
+            "text": "74.0"
+          },
+          "5_0": {
+            "text": "DETR"
+          },
+          "5_1": {
+            "text": " R50"
+          },
+          "5_2": {
+            "text": "43.4"
+          },
+          "5_3": {
+            "text": "79.3"
+          },
+          "5_4": {
+            "text": "53.8"
+          },
+          "5_5": {
+            "text": "48.2"
+          },
+          "5_6": {
+            "text": "79.8"
+          },
+          "5_7": {
+            "text": "59.5"
+          },
+          "5_8": {
+            "text": "36.3"
+          },
+          "5_9": {
+            "text": "78.5"
+          },
+          "6_0": {
+            "text": "DETR-DC5"
+          },
+          "6_1": {
+            "text": " R50"
+          },
+          "6_2": {
+            "text": "44.6"
+          },
+          "6_3": {
+            "text": "79.8"
+          },
+          "6_4": {
+            "text": "55.0"
+          },
+          "6_5": {
+            "text": "49.4"
+          },
+          "6_6": {
+            "text": "80.5"
+          },
+          "6_7": {
+            "text": "60.6"
+          },
+          "6_8": {
+            "text": "37.3"
+          },
+          "6_9": {
+            "text": "78.7"
+          },
+          "7_0": {
+            "text": "DETR-R101"
+          },
+          "7_1": {
+            "text": " R101"
+          },
+          "7_2": {
+            "text": "45.1"
+          },
+          "7_3": {
+            "text": "79.9"
+          },
+          "7_4": {
+            "text": "55.5"
+          },
+          "7_5": {
+            "text": "50.5"
+          },
+          "7_6": {
+            "text": "80.9"
+          },
+          "7_7": {
+            "text": "61.7"
+          },
+          "7_8": {
+            "text": "37.0"
+          },
+          "7_9": {
+            "text": "78.5"
+          },
+          "0_10": {
+            "text": "\\(\\mathrm{RQ^{\\mathrm{st}}}\\)"
+          },
+          "0_11": {
+            "text": "AP"
+          },
+          "1_10": {
+            "text": "40.6"
+          },
+          "1_11": {
+            "text": "37.7"
+          },
+          "2_10": {
+            "text": "41.7"
+          },
+          "2_11": {
+            "text": "34.3"
+          },
+          "3_10": {
+            "text": "42.3"
+          },
+          "3_11": {
+            "text": "34.3"
+          },
+          "4_10": {
+            "text": "42.1"
+          },
+          "4_11": {
+            "text": "39.7"
+          },
+          "5_10": {
+            "text": "45.3"
+          },
+          "5_11": {
+            "text": "31.1"
+          },
+          "6_10": {
+            "text": "46.5"
+          },
+          "6_11": {
+            "text": "31.9"
+          },
+          "7_10": {
+            "text": "46.0"
+          },
+          "7_11": {
+            "text": "33.0"
+          }
+        },
+        "merged": [],
+        "grid": {
+          "rows": [
+            15.0,
+            27.0,
+            36.5,
+            46.5,
+            57.0,
+            66.5,
+            76.0
+          ],
+          "columns": [
+            67.5,
+            108.5,
+            131.0,
+            153.0,
+            176.0,
+            200.5,
+            223.5,
+            248.0,
+            271.0,
+            293.5,
+            317.0
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "To predict the final panoptic segmentation we simply use an argmax over the mask scores at each pixel, and assign the corresponding categories to the resulting masks. This procedure guarantees that the final masks have no overlaps and, therefore, DETR does not require a heuristic [19] that is often used to align different masks.",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 131,
+        "outline": [
+          33.0,
+          211.5,
+          379.0,
+          266.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Training details. We train DETR, DETR-DC5 and DETR-R101 models following the recipe for bounding box detection to predict boxes around stuff and things classes in COCO dataset. The new mask head is trained for 25 epochs (see supplementary for details). During inference we first filter out the detection with a confidence below 85%, then compute the per-pixel argmax to determine in which mask each pixel belongs. We then collapse different mask predictions of the same stuff category in one, and filter the empty ones (less than 4 pixels).",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 132,
+        "outline": [
+          33.0,
+          297.0,
+          379.0,
+          377.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Main results. Qualitative results are shown in Figure 9. In table 5 we compare our unified panoptic segmenation approach with several established methods that treat things and stuff differently. We report the Panoptic Quality (PQ) and the break-down on things (\\(\\mathrm{{PQ}^{t h}}\\)) and stuff (\\(\\mathrm{PQ^{st}}\\)). We also report the mask AP (computed on the things classes), before any panoptic post-treatment (in our case, before taking the pixel-wise argmax). We show that DETR outperforms published results on COCO-val 2017, as well as our strong PanopticFPN baseline (trained with same data-augmentation as DETR, for fair comparison). The result break-down shows that DETR is especially dominant on stuff classes, and we hypothesize that the global reasoning allowed by the encoder attention is the key element to this result. For things class, despite a severe deficit of up to 8 mAP compared to the baselines on the mask AP computation, DETR obtains competitive \\(\\mathrm{PQ}^{\\mathrm{th}}\\). We also evaluated our method on the test set of the COCO dataset, and obtained 46 PQ. We hope that our approach will inspire the exploration of fully unified models for panoptic segmentation in future work.",
+        "page": 15,
+        "parent_chapter": 117,
+        "index": 133,
+        "outline": [
+          31.0,
+          404.5,
+          381.0,
+          584.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 17",
+        "page": 16,
+        "parent_chapter": 117,
+        "index": 134,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "5 Conclusion",
+        "page": 16,
+        "parent_chapter": -1,
+        "index": 135,
+        "outline": [
+          34.0,
+          34.5,
+          118.0,
+          44.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We presented DETR, a new design for object detection systems based on transformers and bipartite matching loss for direct set prediction. The approach achieves comparable results to an optimized Faster R-CNN baseline on the challenging COCO dataset. DETR is straightforward to implement and has a flexible architecture that is easily extensible to panoptic segmentation, with competitive results. In addition, it achieves significantly better performance on large objects than Faster R-CNN, likely thanks to the processing of global information performed by the self-attention.",
+        "page": 16,
+        "parent_chapter": 135,
+        "index": 136,
+        "outline": [
+          33.0,
+          59.0,
+          379.0,
+          153.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "This new design for detectors also comes with new challenges, in particular regarding training, optimization and performances on small objects. Current detectors required several years of improvements to cope with similar issues, and we expect future work to successfully address them for DETR.",
+        "page": 16,
+        "parent_chapter": 135,
+        "index": 137,
+        "outline": [
+          33.0,
+          155.0,
+          378.5,
+          200.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "6 Acknowledgements",
+        "page": 16,
+        "parent_chapter": -1,
+        "index": 138,
+        "outline": [
+          33.0,
+          220.0,
+          165.0,
+          232.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We thank Sainbayar Sukhbaatar, Piotr Bojanowski, Natalia Neverova, David Lopez-Paz, Guillaume Lample, Danielle Rothermel, Kaiming He, Ross Girshick, Xinlei Chen and the whole Facebook AI Research Paris team for discussions and advices without which this work would not be possible.",
+        "page": 16,
+        "parent_chapter": 138,
+        "index": 139,
+        "outline": [
+          33.0,
+          246.0,
+          379.0,
+          290.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "References",
+        "page": 16,
+        "parent_chapter": -1,
+        "index": 140,
+        "outline": [
+          33.0,
+          311.0,
+          97.0,
+          321.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "1. Al-Rfou, R., Choe, D., Constant, N., Guo, M., Jones, L.: Character-level language modeling with deeper self-attention. In: AAAI Conference on Artificial Intelligence (2019)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 141,
+        "outline": [
+          38.5,
+          334.5,
+          379.0,
+          366.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "2. Bahdanau, D., Cho, K., Bengio, Y.: Neural machine translation byj ointly learning to align and translate. In: ICLR (2015)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 142,
+        "outline": [
+          38.5,
+          367.0,
+          378.5,
+          387.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "3. Bello, I., Zoph, B., Vaswani, A., Shlens, J., Le, Q.V.: Attention augmented convolutional networks. In: ICCV (2019)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 143,
+        "outline": [
+          38.5,
+          388.5,
+          378.5,
+          409.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "4. Bodla, N., Singh, B., Chellappa, R., Davis, L.S.: Soft-NMS improving object detection with one line of code. In: ICCV (2017)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 144,
+        "outline": [
+          38.5,
+          411.0,
+          378.5,
+          431.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "5. Cai, Z., Vasconcelos, N.: Cascade R-CNN: High quality object detection and instance segmentation. PAMI (2019)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 145,
+        "outline": [
+          38.5,
+          432.0,
+          378.5,
+          452.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "6. Chan, W., Saharia, C., Hinton, G., Norouzi, M., Jaitly, N.: Imputer: Sequence modelling via imputation and dynamic programming. arXiv:2002.08926 (2020)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 146,
+        "outline": [
+          38.5,
+          454.0,
+          378.5,
+          474.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "7. Cordonnier, J.B., Loukas, A., Jaggi, M.: On the relationship between self-attention and convolutional layers. In: ICLR (2020)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 147,
+        "outline": [
+          38.5,
+          476.0,
+          378.5,
+          495.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "8. Devlin, J., Chang, M.W., Lee, K., Toutanova, K.: BERT: Pre-training of deep bidirectional transformers for language understanding. In: NAACL-HLT (2019)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 148,
+        "outline": [
+          38.5,
+          497.5,
+          378.5,
+          518.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "9. Erhan, D., Szegedy, C., Toshev, A., Anguelov, D.: Scalable object detection using deep neural networks. In: CVPR (2014)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 149,
+        "outline": [
+          38.0,
+          519.0,
+          379.0,
+          540.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "10. Ghazvininejad, M., Levy, O., Liu, Y., Zettlemoyer, L.: Mask-predict: Parallel decoding of conditional masked language models. arXiv:1904.09324 (2019)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 150,
+        "outline": [
+          34.0,
+          541.0,
+          378.5,
+          562.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "11. Glorot, X., Bengio, Y.: Understanding the difficulty of training deep feedforward neural networks. In: AISTATS (2010)",
+        "page": 16,
+        "parent_chapter": 140,
+        "index": 151,
+        "outline": [
+          34.0,
+          562.5,
+          378.5,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "18 Carion et al.",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 152,
+        "outline": [
+          33.0,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "12. Gu, J., Bradbury, J., Xiong, C., Li, V.O., Socher, R.: Non-autoregressive neural machine translation. In: ICLR (2018)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 153,
+        "outline": [
+          34.5,
+          36.5,
+          378.5,
+          57.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "13. He, K., Girshick, R., Dolla´r, P.: Rethinking imagenet pre-training. In: ICCV (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 154,
+        "outline": [
+          34.0,
+          57.5,
+          378.5,
+          68.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "14. He, K., Gkioxari, G., Dolla´r, P., Girshick, R.B.: Mask R-CNN. In: ICCV (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 155,
+        "outline": [
+          34.0,
+          68.5,
+          372.0,
+          78.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "15. He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image recognition. In: CVPR (2016)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 156,
+        "outline": [
+          34.0,
+          79.0,
+          378.5,
+          100.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "16. Hosang, J.H., Benenson, R., Schiele, B.: Learning non-maximum suppression. In: CVPR (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 157,
+        "outline": [
+          34.0,
+          100.0,
+          378.5,
+          121.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "17. Hu, H., Gu, J., Zhang, Z., Dai, J., Wei, Y.: Relation networks for object detection. In: CVPR (2018)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 158,
+        "outline": [
+          34.0,
+          122.0,
+          378.5,
+          143.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "18. Kirillov, A., Girshick, R., He, K., Dolla´r, P.: Panoptic feature pyramid networks. In: CVPR (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 159,
+        "outline": [
+          34.0,
+          143.0,
+          378.5,
+          164.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "19. Kirillov, A., He, K., Girshick, R., Rother, C., Dollar, P.: Panoptic segmentation. In: CVPR (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 160,
+        "outline": [
+          34.0,
+          165.0,
+          378.0,
+          186.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "20. Kuhn, H.W.: The hungarian method for the assignment problem (1955)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 161,
+        "outline": [
+          32.5,
+          185.5,
+          339.5,
+          197.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "21. Li, Y., Qi, H., Dai, J., Ji, X., Wei, Y.: Fully convolutional instance-aware semantic segmentation. In: CVPR (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 162,
+        "outline": [
+          33.0,
+          197.0,
+          378.5,
+          216.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "22. Lin, T.Y., Dolla´r, P., Girshick, R., He, K., Hariharan, B., Belongie, S.: Feature pyramid networks for object detection. In: CVPR (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 163,
+        "outline": [
+          33.0,
+          218.0,
+          378.5,
+          238.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "23. Lin, T.Y., Goyal, P., Girshick, R.B., He, K., Dolla´r, P.: Focal loss for dense object detection. In: ICCV (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 164,
+        "outline": [
+          33.0,
+          239.0,
+          378.5,
+          260.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "24. Lin, T.Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dolla´r, P., Zitnick, C.L.: Microsoft COCO: Common objects in context. In: ECCV (2014)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 165,
+        "outline": [
+          33.0,
+          261.0,
+          378.5,
+          281.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "25. Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S.E., Fu, C.Y., Berg, A.C.: Ssd: Single shot multibox detector. In: ECCV (2016)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 166,
+        "outline": [
+          33.0,
+          282.5,
+          378.5,
+          303.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "26. Loshchilov, I., Hutter, F.: Decoupled weight decay regularization. In: ICLR (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 167,
+        "outline": [
+          33.0,
+          303.0,
+          378.0,
+          314.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "27. L¨uscher, C., Beck, E., Irie, K., Kitza, M., Michel, W., Zeyer, A., Schl¨uter, R., Ney, H.: Rwth asr systems for librispeech: Hybrid vs attention - w/o data augmentation. arXiv:1905.03072 (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 168,
+        "outline": [
+          33.0,
+          313.5,
+          378.5,
+          346.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "28. Milletari, F., Navab, N., Ahmadi, S.A.: V-net: Fully convolutional neural networks for volumetric medical image segmentation. In: 3DV (2016)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 169,
+        "outline": [
+          33.0,
+          346.5,
+          378.5,
+          368.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "29. Oord, A.v.d., Li, Y., Babuschkin, I., Simonyan, K., Vinyals, O., Kavukcuoglu, K., Driessche, G.v.d., Lockhart, E., Cobo, L.C., Stimberg, F., et al.: Parallel wavenet: Fast high-fidelity speech synthesis. arXiv:1711.10433 (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 170,
+        "outline": [
+          33.0,
+          368.5,
+          378.5,
+          399.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "30. Park, E., Berg, A.C.: Learning to decompose for object detection and instance segmentation. arXiv:1511.06449 (2015)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 171,
+        "outline": [
+          33.0,
+          401.0,
+          378.5,
+          421.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "31. Parmar, N., Vaswani, A., Uszkoreit, J., Kaiser, L., Shazeer, N., Ku, A., Tran, D.: Image transformer. In: ICML (2018)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 172,
+        "outline": [
+          33.0,
+          423.0,
+          378.5,
+          443.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "32. Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., Chintala, S.: Pytorch: An imperative style, high-performance deep learning library. In: NeurIPS (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 173,
+        "outline": [
+          33.0,
+          444.0,
+          378.5,
+          499.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "33. Pineda, L., Salvador, A., Drozdzal, M., Romero, A.: Elucidating image-to-set prediction: An analysis of models, losses and datasets. arXiv:1904.05709 (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 174,
+        "outline": [
+          33.0,
+          497.5,
+          379.0,
+          519.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "34. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., Sutskever, I.: Language models are unsupervised multitask learners (2019)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 175,
+        "outline": [
+          33.0,
+          519.5,
+          379.0,
+          541.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "35. Redmon, J., Divvala, S., Girshick, R., Farhadi, A.: You only look once: Unified, real-time object detection. In: CVPR (2016)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 176,
+        "outline": [
+          33.0,
+          541.0,
+          379.0,
+          562.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "36. Ren, M., Zemel, R.S.: End-to-end instance segmentation with recurrent attention. In: CVPR (2017)",
+        "page": 17,
+        "parent_chapter": 140,
+        "index": 177,
+        "outline": [
+          33.0,
+          562.0,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 19",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 178,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "37. Ren, S., He, K., Girshick, R.B., Sun, J.: Faster R-CNN: Towards real-time object detection with region proposal networks. PAMI (2015)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 179,
+        "outline": [
+          34.0,
+          36.5,
+          378.5,
+          57.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "38. Rezatofighi, H., Tsoi, N., Gwak, J., Sadeghian, A., Reid, I., Savarese, S.: Generalized intersection over union. In: CVPR (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 180,
+        "outline": [
+          34.0,
+          59.0,
+          378.0,
+          79.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "39. Rezatofighi, S.H., Kaskman, R., Motlagh, F.T., Shi, Q., Cremers, D., Leal-Taixe´,L., Reid, I.: Deep perm-set net: Learn to predict sets with unknown permutation and cardinality using deep neural networks. arXiv:1805.00613 (2018)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 181,
+        "outline": [
+          33.0,
+          81.0,
+          378.5,
+          111.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "40. Rezatofighi, S.H., Milan, A., Abbasnejad, E., Dick, A., Reid, I., Kaskman, R., Cremers, D., Leal-Taix, l.: Deepsetnet: Predicting sets with deep neural networks. In: ICCV (2017)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 182,
+        "outline": [
+          33.0,
+          113.5,
+          378.5,
+          144.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "41. Romera-Paredes, B., Torr, P.H.S.: Recurrent instance segmentation. In: ECCV (2015)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 183,
+        "outline": [
+          33.0,
+          146.0,
+          378.5,
+          167.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "42. Salvador, A., Bellver, M., Baradad, M., Marque´s, F., Torres, J., Giro´, X.: Recurrent neural networks for semantic instance segmentation. arXiv:1712.00617 (2017)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 184,
+        "outline": [
+          34.0,
+          169.0,
+          378.0,
+          188.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "43. Stewart, R.J., Andriluka, M., Ng, A.Y.: End-to-end people detection in crowded scenes. In: CVPR (2015)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 185,
+        "outline": [
+          33.0,
+          190.0,
+          378.5,
+          210.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "44. Sutskever, I., Vinyals, O., Le, Q.V.: Sequence to sequence learning with neural networks. In: NeurIPS (2014)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 186,
+        "outline": [
+          33.0,
+          212.0,
+          378.5,
+          232.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "45. Synnaeve, G., Xu, Q., Kahn, J., Grave, E., Likhomanenko, T., Pratap, V., Sriram, A., Liptchinsky, V., Collobert, R.: End-to-end ASR: from supervised to semisupervised learning with modern architectures. arXiv:1911.08460 (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 187,
+        "outline": [
+          33.0,
+          233.5,
+          378.5,
+          265.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "46. Tian, Z., Shen, C., Chen, H., He, T.: FCOS: Fully convolutional one-stage object detection. In: ICCV (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 188,
+        "outline": [
+          33.0,
+          266.5,
+          378.5,
+          287.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "47. Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I.: Attention is all you need. In: NeurIPS (2017)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 189,
+        "outline": [
+          33.0,
+          288.5,
+          378.5,
+          309.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "48. Vinyals, O., Bengio, S., Kudlur, M.: Order matters: Sequence to sequence for sets. In: ICLR (2016)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 190,
+        "outline": [
+          33.0,
+          311.0,
+          378.5,
+          331.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "49. Wang, X., Girshick, R.B., Gupta, A., He, K.: Non-local neural networks. In: CVPR (2018)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 191,
+        "outline": [
+          33.0,
+          332.0,
+          379.0,
+          353.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "50. Wu, Y., Kirillov, A., Massa, F., Lo, W.Y., Girshick, R.: Detectron2. https://github.com/facebookresearch/detectron2 (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 192,
+        "outline": [
+          34.0,
+          354.0,
+          378.5,
+          375.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "51. Xiong, Y., Liao, R., Zhao, H., Hu, R., Bai, M., Yumer, E., Urtasun, R.: Upsnet: A unified panoptic segmentation network. In: CVPR (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 193,
+        "outline": [
+          33.0,
+          376.0,
+          378.5,
+          397.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "52. Zhang, S., Chi, C., Yao, Y., Lei, Z., Li, S.Z.: Bridging the gap between anchor-based and anchor-free detection via adaptive training sample selection. arXiv:1912.02424 (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 194,
+        "outline": [
+          33.0,
+          397.5,
+          379.0,
+          430.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "53. Zhou, X., Wang, D., Kr¨ahenb¨uhl, P.: Objects as points. arXiv:1904.07850 (2019)",
+        "page": 18,
+        "parent_chapter": 140,
+        "index": 195,
+        "outline": [
+          32.5,
+          430.0,
+          374.5,
+          440.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "20 Carion et al.",
+        "page": 19,
+        "parent_chapter": 140,
+        "index": 196,
+        "outline": [
+          32.5,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "A Appendix",
+        "page": 19,
+        "parent_chapter": -1,
+        "index": 197,
+        "outline": [
+          33.0,
+          34.5,
+          114.5,
+          46.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A.1 Preliminaries: Multi-head attention layers",
+        "page": 19,
+        "parent_chapter": 197,
+        "index": 198,
+        "outline": [
+          32.5,
+          58.5,
+          273.0,
+          69.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Since our model is based on the Transformer architecture, we remind here the general form of attention mechanisms we use for exhaustivity. The attention mechanism follows [47], except for the details of positional encodings (see Equation 8) that follows [7].",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 199,
+        "outline": [
+          33.0,
+          77.0,
+          379.0,
+          123.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Multi-head The general form of multi-head attention with M heads of dimension d is a function with the following signature (using \\(\\begin{array}{r}{d^{\\prime}=\\frac{d}{M}}\\end{array}\\), and giving matrix/tensors sizes in underbrace)",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 200,
+        "outline": [
+          33.0,
+          130.0,
+          380.0,
+          163.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\mathrm{mh-attn}:\\underbrace{X_{\\mathrm{q}}}_{d\\times N_{\\mathrm{q}}},\\underbrace{X_{\\mathrm{kv}}}_{d\\times N_{\\mathrm{kv}}},\\underbrace{T}_{M\\times3\\times d^{\\prime}\\times d},\\underbrace{L}_{d\\times d}\\mapsto\\underbrace{\\tilde{X}_{\\mathrm{q}}}_{d\\times N_{\\mathrm{q}}}\\]",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 201,
+        "outline": [
+          106.5,
+          172.5,
+          378.5,
+          201.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(X_{\\mathrm{q}}\\) is the query sequence of length \\(N_{\\mathbf{q}}\\), \\(X_{\\mathrm{kv}}\\) is the key-value sequence of length \\(N_{\\mathrm{kv}}\\) (with the same number of channels d for simplicity of exposition), T is the weight tensor to compute the so-called query, key and value embeddings, and L is a projection matrix. The output is the same size as the query sequence. To fix the vocabulary before giving details, multi-head self-attention (mh-s-attn) is the special case \\(X_{\\mathrm{q}}=X_{\\mathrm{kv}}\\), i.e.",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 202,
+        "outline": [
+          33.0,
+          210.0,
+          380.5,
+          280.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\mathrm{mh-s-attn}(X,T,L)=\\mathrm{mh-attn}(X,X,T,L)\\,.\\tag{4}\\]",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 203,
+        "outline": [
+          112.5,
+          289.0,
+          378.5,
+          300.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The multi-head attention is simply the concatenation of M single attention heads followed by a projection with L. The common practice [47] is to use residual connections, dropout and layer normalization. In other words, denoting \\(\\tilde{X}_{\\mathrm{q}}=\\)\\(\\mathrm{mh-attn}(X_{\\mathrm{q}},X_{\\mathrm{kv}},T,L)\\) and \\({\\bar{\\bar{X}}}^{(q)}\\) the concatenation of attention heads, we have",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 204,
+        "outline": [
+          31.0,
+          310.0,
+          380.5,
+          359.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[X_{\\mathrm{q}}^{\\prime}=[\\mathrm{attn}(X_{\\mathrm{q}},X_{\\mathrm{kv}},T_{1});...;\\mathrm{attn}(X_{\\mathrm{q}},X_{\\mathrm{kv}},T_{M})]\\tag{5}\\]",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 205,
+        "outline": [
+          104.0,
+          367.0,
+          378.0,
+          379.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\tilde{X}_{\\mathrm{q}}=\\mathrm{layernorm}\\bigl(X_{\\mathrm{q}}+\\mathrm{dropout}(L X_{\\mathrm{q}}^{\\prime})\\bigr)\\,,\\tag{6}\\]",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 206,
+        "outline": [
+          103.5,
+          382.5,
+          378.5,
+          396.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where [;] denotes concatenation on the channel axis.",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 207,
+        "outline": [
+          32.5,
+          403.5,
+          261.0,
+          415.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Single head An attention head with weight tensor \\(T^{\\prime}\\in\\mathbb{R}^{3\\times d^{\\prime}\\times d}\\), denoted by \\(\\mathrm{attn}(X_{\\mathrm{q}},X_{\\mathrm{kv}},T^{\\prime})\\), depends on additional positional encoding \\(P_{\\mathrm{q}}\\in\\mathbb{R}^{d\\times N_{\\mathrm{q}}}\\) and \\(P_{\\mathrm{kv}}\\in\\mathbb{R}^{d\\times N_{\\mathrm{kv}}}\\) . It starts by computing so-called query, key and value embeddings after adding the query and key positional encodings [7]:",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 208,
+        "outline": [
+          32.5,
+          419.0,
+          380.5,
+          467.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[[Q;K;V]=[T_{1}^{\\prime}(X_{\\mathrm{q}}+P_{\\mathrm{q}});T_{2}^{\\prime}(X_{\\mathrm{kv}}+P_{\\mathrm{kv}});T_{3}^{\\prime}X_{\\mathrm{kv}}]\\tag{7}\\]",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 209,
+        "outline": [
+          101.0,
+          476.5,
+          378.5,
+          488.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(T^{\\prime}\\) is the concatenation of \\(T_{1}^{\\prime},T_{2}^{\\prime},T_{3}^{\\prime}\\). The attention weights \\(\\alpha\\) are then computed based on the softmax of dot products between queries and keys, so that each element of the query sequence attends to all elements of the key-value sequence (i is a query index and j a key-value index):",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 210,
+        "outline": [
+          32.0,
+          495.5,
+          380.5,
+          543.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\alpha_{i,j}=\\frac{e^{\\frac{1}{\\sqrt{d^{\\prime}}}Q_{i}^{T}K_{j}}}{Z_{i}}\\ \\ \\mathrm{~where~}Z_{i}=\\sum_{j=1}^{N_{\\mathrm{kv}}}e^{\\frac{1}{\\sqrt{d^{\\prime}}}Q_{i}^{T}K_{j}}\\,.\\tag{8}\\] ",
+        "page": 19,
+        "parent_chapter": 198,
+        "index": 211,
+        "outline": [
+          109.5,
+          552.5,
+          378.5,
+          585.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 21",
+        "page": 20,
+        "parent_chapter": 198,
+        "index": 212,
+        "outline": [
+          150.0,
+          10.5,
+          378.5,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "In our case, the positional encodings may be learnt or fixed, but are shared across all attention layers for a given query/key-value sequence, so we do not explicitly write them as parameters of the attention. We give more details on their exact value when describing the encoder and the decoder. The final output is the aggregation of values weighted by attention weights: The i-th row is given by \\(\\begin{array}{r}{\\mathrm{attn}_{i}(X_{\\mathrm{q}},X_{\\mathrm{kv}},T^{\\prime})=\\sum_{j=1}^{N_{\\mathrm{kv}}}\\overline{{\\alpha}}_{i,j}V_{j}}\\end{array}\\) .",
+        "page": 20,
+        "parent_chapter": 198,
+        "index": 213,
+        "outline": [
+          32.5,
+          36.5,
+          379.0,
+          107.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Feed-forward network (FFN) layers The original transformer alternates multi-head attention and so-called FFN layers [47], which are effectively multilayer 1x1 convolutions, which have M d input and output channels in our case. The FFN we consider is composed of two-layers of 1x1 convolutions with ReLU activations. There is also a residual connection/dropout/layernorm after the two layers, similarly to equation 6.",
+        "page": 20,
+        "parent_chapter": 198,
+        "index": 214,
+        "outline": [
+          33.0,
+          112.5,
+          378.5,
+          182.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A.2 Losses",
+        "page": 20,
+        "parent_chapter": 197,
+        "index": 215,
+        "outline": [
+          33.0,
+          201.5,
+          94.0,
+          210.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "For completeness, we present in detail the losses used in our approach. All losses are normalized by the number of objects inside the batch. Extra care must be taken for distributed training: since each GPU receives a sub-batch, it is not sufficient to normalize by the number of objects in the local batch, since in general the sub-batches are not balanced across GPUs. Instead, it is important to normalize by the total number of objects in all sub-batches.",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 216,
+        "outline": [
+          33.0,
+          222.0,
+          379.0,
+          291.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Box loss Similarly to [41,36], we use a soft version of Intersection over Union in our loss, together with a \\(\\ell_{1}\\) loss on \\(\\hat{b}\\):",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 217,
+        "outline": [
+          33.0,
+          298.0,
+          378.5,
+          322.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\mathcal{L}_{\\mathrm{box}}(b_{\\sigma(i)},\\hat{b}_{i})=\\lambda_{\\mathrm{iou}}\\mathcal{L}_{\\mathrm{iou}}(b_{\\sigma(i)},\\hat{b}_{i})+\\lambda_{\\mathrm{L1}}||b_{\\sigma(i)}-\\hat{b}_{i}||_{1}\\,,\\eqno{(9)}\\]",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 218,
+        "outline": [
+          91.0,
+          330.5,
+          378.5,
+          344.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(\\lambda_{\\mathrm{iou}},\\lambda_{\\mathrm{L1}}\\in\\mathbb{R}\\) are hyperparameters and \\(\\mathcal{L}_{\\mathrm{iou}}(\\cdot)\\) is the generalized IoU [38]:",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 219,
+        "outline": [
+          32.5,
+          354.0,
+          378.5,
+          365.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[\\mathcal{L}_{\\mathrm{iou}}(b_{\\sigma(i)},\\hat{b}_{i})=1-\\left(\\frac{|b_{\\sigma(i)}\\cap\\hat{b}_{i}|}{|b_{\\sigma(i)}\\cup\\hat{b}_{i}|}-\\frac{|B(b_{\\sigma(i)},\\hat{b}_{i})\\setminus b_{\\sigma(i)}\\cup\\hat{b}_{i}|}{|B(b_{\\sigma(i)},\\hat{b}_{i})|}\\right).\\qquad\\mathrm{(10)}\\]",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 220,
+        "outline": [
+          73.5,
+          375.0,
+          378.0,
+          404.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "|.| means “area”, and the union and intersection of box coordinates are used as shorthands for the boxes themselves. The areas of unions or intersections are computed by min / max of the linear functions of \\(b_{\\sigma(i)}\\) and \\(\\hat{b}_{i}\\), which makes the loss sufficiently well-behaved for stochastic gradients. \\(B(b_{\\sigma(i)},\\hat{b}_{i})\\) means the largest box containing \\(b_{\\sigma(i)},\\hat{b}_{i}\\) (the areas involving B are also computed based on min / max of linear functions of the box coordinates).",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 221,
+        "outline": [
+          30.5,
+          415.0,
+          381.0,
+          488.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "DICE/F-1 loss [28] The DICE coefficient is closely related to the Intersection over Union. If we denote by \\(\\hat{m}\\) the raw mask logits prediction of the model, and m the binary target mask, the loss is defined as:",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 222,
+        "outline": [
+          33.0,
+          495.5,
+          379.0,
+          529.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "\\[{\\mathcal{L}}_{\\mathrm{DICE}}(m,{\\hat{m}})=1-{\\frac{2m\\sigma({\\hat{m}})+1}{\\sigma({\\hat{m}})+m+1}}\\tag{11}\\]",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 223,
+        "outline": [
+          131.5,
+          540.0,
+          378.0,
+          562.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "where \\(\\sigma\\) is the sigmoid function. This loss is normalized by the number of objects.",
+        "page": 20,
+        "parent_chapter": 215,
+        "index": 224,
+        "outline": [
+          32.5,
+          573.0,
+          376.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "22 Carion et al.",
+        "page": 21,
+        "parent_chapter": 215,
+        "index": 225,
+        "outline": [
+          32.5,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "A.3 Detailed architecture",
+        "page": 21,
+        "parent_chapter": 197,
+        "index": 226,
+        "outline": [
+          32.5,
+          35.0,
+          169.0,
+          45.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "The detailed description of the transformer used in DETR, with positional encodings passed at every attention layer, is given in Fig. 10. Image features from the CNN backbone are passed through the transformer encoder, together with spatial positional encoding that are added to queries and keys at every multihead self-attention layer. Then, the decoder receives queries (initially set to zero), output positional encoding (object queries), and encoder memory, and produces the final set of predicted class labels and bounding boxes through multiple multihead self-attention and decoder-encoder attention. The first self-attention layer in the first decoder layer can be skipped.",
+        "page": 21,
+        "parent_chapter": 226,
+        "index": 227,
+        "outline": [
+          33.0,
+          59.0,
+          379.0,
+          164.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "figure",
+        "text": "Class Bounding Box FFN FFN Decoder M×Add & Norm FFN Encoder Add & Norm N×Add & Norm Multi-Head Attention VK Q FFN+ +Add & NormAdd & Norm Multi-Head Self-AttentionMulti-Head Self-Attention VKQVKQ+ ++ +Image featuresSpatial positionalObject queries encoding ",
+        "page": 21,
+        "parent_chapter": 226,
+        "index": 228,
+        "outline": [
+          97.5,
+          187.0,
+          340.0,
+          450.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 10: Architecture of DETR’s transformer. Please, see Section A.3 for details.",
+        "page": 21,
+        "parent_chapter": 226,
+        "index": 229,
+        "outline": [
+          45.0,
+          456.5,
+          366.5,
+          466.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Computational complexity Every self-attention in the encoder has complexity \\(\\mathcal{O}(d^{2}H W{+}d(H W)^{2})\\!:\\mathcal{O}(d^{\\prime}d)\\) is the cost of computing a single query/key/value embeddings (and \\(M d^{\\prime}=d\\)), while \\(\\mathcal{O}(d^{\\prime}(H W)^{2})\\) is the cost of computing the attention weights for one head. Other computations are negligible. In the decoder, each self-attention is in \\(\\mathcal{O}(d^{2}N\\!+\\!d N^{2})\\), and cross-attention between encoder and decoder is in \\(\\mathcal{O}(d^{2}(N+H W)+d N H W)\\), which is much lower than the encoder since \\(N\\ll H W\\) in practice.",
+        "page": 21,
+        "parent_chapter": 226,
+        "index": 230,
+        "outline": [
+          32.5,
+          501.5,
+          382.5,
+          584.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 23",
+        "page": 22,
+        "parent_chapter": 226,
+        "index": 231,
+        "outline": [
+          150.0,
+          11.5,
+          379.0,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "FLOPS computation Given that the FLOPS for Faster R-CNN depends on the number of proposals in the image, we report the average number of FLOPS for the first 100 images in the COCO 2017 validation set. We compute the FLOPS with the tool flop count operators from Detectron2 [50]. We use it without modifications for Detectron2 models, and extend it to take batch matrix multiply (bmm) into account for DETR models.",
+        "page": 22,
+        "parent_chapter": 226,
+        "index": 232,
+        "outline": [
+          33.0,
+          36.5,
+          379.0,
+          105.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A.4 Training hyperparameters",
+        "page": 22,
+        "parent_chapter": 197,
+        "index": 233,
+        "outline": [
+          33.0,
+          121.5,
+          193.0,
+          132.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "We train DETR using AdamW [26] with improved weight decay handling, set to \\(10^{-4}\\). We also apply gradient clipping, with a maximal gradient norm of 0.1. The backbone and the transformers are treated slightly differently, we now discuss the details for both.",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 234,
+        "outline": [
+          32.5,
+          137.0,
+          380.5,
+          182.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Backbone ImageNet pretrained backbone ResNet-50 is imported from Torchvision, discarding the last classification layer. Backbone batch normalization weights and statistics are frozen during training, following widely adopted practice in object detection. We fine-tune the backbone using learning rate of \\(10^{-5}\\). We observe that having the backbone learning rate roughly an order of magnitude smaller than the rest of the network is important to stabilize training, especially in the first few epochs.",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 235,
+        "outline": [
+          32.5,
+          190.0,
+          383.0,
+          271.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Transformer We train the transformer with a learning rate of \\(10^{-4}\\). Additive dropout of 0.1 is applied after every multi-head attention and FFN before layer normalization. The weights are randomly initialized with Xavier initialization.",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 236,
+        "outline": [
+          32.5,
+          276.5,
+          380.0,
+          311.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Losses We use linear combination of \\(\\ell_{1}\\) and GIoU losses for bounding box regression with \\(\\lambda_{\\mathrm{L1}}=5\\) and \\(\\lambda_{\\mathrm{iou}}=2\\) weights respectively. All models were trained with \\(N\\) = 100 decoder query slots.",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 237,
+        "outline": [
+          33.0,
+          319.0,
+          379.0,
+          352.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Baseline Our enhanced Faster-RCNN+ baselines use GIoU [38] loss along with the standard \\(\\ell_{1}\\) loss for bounding box regression. We performed a grid search to find the best weights for the losses and the final models use only GIoU loss with weights 20 and 1 for box and proposal regression tasks respectively. For the baselines we adopt the same data augmentation as used in DETR and train it with 9× schedule (approximately 109 epochs). All other settings are identical to the same models in the Detectron2 model zoo [50].",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 238,
+        "outline": [
+          33.0,
+          359.0,
+          379.0,
+          441.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Spatial positional encoding Encoder activations are associated with corresponding spatial positions of image features. In our model we use a fixed absolute encoding to represent these spatial positions. We adopt a generalization of the original Transformer [47] encoding to the 2D case [31]. Specifically, for both spatial coordinates of each embedding we independently use 2dsine and cosine functions with different frequencies. We then concatenate them to get the final d channel positional encoding.",
+        "page": 22,
+        "parent_chapter": 233,
+        "index": 239,
+        "outline": [
+          30.5,
+          448.0,
+          382.0,
+          529.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A.5 Additional results",
+        "page": 22,
+        "parent_chapter": 197,
+        "index": 240,
+        "outline": [
+          33.0,
+          545.0,
+          152.5,
+          554.0
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Some extra qualitative results for the panoptic prediction of the DETR-R101 model are shown in Fig.11.",
+        "page": 22,
+        "parent_chapter": 240,
+        "index": 241,
+        "outline": [
+          33.0,
+          561.5,
+          378.5,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "24 Carion et al.",
+        "page": 23,
+        "parent_chapter": 240,
+        "index": 242,
+        "outline": [
+          32.5,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "(a) Failure case with overlapping objects. PanopticFPN misses one plane entirely, while DETR fails to accurately segment 3 of them. (b) Things masks are predicted at full resolution, which allows sharper boundaries than PanopticFPN",
+        "page": 23,
+        "parent_chapter": 240,
+        "index": 243,
+        "outline": [
+          29.0,
+          29.0,
+          384.5,
+          237.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 11: Comparison of panoptic predictions. From left to right: Ground truth, PanopticFPN with ResNet 101, DETR with ResNet 101",
+        "page": 23,
+        "parent_chapter": 240,
+        "index": 244,
+        "outline": [
+          33.0,
+          248.5,
+          378.5,
+          269.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Increasing the number of instances By design, DETR cannot predict more objects than it has query slots, i.e. 100 in our experiments. In this section, we analyze the behavior of DETR when approaching this limit. We select a canonical square image of a given class, repeat it on a 10×10 grid, and compute the percentage of instances that are missed by the model. To test the model with less than 100 instances, we randomly mask some of the cells. This ensures that the absolute size of the objects is the same no matter how many are visible. To account for the randomness in the masking, we repeat the experiment 100 times with different masks. The results are shown in Fig.12. The behavior is similar across classes, and while the model detects all instances when up to 50 are visible, it then starts saturating and misses more and more instances. Notably, when the image contains all 100 instances, the model only detects 30 on average, which is less than if the image contains only 50 instances that are all detected. The counter-intuitive behavior of the model is likely because the images and the detections are far from the training distribution.",
+        "page": 23,
+        "parent_chapter": 240,
+        "index": 245,
+        "outline": [
+          31.0,
+          295.5,
+          380.5,
+          476.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Note that this test is a test of generalization out-of-distribution by design, since there are very few example images with a lot of instances of a single class. It is difficult to disentangle, from the experiment, two types of out-of-domain generalization: the image itself vs the number of object per class. But since few to no COCO images contain only a lot of objects of the same class, this type of experiment represents our best effort to understand whether query objects overfit the label and position distribution of the dataset. Overall, the experiments suggests that the model does not overfit on these distributions since it yields near-perfect detections up to 50 objects.",
+        "page": 23,
+        "parent_chapter": 240,
+        "index": 246,
+        "outline": [
+          32.5,
+          477.0,
+          379.0,
+          583.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "End-to-End Object Detection with Transformers 25",
+        "page": 24,
+        "parent_chapter": 240,
+        "index": 247,
+        "outline": [
+          150.0,
+          10.0,
+          380.0,
+          20.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "figure",
+        "text": "s e70dog cperson n a60apple t ns50 i d40 e s s30 i m20 f o10%020 40 60 80 100 Number of visible instances",
+        "page": 24,
+        "parent_chapter": 240,
+        "index": 248,
+        "outline": [
+          110.5,
+          31.0,
+          312.0,
+          200.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "Fig. 12: Analysis of the number of instances of various classes missed by DETR depending on how many are present in the image. We report the mean and the standard deviation. As the number of instances gets close to 100, DETR starts saturating and misses more and more objects",
+        "page": 24,
+        "parent_chapter": 240,
+        "index": 249,
+        "outline": [
+          33.0,
+          210.5,
+          379.0,
+          252.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "A.6 PyTorch inference code",
+        "page": 24,
+        "parent_chapter": 197,
+        "index": 250,
+        "outline": [
+          33.0,
+          278.5,
+          181.0,
+          288.5
+        ],
+        "is_chapter_title": true,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "To demonstrate the simplicity of the approach, we include inference code with PyTorch and Torchvision libraries in Listing 1. The code runs with Python 3.6+,PyTorch 1.4 and Torchvision 0.5. Note that it does not support batching, hence it is suitable only for inference or training with DistributedDataParallel with one image per GPU. Also note that for clarity, this code uses learnt positional encodings in the encoder instead of fixed, and positional encodings are added to the input only instead of at each transformer layer. Making these changes requires going beyond PyTorch implementation of transformers, which hampers readability. The entire code to reproduce the experiments will be made available before the conference.",
+        "page": 24,
+        "parent_chapter": 250,
+        "index": 251,
+        "outline": [
+          33.0,
+          299.0,
+          379.0,
+          415.5
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "page_header",
+        "text": "26 Carion et al.",
+        "page": 25,
+        "parent_chapter": 250,
+        "index": 252,
+        "outline": [
+          32.5,
+          10.0,
+          117.5,
+          19.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0
+      },
+      {
+        "type": "paragraph",
+        "text": "1 import torch\n2 from torch import nn\n3 from torchvision.models import resnet50\n4\n5 class DETR(nn.Module):\n6\n7 def __init__(self, num_classes, hidden_dim, nheads,\n8 num_encoder_layers, num_decoder_layers):\n9 super().__init__()\n10 # We take only convolutional layers from ResNet-50 model\n11 self.backbone = nn.Sequential(*list(resnet50(pretrained=True).children())[:-2])\n12 self.conv = nn.Conv2d(2048, hidden_dim, 1)\n13 self.transformer = nn.Transformer(hidden_dim, nheads,\n14 num_encoder_layers, num_decoder_layers)\n15 self.linear_class = nn.Linear(hidden_dim, num_classes + 1)\n16 self.linear_bbox = nn.Linear(hidden_dim, 4)\n17 self.query_pos = nn.Parameter(torch.rand(100, hidden_dim))\n18 self.row_embed = nn.Parameter(torch.rand(50, hidden_dim // 2))\n19 self.col_embed = nn.Parameter(torch.rand(50, hidden_dim // 2))\n20\n21 def forward(self, inputs):\n22 x = self.backbone(inputs)\n23 h = self.conv(x)\n24 H, W = h.shape[-2:]\n25 pos = torch.cat([\n26 self.col_embed[:W].unsqueeze(0).repeat(H, 1, 1),\n27 self.row_embed[:H].unsqueeze(1).repeat(1, W, 1),\n28 ], dim=-1).flatten(0, 1).unsqueeze(1)\n29 h = self.transformer(pos + h.flatten(2).permute(2, 0, 1),\n30 self.query_pos.unsqueeze(1))\n31 return self.linear_class(h), self.linear_bbox(h).sigmoid()\n32\n33 detr = DETR(num_classes=91, hidden_dim=256, nheads=8, num_encoder_layers=6, num_decoder_layers=6)\n34 detr.eval()\n35 inputs = torch.randn(1, 3, 800, 1200)\n36 logits, bboxes = detr(inputs)",
+        "page": 25,
+        "parent_chapter": 250,
+        "index": 253,
+        "outline": [
+          12.0,
+          124.5,
+          394.5,
+          415.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      },
+      {
+        "type": "paragraph",
+        "text": "Listing 1: DETR PyTorch inference code. For clarity it uses learnt positional encodings in the encoder instead of fixed, and positional encodings are added to the input only instead of at each transformer layer. Making these changes requires going beyond PyTorch implementation of transformers, which hampers readability. The entire code to reproduce the experiments will be made available before the conference.",
+        "page": 25,
+        "parent_chapter": -1,
+        "index": 254,
+        "outline": [
+          33.0,
+          433.0,
+          379.0,
+          486.0
+        ],
+        "is_chapter_title": false,
+        "rotation": 0.0,
+        "continued": false,
+        "page_merged_paragraph": null
+      }
+    ]
+  }
+}

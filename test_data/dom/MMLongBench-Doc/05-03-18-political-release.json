@@ -1,0 +1,4853 @@
+{
+  "tag": "document",
+  "metadata": {
+    "depth": 0,
+    "page_id": null,
+    "global_id": "doc_05-03-18-political-release_136151",
+    "node_type": null,
+    "document_name": "05-03-18-political-release.pdf",
+    "page_count": 17,
+    "source_type": "pdf_json"
+  },
+  "children": [
+    {
+      "tag": "figure",
+      "text": "Pew Research Cen ter",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136152",
+        "node_type": null,
+        "original_index": 0,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "figure",
+        "page_number": 0,
+        "bbox": [
+          345.0,
+          57.0,
+          561.5,
+          94.5
+        ],
+        "image_extracted": true,
+        "ai_description": "Skipped (disabled or too small)"
+      },
+      "children": [
+        {
+          "tag": "img",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136153",
+            "node_type": null
+          },
+          "src": "05-03-18-political-release/page_1_figure_0.png"
+        }
+      ],
+      "src": "05-03-18-political-release/page_1_figure_0.png",
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "FOR RELEASE MAY 3,2018",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136154",
+        "node_type": null,
+        "original_index": 1,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          71.0,
+          189.5,
+          165.5,
+          198.0
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Trump Viewed Less Negatively on Issues, but Most Americans Are Critical of His Conduct",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136155",
+        "node_type": null,
+        "original_index": 2,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          66.5,
+          205.0,
+          527.5,
+          385.0
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Majority expresses confidence in Trump on economic policy",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136156",
+        "node_type": null,
+        "original_index": 3,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          70.0,
+          397.5,
+          492.5,
+          415.5
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "FOR MEDIA OR OTHER INQUIRIES:",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136157",
+        "node_type": null,
+        "original_index": 4,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          77.0,
+          515.5,
+          200.5,
+          525.0
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Carroll Doherty, Director of Political Research Jocelyn Kiley, Associate Director, Research Bridget Johnson, Communications Associate",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136158",
+        "node_type": null,
+        "original_index": 5,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          72.5,
+          538.5,
+          234.5,
+          583.0
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "202,419.4372",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136159",
+        "node_type": null,
+        "original_index": 6,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          77.0,
+          589.5,
+          129.5,
+          598.5
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "p",
+      "text": "www.pewresearch.org",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136160",
+        "node_type": null,
+        "original_index": 7,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          77.0,
+          607.0,
+          152.0,
+          616.0
+        ],
+        "heading_level": null
+      },
+      "data-page": "0"
+    },
+    {
+      "tag": "h1",
+      "text": "RECOMMENDED CITATION",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136161",
+        "node_type": null,
+        "original_index": 8,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 0,
+        "bbox": [
+          77.0,
+          642.5,
+          173.5,
+          651.0
+        ],
+        "heading_level": 1
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "Pew Research Center, May,2018,“Trump Viewed Less Negatively on Issues, but Most Americans Are Critical of His Conduct.”",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136162",
+            "node_type": null,
+            "original_index": 9,
+            "parent_chapter": 8,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 0,
+            "bbox": [
+              73.5,
+              653.0,
+              250.0,
+              688.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "0"
+        },
+        {
+          "tag": "header",
+          "text": "PEW RESEARCH CENTER",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136163",
+            "node_type": null,
+            "original_index": 10,
+            "parent_chapter": 8,
+            "is_chapter_title": false,
+            "element_type": "page_header",
+            "page_number": 1,
+            "bbox": [
+              258.0,
+              53.0,
+              353.5,
+              62.5
+            ]
+          },
+          "data-page": "1"
+        }
+      ],
+      "data-page": "0"
+    },
+    {
+      "tag": "h1",
+      "text": "About Pew Research Center",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136164",
+        "node_type": null,
+        "original_index": 11,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 1,
+        "bbox": [
+          65.0,
+          92.0,
+          287.5,
+          106.5
+        ],
+        "heading_level": 1
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "Pew Research Center is a nonpartisan fact tank that informs the public about the issues, attitudes and trends shaping America and the world. It does not take policy positions. It conducts public  opinion polling, demographic research, content analysis and other data-driven social science  research. The Center studies U.S. politics and policy; journalism and media; internet, science and technology; religion and public life; Hispanic trends; global attitudes and trends; and U.S. social  and demographic trends. All of the Center’s reports are available at www.pewresearch.org. Pew  Research Center is a subsidiary of The Pew Charitable Trusts, its primary funder.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136165",
+            "node_type": null,
+            "original_index": 12,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              65.5,
+              124.5,
+              537.5,
+              231.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "p",
+          "text": "© Pew Research Center 2018",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136166",
+            "node_type": null,
+            "original_index": 13,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 1,
+            "bbox": [
+              65.5,
+              252.0,
+              208.5,
+              262.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "footer",
+          "text": "www.pewresearch.org",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136167",
+            "node_type": null,
+            "original_index": 14,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "page_footer",
+            "page_number": 1,
+            "bbox": [
+              263.5,
+              746.0,
+              348.5,
+              755.5
+            ]
+          },
+          "data-page": "1"
+        },
+        {
+          "tag": "header",
+          "text": "PEW RESEARCH CENTER",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136168",
+            "node_type": null,
+            "original_index": 15,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "page_header",
+            "page_number": 2,
+            "bbox": [
+              258.0,
+              54.0,
+              353.5,
+              62.5
+            ]
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136169",
+            "node_type": null,
+            "original_index": 16,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              64.0,
+              89.5,
+              524.0,
+              135.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136170",
+            "node_type": null,
+            "original_index": 17,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              65.0,
+              142.5,
+              486.5,
+              160.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "A majority of Americans find little or no common ground with Donald Trump on issues, but the",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136171",
+            "node_type": null,
+            "original_index": 18,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              65.0,
+              173.5,
+              530.0,
+              186.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "share who say they agree with him on many or  all issues has risen since last August. The  public’s assessment of Trump’s conduct as  president is little changed over the past nine  months, with 54% saying they don’t like the  way he conducts himself as president.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136172",
+            "node_type": null,
+            "original_index": 19,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              64.0,
+              186.5,
+              293.5,
+              282.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "Currently, 41% of the public agrees with  Trump on “all or nearly all” or many of the  issues facing the country, while 57% agree with  him on just a few issues or virtually none. In  August, just 33% said they agreed with Trump  on many or all issues.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136173",
+            "node_type": null,
+            "original_index": 20,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              65.0,
+              300.5,
+              294.5,
+              394.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "Public views of Trump’s issue positions  improve; critiques of conduct remain",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136174",
+            "node_type": null,
+            "original_index": 21,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              313.5,
+              205.0,
+              537.0,
+              232.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "% who say they agree with Donald Trump on __ issues  facing the country today",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136175",
+            "node_type": null,
+            "original_index": 22,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              313.5,
+              237.5,
+              537.5,
+              261.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "figure",
+          "text": "No or almost no A few Many, not all All or nearly all May 201857 3324221941 Aug 2017 66 4521181533",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136176",
+            "node_type": null,
+            "original_index": 23,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "figure",
+            "page_number": 2,
+            "bbox": [
+              313.5,
+              258.5,
+              545.5,
+              345.5
+            ],
+            "image_extracted": true,
+            "ai_description": "Skipped (disabled or too small)"
+          },
+          "children": [
+            {
+              "tag": "img",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136177",
+                "node_type": null
+              },
+              "src": "05-03-18-political-release/page_3_figure_23.png"
+            }
+          ],
+          "src": "05-03-18-political-release/page_3_figure_23.png",
+          "data-page": "2"
+        },
+        {
+          "tag": "p",
+          "text": "% who say they __ the way Donald Trump conducts  himself as president",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136178",
+            "node_type": null,
+            "original_index": 24,
+            "parent_chapter": 11,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              313.5,
+              354.0,
+              527.5,
+              376.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "2"
+        },
+        {
+          "tag": "h1",
+          "text": "Like Have mixed feelings about Don't like",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136179",
+            "node_type": null,
+            "original_index": 25,
+            "parent_chapter": 11,
+            "is_chapter_title": true,
+            "element_type": "paragraph",
+            "page_number": 2,
+            "bbox": [
+              367.0,
+              386.7,
+              540.4,
+              394.5
+            ],
+            "heading_level": 1
+          },
+          "children": [
+            {
+              "tag": "p",
+              "text": "The latest national survey by Pew Research May 2018192654 Center, conducted April 25-May 1 among Aug 2017162558 1,503 adults, finds that 80% of Republicans  and Republican-leaning independents now say Note: Don’t know responses not shown.  they agree with Trump on many or all issues, Source: Survey of U.S. adults conducted April 25-May 1, 2018.  up from 69% in August. And while just 12% of PEW RESEARCH CENTER Democrats and Democratic leaners say the  same today, the share of Democrats who say there are “no or almost no” issues where they align  with Trump has dropped from 77% to 58%.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136180",
+                "node_type": null,
+                "original_index": 26,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 2,
+                "bbox": [
+                  54.0,
+                  403.0,
+                  552.5,
+                  575.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "2"
+            },
+            {
+              "tag": "p",
+              "text": "Democrats remain deeply critical of Trump’s conduct, with 85% saying they don’t like the way  Trump conducts himself in office. But there is also criticism from within Trump’s own party: Just 38% of Republicans say they like the way he conducts himself, while 45% say they have “mixed  feelings about the way he conducts himself as president.”",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136181",
+                "node_type": null,
+                "original_index": 27,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 2,
+                "bbox": [
+                  65.5,
+                  573.5,
+                  537.5,
+                  633.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "2"
+            },
+            {
+              "tag": "p",
+              "text": "The Trump administration also gets low marks from the public for its ethical standards: 39% say  the administration’s ethical standards are excellent or good, while 58% rate them as not good or poor. On these views partisans are deeply  divided, with three-quarters of Republicans  (75%) giving the administration high marks and 86% of Democrats rating its ethical  standards negatively.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136182",
+                "node_type": null,
+                "original_index": 28,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 2,
+                "bbox": [
+                  65.5,
+                  653.5,
+                  534.5,
+                  682.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "2"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136183",
+                "node_type": null,
+                "original_index": 29,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 2,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "2"
+            },
+            {
+              "tag": "header",
+              "text": "2 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136184",
+                "node_type": null,
+                "original_index": 30,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 3,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  353.5,
+                  62.5
+                ]
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "Critiques about ethical standards also extend  to the two parties: Just 41% of Americans say  the GOP has high ethical standards, while a  nearly identical share (42%) say this about the  Democratic Party.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136185",
+                "node_type": null,
+                "original_index": 32,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  65.0,
+                  188.5,
+                  292.0,
+                  266.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "The Republican and Democratic parties are  now seen by half of the public (50% each) as  having good policy ideas, a trait the public  rated Democrats higher on in 2017. And more  iih",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136186",
+                "node_type": null,
+                "original_index": 33,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  65.0,
+                  284.0,
+                  295.5,
+                  355.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "Most rate top Trump administration  officials’ ethics as ‘not good’ or ‘poor’",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136187",
+                "node_type": null,
+                "original_index": 34,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  314.0,
+                  112.0,
+                  528.5,
+                  139.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "% who say that the ethical standards of top Trump  administration officials are …",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136188",
+                "node_type": null,
+                "original_index": 35,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  313.5,
+                  144.0,
+                  520.5,
+                  168.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "figure",
+              "text": "Poor Not good Good Excellent Total58 36939 Rep/Lean Rep22 71975 Dem/Lean Dem86 61212",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136189",
+                "node_type": null,
+                "original_index": 36,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 3,
+                "bbox": [
+                  315.0,
+                  176.0,
+                  537.5,
+                  276.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart and accompanying text discussing public perceptions of the ethical standards of top Trump administration officials.\n\n**Content Details**:\n- **Bar Chart**: \n  - Title: \"Most rate top Trump administration officials’ ethics as ‘not good’ or ‘poor’\"\n  - Categories: Poor, Not good, Good, Excellent\n  - Data points: \n    - Total: 58% Poor, 36% Not good, 9% Good, 39% Excellent\n    - Rep/Lean Rep: 22% Poor, 7% Not good, 19% Good, 75% Excellent\n    - Dem/Lean Dem: 86% Poor, 61% Not good, 2% Good, 12% Excellent\n- **Text**:\n  - \"Critiques about ethical standards also extend to the two parties: Just 41% of Americans say the GOP has high ethical standards, while a nearly identical share (42%) say this about the Democratic Party.\"\n  - \"The Republican and Democratic parties are now seen by half of the public (50% each) as having good policy ideas, a trait the public rated Democrats higher on in 2017. And more continue to view the GOP as “too extreme” (48%) than say this of the Democratic Party (42%).\"\n\n**Visual Features**:\n- The bar chart uses different shades of gray for each category.\n- The text is black and white, with the title in a larger font size.\n- The chart and text are aligned to the left, with the chart slightly above the text.\n\n**Context Integration**:\nThe target region is part of a larger document that discusses public perceptions of political parties and the Trump administration. The bar chart visually represents the data on ethical standards, while the accompanying text provides context and additional analysis.\n\n**Purpose**:\nThe purpose of this content is to present and analyze public opinion data regarding the ethical standards of top Trump administration officials, contrasting these perceptions with views of the political parties. The bar chart serves as a visual aid to quickly convey the distribution of responses, while the text offers a narrative explanation and further insights into the data."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136190",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_4_figure_36.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_4_figure_36.png",
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "Note: Don’t know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136191",
+                "node_type": null,
+                "original_index": 37,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  314.0,
+                  287.5,
+                  449.0,
+                  296.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136192",
+                "node_type": null,
+                "original_index": 38,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  314.0,
+                  297.0,
+                  526.0,
+                  306.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136193",
+                "node_type": null,
+                "original_index": 39,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  315.0,
+                  312.5,
+                  400.5,
+                  319.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "p",
+              "text": "to vew te GOP as “too extreme” (48%) tan say ts o te Democratc Party (42%).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136194",
+                "node_type": null,
+                "original_index": 40,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 3,
+                "bbox": [
+                  114.5,
+                  355.0,
+                  522.5,
+                  362.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136195",
+                "node_type": null,
+                "original_index": 41,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 3,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "3"
+            },
+            {
+              "tag": "header",
+              "text": "3 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136196",
+                "node_type": null,
+                "original_index": 42,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 4,
+                "bbox": [
+                  256.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "Public confidence in Trump on most key issues remains mixed, though a narrow majority (54%)  now say they are either very or somewhat confident in him to negotiate favorable trade agreements  with other countries. This is the first measure in Pew Research Center surveys on which",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136197",
+                "node_type": null,
+                "original_index": 43,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  65.0,
+                  119.5,
+                  546.5,
+                  164.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "significantly more say they  are at least somewhat  confident in Trump than say  they are not too or not at all  confident (54% vs. 44%).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136198",
+                "node_type": null,
+                "original_index": 44,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  63.0,
+                  161.5,
+                  210.0,
+                  245.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "Views are similar about  Trump’s ability to make good  decisions about economic  policy (53% express at least  some confidence, 46% little  or no confidence).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136199",
+                "node_type": null,
+                "original_index": 45,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  64.0,
+                  262.0,
+                  209.0,
+                  356.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "Public opinion is split over  whether Trump can use  military force wisely (46%  confident, 51% little or no  confidence) and make good  appointments to federal  courts (46% vs 48%).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136200",
+                "node_type": null,
+                "original_index": 46,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  65.0,
+                  374.5,
+                  201.5,
+                  484.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "On several other issues, such  as immigration policy (55%), handling an international  crisis (54%) and working  effectively with Congress  (54%), narrow majorities of  the public say they have little  or no confidence in Trump.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136201",
+                "node_type": null,
+                "original_index": 47,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  64.0,
+                  502.5,
+                  209.0,
+                  628.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "Public’s confidence in Trump to handle several policy  areas mixed",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136202",
+                "node_type": null,
+                "original_index": 48,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  230.5,
+                  194.5,
+                  534.5,
+                  222.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "figure",
+              "text": "% who are __ confident that Donald Trump can …Not at all Not too Somewhat Very Negotiate favorable  trade agreements 44263054 with other countries Make good decisions 46 about economic policy293153 Use military force 51322646 wisely Make good  appointments to the 48322546 federal courts Manage the executive 52342145 branch effectively Make wise decisions  about immigration 55392643 policy Handle an 54352543 international crisis Work effectively with 54331343 Congress Note: Don’t know responses not shown.  Source: Survey of U.S. adults conducted April 25-May 1, 2018.  PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136203",
+                "node_type": null,
+                "original_index": 49,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 4,
+                "bbox": [
+                  226.0,
+                  228.5,
+                  547.0,
+                  615.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart titled \"Public's confidence in Trump to handle several policy areas mixed,\" showing varying levels of confidence in Trump across different policy domains.\n\n**Content Details**:\n- **Title**: Public's confidence in Trump to handle several policy areas mixed\n- **Subtitle**: % who are __ confident that Donald Trump can ...\n- **Bars**: The chart displays four categories of confidence levels (Not at all, Not too, Somewhat, Very) for each policy area.\n- **Policy Areas**: Negotiate favorable trade agreements, Make good decisions about economic policy, Use military force wisely, Make good appointments to the federal courts, Manage the executive branch effectively, Make wise decisions about immigration policy, Handle an international crisis, Work effectively with Congress.\n- **Confidence Levels**: Each policy area has a bar divided into four segments representing the percentage of respondents expressing each level of confidence.\n\n**Visual Features**:\n- **Colors**: The bars are colored in shades of yellow and brown.\n- **Layout**: The chart is vertically oriented with policy areas listed on the left and confidence levels on the right.\n- **Source**: The chart includes a note indicating the source of the data: \"Survey of U.S. adults conducted April 25-May 1, 2018.\"\n\n**Context Integration**:\n- The chart complements the surrounding text, which discusses public confidence in Trump across various policy areas.\n- The bar chart visually represents the data presented in the text, allowing readers to quickly compare confidence levels across different issues.\n\n**Purpose**:\n- The chart serves to visually summarize the public's confidence in Trump's ability to handle different policy areas, providing a clear and concise overview of the survey results."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136204",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_5_figure_49.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_5_figure_49.png",
+              "data-page": "4"
+            },
+            {
+              "tag": "p",
+              "text": "As was true in previous months, there are deep partisan divisions on these measures, with no  fewer than three-quarters of Republicans – and no more than a quarter of Democrats – expressing  confidence in Trump in each of these domains.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136205",
+                "node_type": null,
+                "original_index": 50,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 4,
+                "bbox": [
+                  65.0,
+                  648.0,
+                  544.5,
+                  691.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136206",
+                "node_type": null,
+                "original_index": 51,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 4,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  349.0,
+                  755.5
+                ]
+              },
+              "data-page": "4"
+            },
+            {
+              "tag": "header",
+              "text": "4 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136207",
+                "node_type": null,
+                "original_index": 52,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 5,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "On many items, the share  expressing confidence in  Trump has remained steady  over the past several months,  but on others public  confidence in Trump is now  higher than earlier this year.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136208",
+                "node_type": null,
+                "original_index": 53,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  64.0,
+                  92.0,
+                  210.0,
+                  203.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "Today, 43% express  confidence in Trump to  handle an international  crisis, up from 35% in  January; last April, 48% had  at least some confidence in  Trump’s ability to handle an  international crisis.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136209",
+                "node_type": null,
+                "original_index": 54,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  64.0,
+                  220.0,
+                  207.5,
+                  345.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "Since January, Republicans  have grown significantly  more confident in Trump to  handle an international crisis (84% now, 73% then).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136210",
+                "node_type": null,
+                "original_index": 55,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  65.0,
+                  365.5,
+                  209.0,
+                  441.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "Public confidence in Trump’s  handling of economic policy  also has ticked up since  January (53% now, 46%  then).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136211",
+                "node_type": null,
+                "original_index": 56,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  64.0,
+                  461.0,
+                  209.0,
+                  537.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "Since January, public’s confidence in Trump to handle international crisis and economy ticks up",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136212",
+                "node_type": null,
+                "original_index": 57,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  231.5,
+                  104.0,
+                  537.5,
+                  132.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "% who are very/somewhat confident that Donald Trump can …",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136213",
+                "node_type": null,
+                "original_index": 58,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  230.5,
+                  136.5,
+                  498.5,
+                  149.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "figure",
+              "text": "Make good decisions  Handle an international crisisabout economic policy 5348 39434635 Apr May Jan May2017 2018 2018 2018 Make wise decisions about  immigration policy Work effectively with Congress 44434643403839 Aug May Apr May 2017 20182017 2018",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136214",
+                "node_type": null,
+                "original_index": 59,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 5,
+                "bbox": [
+                  229.5,
+                  151.0,
+                  545.5,
+                  461.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a series of line graphs showing changes in public confidence in Donald Trump's ability to handle various tasks over time.\n\n**Content Details**:\n- **Graphs**: There are four line graphs, each representing different tasks or areas of confidence.\n- **Data Points**: Each graph has data points marked with circles, indicating specific percentages of confidence.\n- **Time Periods**: The graphs cover different time periods, including April 2017, May 2018, and January and May 2018.\n- **Confidence Levels**: The confidence levels range from 35% to 53%, with some areas showing an increase in confidence over time.\n\n**Visual Features**:\n- **Colors**: The graphs use a consistent color scheme, primarily shades of yellow and orange.\n- **Layout**: The graphs are aligned horizontally, with each graph representing a different task.\n- **Source**: The source of the data is cited as a survey of U.S. adults conducted April 25-May 1, 2018, by the Pew Research Center.\n\n**Context Integration**:\n- The graphs are part of a larger report analyzing public confidence in Donald Trump's presidency.\n- The surrounding text provides context about the overall trends in public confidence, highlighting specific areas where confidence has increased or remained steady.\n\n**Purpose**:\n- The graphs serve to visually represent the changes in public confidence in Donald Trump's ability to handle various tasks, providing a clear and concise way to understand the data.\n- The inclusion of specific time periods allows for a comparison of confidence levels over time, emphasizing trends and shifts in public opinion."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136215",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_6_figure_59.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_6_figure_59.png",
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136216",
+                "node_type": null,
+                "original_index": 60,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  230.5,
+                  469.5,
+                  442.0,
+                  478.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136217",
+                "node_type": null,
+                "original_index": 61,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  230.5,
+                  482.0,
+                  317.5,
+                  491.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "p",
+              "text": "In other arenas, such as immigration, working effectively with Congress and managing the  executive branch, there has been little change over the past several months of Trump’s presidency.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136218",
+                "node_type": null,
+                "original_index": 62,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 5,
+                "bbox": [
+                  65.5,
+                  557.5,
+                  542.0,
+                  585.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136219",
+                "node_type": null,
+                "original_index": 63,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 5,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "5"
+            },
+            {
+              "tag": "header",
+              "text": "5 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136220",
+                "node_type": null,
+                "original_index": 64,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 6,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Eight-in-ten Republicans and Republicanleaners (80%) now say they agree with Trump  on many or all issues, up 11 percentage points  from last August. Nearly four-in-ten (38%) say  they agree on “all or nearly all” policy areas,  while 42% say they agree on many, but not all  issues.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136221",
+                "node_type": null,
+                "original_index": 65,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  65.0,
+                  118.5,
+                  293.5,
+                  227.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Though an overwhelming majority of  Democrats and Democratic leaners (88%)  continue to say they have few or no areas of  agreement with Trump, the share saying there  are “no or almost no” areas of agreement has  dropped from 77% in August to 58% today.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136222",
+                "node_type": null,
+                "original_index": 66,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  65.0,
+                  246.5,
+                  292.0,
+                  340.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Roughly four-in-ten Republicans and  Republican leaners (38%) say they like the way  Trump conducts himself as president, while  45% say they “have mixed feelings about” his  conduct and 16% do not like it.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136223",
+                "node_type": null,
+                "original_index": 67,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  65.0,
+                  401.0,
+                  295.5,
+                  475.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Conservative Republicans are significantly  more likely than their moderate or liberal  counterparts to say they like Trump’s conduct  (44% to 25%, respectively). And roughly a  third of moderate or liberal Republicans say they do not like his conduct in office (32%).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136224",
+                "node_type": null,
+                "original_index": 68,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  65.0,
+                  496.5,
+                  289.5,
+                  589.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Democrats continue to overwhelmingly say  they do not like the way Trump conducts  himself (85%). Just 10% say they have mixed  feelings and 5% say they like his behavior.  These views are little changed since August.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136225",
+                "node_type": null,
+                "original_index": 69,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  65.0,
+                  609.5,
+                  285.0,
+                  685.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "More Republicans agree with Trump on many or all issues than did so last year",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136226",
+                "node_type": null,
+                "original_index": 70,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  313.5,
+                  135.5,
+                  538.5,
+                  164.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "% who say they agree with Donald Trump on __ issues  facing the country today",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136227",
+                "node_type": null,
+                "original_index": 71,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  313.5,
+                  168.0,
+                  538.5,
+                  192.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "figure",
+              "text": "No or almost no A few Many, not all All or nearly all Among Rep/Lean Rep... May 201819 514423880 Aug 2017 30 822383169 Among Dem/Lean Dem... May 20188858297512 Aug 2017937717336",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136228",
+                "node_type": null,
+                "original_index": 72,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 6,
+                "bbox": [
+                  310.5,
+                  193.5,
+                  545.5,
+                  368.0
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a table comparing the percentage of Republicans and Democrats who agree with Donald Trump on various issues, with a focus on the agreement levels between May 2018 and August 2017.\n\n**Content Details**:\n- **Table**: The table is divided into two sections, one for Republicans and one for Democrats, each with three columns showing the percentage of agreement on \"no or almost no\" issues, \"a few\" issues, and \"many, not all\" issues.\n- **Data**: The data shows a significant increase in agreement among Republicans and a decrease in disagreement among Democrats over the period.\n- **Source**: The data is sourced from a survey conducted by the Pew Research Center.\n\n**Visual Features**:\n- **Colors**: The table uses shades of gray for the data columns, with a clear distinction between the Republican and Democratic sections.\n- **Layout**: The table is neatly organized, with clear headers and subheaders for each section.\n\n**Context Integration**:\n- The table fits within the broader context of the page, which discusses the increasing alignment between Republicans and Trump on important issues, as well as the persistent disagreement among Democrats.\n- The table provides quantitative evidence supporting the narrative of growing Republican support for Trump's policies and the declining Democratic opposition.\n\n**Purpose**:\n- The table serves to visually represent the survey findings, allowing readers to quickly grasp the changes in agreement levels over time.\n- It supports the main points made in the surrounding text by providing concrete data to back up the claims about the evolving political landscape."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136229",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_7_figure_72.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_7_figure_72.png",
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Note: Don’t know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136230",
+                "node_type": null,
+                "original_index": 73,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  376.5,
+                  448.0,
+                  386.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136231",
+                "node_type": null,
+                "original_index": 74,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  387.5,
+                  526.0,
+                  396.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136232",
+                "node_type": null,
+                "original_index": 75,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  315.0,
+                  402.0,
+                  400.5,
+                  408.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Many in GOP have ‘mixed feelings’ about Trump’s conduct as president",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136233",
+                "node_type": null,
+                "original_index": 76,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  447.0,
+                  520.0,
+                  474.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "% who say they __ the way Donald Trump conducts  himself as president",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136234",
+                "node_type": null,
+                "original_index": 77,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  313.5,
+                  479.5,
+                  528.5,
+                  502.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "figure",
+              "text": "Like Have mixed feelings about Don't like Total192654 Rep/Lean Rep384516 Dem/Lean Dem51085",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136235",
+                "node_type": null,
+                "original_index": 78,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  508.0,
+                  546.5,
+                  615.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a table and a bar chart showing the percentage of Republicans and Democrats who like or have mixed feelings about Donald Trump's conduct as president.\n\n**Content Details**:\n- **Table**: \n  - Title: \"Many in GOP have 'mixed feelings' about Trump's conduct as president\"\n  - Columns: \"Like\", \"Have mixed feelings about\", \"Don't like\"\n  - Rows: \"Total\", \"Rep/Lean Rep\", \"Dem/Lean Dem\"\n  - Data: \n    - Total: 19% like, 26% have mixed feelings, 54% don't like\n    - Rep/Lean Rep: 38% like, 45% have mixed feelings, 16% don't like\n    - Dem/Lean Dem: 5% like, 10% have mixed feelings, 85% don't like\n\n- **Bar Chart**: \n  - Title: \"Many in GOP have 'mixed feelings' about Trump's conduct as president\"\n  - X-axis: \"Don't like\"\n  - Y-axis: \"Like\"\n  - Data points: \n    - Total: 54% (yellow bar)\n    - Rep/Lean Rep: 16% (yellow bar)\n    - Dem/Lean Dem: 85% (yellow bar)\n\n**Visual Features**:\n- The table and bar chart use a consistent color scheme with yellow for the \"Don't like\" category and a gradient of gray for the \"Like\" and \"Have mixed feelings about\" categories.\n- The table has a clear title and column headers, while the bar chart has a title and axis labels.\n\n**Context Integration**:\nThe target region is part of a larger report that discusses the political alignment of Republicans and Democrats regarding their agreement with Donald Trump on various issues and their feelings about his conduct as president. The table and bar chart provide quantitative data to support the narrative that Republicans, especially conservative Republicans, have more positive views of Trump's conduct compared to Democrats.\n\n**Purpose**:\nThe purpose of this content is to present statistical evidence of the differing opinions between Republicans and Democrats on Trump's conduct, highlighting the significant divide in sentiment within the Republican Party."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136236",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_7_figure_78.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_7_figure_78.png",
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Note: Don’t know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136237",
+                "node_type": null,
+                "original_index": 79,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  626.5,
+                  449.0,
+                  636.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136238",
+                "node_type": null,
+                "original_index": 80,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  636.0,
+                  525.0,
+                  646.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136239",
+                "node_type": null,
+                "original_index": 81,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 6,
+                "bbox": [
+                  314.0,
+                  649.5,
+                  400.5,
+                  658.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136240",
+                "node_type": null,
+                "original_index": 82,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 6,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "6"
+            },
+            {
+              "tag": "header",
+              "text": "6 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136241",
+                "node_type": null,
+                "original_index": 83,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 7,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "About four-in-ten Americans rate the ethical  standards of Trump administration officials as  excellent (9%) or good (30%), while 58% say  they are not good (21%) or poor (36%).  Current ratings for the Trump  administration’s ethical standards are lower  than for those at various points in other  administrations dating back to when the  question was first asked by ABC News and The  Washington Post of Ronald Reagan’s  administration in 1983.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136242",
+                "node_type": null,
+                "original_index": 84,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  63.0,
+                  139.0,
+                  295.5,
+                  316.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "This question has often been asked when  previous administrations have faced specific ethical controversies.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136243",
+                "node_type": null,
+                "original_index": 85,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  65.0,
+                  333.5,
+                  281.5,
+                  376.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "Ratings for Trump officials’ ethical  standards trail past administrations",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136244",
+                "node_type": null,
+                "original_index": 86,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  313.5,
+                  138.5,
+                  520.0,
+                  166.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "% who rate the ethical standards of top  administration officials as excellent or good",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136245",
+                "node_type": null,
+                "original_index": 87,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  313.5,
+                  171.5,
+                  498.5,
+                  196.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "figure",
+              "text": "TrumpMay 201839 ObamaJune 201349 G.W. BushJune 200644 Oct 200550 July 200555 July 200274 ClintonSep 1996*45 Mar 199458 BushMay 198959 ReaganOct 1984*67 Sep 1984*64 Aug 198364",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136246",
+                "node_type": null,
+                "original_index": 88,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 7,
+                "bbox": [
+                  310.0,
+                  209.0,
+                  548.0,
+                  444.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a table comparing the ratings of ethical standards for top administration officials across various administrations, including Trump, Obama, G.W. Bush, Clinton, and Reagan.\n\n**Content Details**:\n- **Table Title**: \"Ratings for Trump officials' ethical standards trail past administrations\"\n- **Question**: \"% who rate the ethical standards of top administration officials as excellent or good\"\n- **Data Points**: Ratings for Trump (May 2018: 39), Obama (June 2013: 49), G.W. Bush (June 2006: 44, Oct 2005: 50, July 2005: 55, July 2002: 74), Clinton (Sep 1996*: 45, Mar 1994: 58), Bush (May 1989: 59), Reagan (Oct 1984*: 67, Sep 1984*: 64, Aug 1983: 64).\n\n**Visual Features**:\n- The table uses a simple bar graph format with yellow bars representing the percentage of respondents.\n- The table is aligned to the right, with the title and data points listed vertically.\n\n**Context Integration**:\nThe table is part of a larger report that discusses public perceptions of ethical standards in government administration. The surrounding text provides context about the survey methodology and the historical context of ethical standards ratings.\n\n**Purpose**:\nThe table serves to visually compare the public's perception of ethical standards across different administrations, highlighting the lower ratings for the Trump administration compared to previous administrations. This comparison is likely intended to illustrate the public's perception of ethical standards during the Trump administration."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136247",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_8_figure_88.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_8_figure_88.png",
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "Notes: Don’t know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136248",
+                "node_type": null,
+                "original_index": 89,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  314.0,
+                  455.5,
+                  452.5,
+                  465.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "*1984 and 1996 surveys based on registered voters. Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136249",
+                "node_type": null,
+                "original_index": 90,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  311.5,
+                  463.0,
+                  534.5,
+                  484.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "Trend sources: Gallup, CNN, Gallup/CNN/USA TODAY, Washington  Post, ABC News-Washington Post.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136250",
+                "node_type": null,
+                "original_index": 91,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  312.5,
+                  484.5,
+                  540.5,
+                  507.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136251",
+                "node_type": null,
+                "original_index": 92,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 7,
+                "bbox": [
+                  313.5,
+                  509.5,
+                  400.5,
+                  518.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136252",
+                "node_type": null,
+                "original_index": 93,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 7,
+                "bbox": [
+                  263.5,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "7"
+            },
+            {
+              "tag": "header",
+              "text": "7 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136253",
+                "node_type": null,
+                "original_index": 94,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 8,
+                "bbox": [
+                  257.0,
+                  37.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "Today, three-quarters of Republicans (75%) rate the ethical standards of key administration  members as good or excellent, while 86% of Democrats say they are not good or poor – including  61% who rate them as poor.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136254",
+                "node_type": null,
+                "original_index": 95,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  58.0,
+                  89.0,
+                  542.0,
+                  145.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "Among Republicans and Republican leaners, these views diverge significantly by ideology.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136255",
+                "node_type": null,
+                "original_index": 96,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  65.0,
+                  158.0,
+                  284.0,
+                  185.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "While just 15% of conservative Republicans  express negative views of the ethical standards  of Trump administration officials, about a  third (36%) of moderate and liberal  Republicans say they are not good or poor.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136256",
+                "node_type": null,
+                "original_index": 97,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  65.0,
+                  205.0,
+                  293.0,
+                  282.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "Among Democrats, there are also modest  differences along ideological lines, with 80% of  conservative or moderate Democrats and 93%  of liberal Democrats giving low marks for the  ethical standards of the Trump  administration.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136257",
+                "node_type": null,
+                "original_index": 98,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  65.0,
+                  301.5,
+                  296.0,
+                  392.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "The overall balance of opinion among independents is far more negative than  positive: Two-thirds (65%) say the  administration’s ethical standards are “not  good” or “poor,” while 31% say they are  “excellent” or “good.” Among independents  who lean toward the GOP, 67% say the  administration’s ethical standards are  excellent or good, while nearly nine-in-ten independents who lean toward the Democratic  Party (88%) rate the standards as not good or poor.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136258",
+                "node_type": null,
+                "original_index": 99,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  62.5,
+                  409.0,
+                  316.0,
+                  588.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "On ethics, most rate top administration officials as ‘poor’ or ‘not good’",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136259",
+                "node_type": null,
+                "original_index": 100,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  313.5,
+                  148.5,
+                  538.5,
+                  176.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "% who say that overall, they would rate the ethical  standards of top Trump administration officials as …",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136260",
+                "node_type": null,
+                "original_index": 101,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  313.5,
+                  181.0,
+                  532.0,
+                  205.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "figure",
+              "text": "Poor Not good Good Excellent Total58 36939 Rep/Lean Rep2271975 CCoonnsseervrv1552282 MMoodd//LLiibb36121261 Dem/Lean Dem8661212 CCoonnss//MMoodd80 52319 LLiibbeerraall93 735 Among independents*All6538731 LLeeaann  DDeemm8859310 LLeeaann  RReepp31101567",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136261",
+                "node_type": null,
+                "original_index": 102,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 8,
+                "bbox": [
+                  312.5,
+                  208.0,
+                  549.0,
+                  473.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart and text discussing the ethical standards of top Trump administration officials, categorized by political affiliation and ideology.\n\n**Content Details**:\n- **Bar Chart**: Shows the percentage of people who rate the ethical standards of top Trump administration officials as poor, not good, good, or excellent, broken down by political affiliation (Republican/Lean Republican, Conservative, Moderate/Liberal, Democratic/Lean Democratic, Conservative/Lean Conservative, and Liberal).\n- **Text**: Explains the data presented in the bar chart, highlighting differences in opinions based on political affiliation and ideology.\n\n**Visual Features**:\n- **Colors**: The bar chart uses different colors to represent the four categories of ethical standards.\n- **Layout**: The bar chart is vertically oriented, with categories on the x-axis and percentages on the y-axis.\n- **Text**: The text is in black, with some words in bold for emphasis.\n\n**Context Integration**:\n- The bar chart and accompanying text are part of a larger analysis on public opinion regarding the ethical standards of the Trump administration, specifically among different political groups.\n- The data is sourced from a survey conducted by the Pew Research Center, indicating the reliability and context of the information presented.\n\n**Purpose**:\n- The purpose of this content is to provide a visual and textual summary of public opinion on the ethical standards of the Trump administration, segmented by political affiliation and ideology, to inform readers about the prevailing views and differences among various groups."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136262",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_9_figure_102.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_9_figure_102.png",
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "*Independents include all those who do not identify as Republican  or Democrat.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136263",
+                "node_type": null,
+                "original_index": 103,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  312.5,
+                  497.5,
+                  540.5,
+                  520.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136264",
+                "node_type": null,
+                "original_index": 104,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 8,
+                "bbox": [
+                  316.0,
+                  520.5,
+                  528.5,
+                  530.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136265",
+                "node_type": null,
+                "original_index": 105,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 8,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "8"
+            },
+            {
+              "tag": "header",
+              "text": "8 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136266",
+                "node_type": null,
+                "original_index": 106,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 9,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  353.5,
+                  62.5
+                ]
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "The public’s evaluation of the way Donald  Trump is handling his job as president is little  changed in recent months – and is roughly on  par with ratings at the outset of his presidency.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136267",
+                "node_type": null,
+                "original_index": 107,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  161.5,
+                  293.5,
+                  222.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "Today, 39% of adults approve of the way  Trump is handling his job, while 54%  disapprove.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136268",
+                "node_type": null,
+                "original_index": 108,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  241.5,
+                  263.0,
+                  286.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "Roughly a quarter of Americans approve very  strongly (27%), while 11% say they approve not  so strongly.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136269",
+                "node_type": null,
+                "original_index": 109,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  305.5,
+                  294.5,
+                  350.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "Evaluations are more intense among  disapprovers; 42% of the public disapproves of  the way Trump is handling his job very  strongly, while 12% say they disapprove not so  strongly.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136270",
+                "node_type": null,
+                "original_index": 110,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  368.0,
+                  294.5,
+                  445.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "There is an 18-point gender gap in approval  ratings of the president: 48% of men approve  of Trump’s performance, while just 30% of  women say the same.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136271",
+                "node_type": null,
+                "original_index": 111,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  465.0,
+                  287.0,
+                  525.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "And there continue to be significant  differences in views of Trump by race, age and  education: Younger adults, those with higher  levels of education and non-whites are more  likely to disapprove of the job Trump is doing.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136272",
+                "node_type": null,
+                "original_index": 112,
+                "parent_chapter": 25,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  65.0,
+                  544.5,
+                  292.0,
+                  622.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            }
+          ],
+          "data-page": "2"
+        },
+        {
+          "tag": "h1",
+          "text": "Wide gender gap in approval of Trump",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136273",
+            "node_type": null,
+            "original_index": 113,
+            "parent_chapter": 11,
+            "is_chapter_title": true,
+            "element_type": "paragraph",
+            "page_number": 9,
+            "bbox": [
+              314.0,
+              124.5,
+              530.0,
+              138.5
+            ],
+            "heading_level": 1
+          },
+          "children": [
+            {
+              "tag": "p",
+              "text": "% who __ of the way Donald Trump is handling his job  as president",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136274",
+                "node_type": null,
+                "original_index": 114,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  313.5,
+                  143.5,
+                  538.5,
+                  166.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "figure",
+              "text": "Disapprove Approve Strongly Not strongly Not strongly Strongly Total54422739 Men45333448 Women64512030 White44363749 Black8365713 Hispanic6949923 Ages 18-296546142730-495441263850-645042344565+49393447 Postgrad68591623 College grad62512335 Some college53402941 HS or less49363043 Rep/Lean Rep1486081 CCoonnsseerrvv747289 MMoodd//LLiibb28163764 Dem/Lean Dem887138 CCoonnss//MMoodd 8463512 Liberal938314 White evang Prot20135672 White mainline Prot41344055 Black Prot8369813 Catholic55422740 Unaffiliated71551322",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136275",
+                "node_type": null,
+                "original_index": 115,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 9,
+                "bbox": [
+                  311.5,
+                  171.5,
+                  542.0,
+                  630.0
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a table comparing the approval ratings of Donald Trump's job performance across different demographic groups, with a focus on gender, race, education, and political affiliation.\n\n**Content Details**:\n- **Table**: A grid with rows and columns showing approval ratings for \"Strongly,\" \"Not strongly,\" \"Not so strongly,\" and \"Not at all\" categories.\n- **Groups**: The table includes data for total, men, women, white, black, Hispanic, ages 18-29, 30-49, 50-64, 65+, postgrad, college grad, some college, and HS or less.\n- **Political Affiliation**: Data for Rep/Lean Rep, Conserv, and Mod/Lib.\n- **Race and Religion**: Data for White evang Prot, White mainline Prot, Black Prot, Catholic, and Unaffiliated.\n\n**Visual Features**:\n- **Colors**: The table uses different shades of brown to represent the approval ratings.\n- **Layout**: The table is organized in a clear, structured manner, with headers and subheaders for each category.\n- **Text**: The text is in black, with some numbers highlighted in yellow to draw attention to specific data points.\n\n**Context Integration**:\nThe table complements the text by providing a detailed breakdown of public approval ratings for Donald Trump's job performance across various demographic and political groups. This allows for a more nuanced understanding of public opinion and the factors influencing it.\n\n**Purpose**:\nThe table serves as a data-driven analysis to support the text's claim about the significant differences in views of Trump by race, age, education, and political affiliation. It provides a visual representation of the approval ratings, making it easier to compare and understand the data presented in the text."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136276",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_10_figure_115.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_10_figure_115.png",
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "Note: Don’t know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136277",
+                "node_type": null,
+                "original_index": 116,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  314.0,
+                  642.5,
+                  449.0,
+                  652.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136278",
+                "node_type": null,
+                "original_index": 117,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  316.0,
+                  652.0,
+                  527.5,
+                  662.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136279",
+                "node_type": null,
+                "original_index": 118,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 9,
+                "bbox": [
+                  313.5,
+                  666.5,
+                  400.5,
+                  675.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136280",
+                "node_type": null,
+                "original_index": 119,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 9,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "9"
+            },
+            {
+              "tag": "header",
+              "text": "9 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136281",
+                "node_type": null,
+                "original_index": 120,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 10,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "The public has similar views of the Republican and Democratic parties in assessments of their  policy ideas and ethical standards. However, somewhat more Americans view the Republican  Party than the Democratic Party as “too  extreme.”",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136282",
+                "node_type": null,
+                "original_index": 121,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  64.0,
+                  115.0,
+                  526.5,
+                  177.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "Overall, half the public says the Republican  Party has good policy ideas, while 42% say it  does not; opinions about the Democratic Party  are identical (50% say it has good ideas, 42%  say it does not).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136283",
+                "node_type": null,
+                "original_index": 122,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  65.0,
+                  199.0,
+                  293.5,
+                  276.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "Opinions about whether the GOP has good  policy ideas are little changed from about a  year ago, but the share saying the Democratic Party has good ideas has declined, from 58%  last April to 50% today.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136284",
+                "node_type": null,
+                "original_index": 123,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  65.0,
+                  295.5,
+                  287.5,
+                  371.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "More view GOP as ‘too extreme’ than say this about Democratic Party",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136285",
+                "node_type": null,
+                "original_index": 124,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  313.5,
+                  175.0,
+                  526.0,
+                  203.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "% who say each describes Republican/Democratic  parties",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136286",
+                "node_type": null,
+                "original_index": 125,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  313.5,
+                  207.5,
+                  520.0,
+                  231.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "figure",
+              "text": "Republican Party Democratic Party Has good 50 policy ideas50 Has high ethical 41 standards42 Is too extreme48 42 Source: Survey of U.S. adults conducted April 25-May 1, 2018. PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136287",
+                "node_type": null,
+                "original_index": 126,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 10,
+                "bbox": [
+                  311.5,
+                  234.5,
+                  543.0,
+                  412.0
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart comparing the views of the Republican and Democratic parties on having good policy ideas, high ethical standards, and being too extreme.\n\n**Content Details**:\n- **Title**: \"More view GOP as ‘too extreme’ than say this about Democratic Party\"\n- **Subtitle**: \"% who say each describes Republican/Democratic parties\"\n- **Bar Chart**:\n  - Republican Party: \n    - Has good policy ideas: 50%\n    - Has high ethical standards: 41%\n    - Is too extreme: 48%\n  - Democratic Party:\n    - Has good policy ideas: 50%\n    - Has high ethical standards: 42%\n    - Is too extreme: 42%\n- **Source**: Survey of U.S. adults conducted April 25-May 1, 2018\n- **Footer**: \"PEW RESEARCH CENTER\"\n\n**Visual Features**:\n- The chart uses red and blue bars to represent the Republican and Democratic parties, respectively.\n- The bars are aligned horizontally for each trait being measured.\n- The percentages are clearly labeled above each bar.\n\n**Context Integration**:\nThe bar chart is part of a larger analysis on public perceptions of the Republican and Democratic parties, focusing on their policy ideas, ethical standards, and extremity. The surrounding text provides context on the overall public views and how they have changed over time.\n\n**Purpose**:\nThe chart serves to visually compare and contrast the public's views on the two major political parties, highlighting the percentage of people who believe each party has good policy ideas, high ethical standards, and is too extreme. This visual representation aids in understanding the public's perception of the parties' traits and helps in identifying trends over time."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136288",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_11_figure_126.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_11_figure_126.png",
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "About four-in-ten say each party has high Sou ethical standards (42% say that about the PEW Democratic Party, 41% about the GOP). These  views are about the same as they were in April 2017.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136289",
+                "node_type": null,
+                "original_index": 127,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  63.0,
+                  389.0,
+                  328.0,
+                  461.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "More continue to view the Republican Party as “too extreme” (48%) than say this about the Democratic Party (42%). While the GOP performs worse on this trait than the Democratic Party,  the share of Americans who view the Republican Party as too extreme has declined since last June (from 54%); views of the Democratic Party are little changed (45% then, 42% now).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136290",
+                "node_type": null,
+                "original_index": 128,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  65.5,
+                  472.0,
+                  541.0,
+                  531.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "p",
+              "text": "Opinions about the traits of the two parties continue to be deeply divided along partisan lines. For  example, overwhelming shares (more than 80%) of both Republicans and Republican-leaning  independents and Democrats and Democratic leaners say their own party has good policy ideas,  while less than a quarter say this describes the opposing party. Similarly, while only about two-inten Republicans or Democrats think their own party is “too extreme,” about three-quarters in each party think the other party can be described this way.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136291",
+                "node_type": null,
+                "original_index": 129,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 10,
+                "bbox": [
+                  65.0,
+                  551.5,
+                  543.0,
+                  643.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136292",
+                "node_type": null,
+                "original_index": 130,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 10,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "10"
+            },
+            {
+              "tag": "header",
+              "text": "10 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136293",
+                "node_type": null,
+                "original_index": 131,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 11,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "However, partisans are somewhat less positive about their own party in views on whether it has high ethical standards, though majorities of Republicans (66%) and Democrats (64%) describe  their party this way.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136294",
+                "node_type": null,
+                "original_index": 132,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  65.5,
+                  94.0,
+                  528.5,
+                  137.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "Combining views of both  political parties on ethics, a  quarter of the public says “high ethical standards”  describes neither the  Republican Party nor the  Democratic Party; 47% say it  describes one party but not  the other; and 17% say the  description applies to both.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136295",
+                "node_type": null,
+                "original_index": 133,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  64.0,
+                  156.0,
+                  207.5,
+                  315.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "Among those with at least a  college degree, 31% say “high  ethical standards” does not  describe the GOP or the  Democratic Party; 43% say it  describes one and not the  other, and 17% think it  describes both.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136296",
+                "node_type": null,
+                "original_index": 134,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  64.0,
+                  332.0,
+                  209.0,
+                  456.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "Nearly a third of college graduates say neither party  has ‘high ethical standards’",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136297",
+                "node_type": null,
+                "original_index": 135,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  234.5,
+                  169.0,
+                  531.0,
+                  198.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "% who say ‘high ethical standards’ ...",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136298",
+                "node_type": null,
+                "original_index": 136,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  234.5,
+                  202.5,
+                  401.0,
+                  214.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "figure",
+              "text": "DescribesDescribes one party,Describes both partiesnot the otherneither party Total174725 College grad+174331 Some coll154926 HS or less174720 Republican145919 Democrat185518 Independent183434 Lean Rep184133 Lean Dem173733",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136299",
+                "node_type": null,
+                "original_index": 137,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 11,
+                "bbox": [
+                  241.5,
+                  220.0,
+                  534.5,
+                  386.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a table and a graph illustrating the percentage of college graduates who believe neither party has high ethical standards.\n\n**Content Details**:\n- **Table**: Shows the percentage of college graduates who believe \"high ethical standards\" describe both parties, one party, or neither party.\n- **Graph**: Visual representation of the same data, with bars indicating the percentage for each category.\n\n**Visual Features**:\n- **Colors**: The table uses shades of brown and gray for the bars, while the graph uses a similar color scheme.\n- **Layout**: The table is organized in a clear, tabular format, while the graph is a horizontal bar chart.\n\n**Context Integration**:\n- The table and graph are part of a larger discussion on the perception of ethical standards among college graduates, specifically comparing the Republican and Democratic parties.\n- The data is sourced from a survey conducted by the Pew Research Center.\n\n**Purpose**:\n- The table and graph provide quantitative evidence to support the claim that a significant portion of college graduates do not perceive either major political party as having high ethical standards. This visual representation helps to convey the findings clearly and effectively to the reader."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136300",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_12_figure_137.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_12_figure_137.png",
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "Note: Independents include all those who do not identify as Republican or Democrat. Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136301",
+                "node_type": null,
+                "original_index": 138,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  232.0,
+                  391.5,
+                  522.5,
+                  415.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136302",
+                "node_type": null,
+                "original_index": 139,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  234.0,
+                  417.5,
+                  322.0,
+                  426.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "By comparison, fewer of those with some college experience (26%) or a high school degree or less education (20%) think neither party has high ethical standards.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136303",
+                "node_type": null,
+                "original_index": 140,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  65.5,
+                  478.0,
+                  537.0,
+                  505.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "p",
+              "text": "And independents are significantly more likely than partisans to say neither party has “high ethical  standards.” About a third of independents (34%), including equal shares of Republican leaners  and Democratic leaners (33% each) say neither party has high ethical standards. By comparison,  only about two-in-ten Republicans (19%) or Democrats (18%) say this.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136304",
+                "node_type": null,
+                "original_index": 141,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 11,
+                "bbox": [
+                  65.0,
+                  525.5,
+                  545.5,
+                  585.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136305",
+                "node_type": null,
+                "original_index": 142,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 11,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "11"
+            },
+            {
+              "tag": "header",
+              "text": "11 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136306",
+                "node_type": null,
+                "original_index": 143,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 12,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  354.0,
+                  62.5
+                ]
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "Nearly six months before the congressional midterm elections in November, just 19% of",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136307",
+                "node_type": null,
+                "original_index": 144,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  65.0,
+                  119.5,
+                  492.5,
+                  132.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "Americans say they are following news about  the candidates and campaign in their state or  district very closely, while 32% say they are  following them fairly closely. About half of  Americans (49%) say they are following  election news not too closely or not at all  closely.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136308",
+                "node_type": null,
+                "original_index": 145,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  65.0,
+                  134.0,
+                  287.0,
+                  244.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "There are differences in attentiveness by race,  education and ideology. Blacks are  significantly more likely than either whites or  Hispanics to say they have been following  campaign news very closely (30% of blacks  compared with 18% of whites and 13% of  Hispanics).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136309",
+                "node_type": null,
+                "original_index": 146,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  65.0,
+                  263.0,
+                  289.5,
+                  373.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "Only about a third of those younger than 30  (32%) are tracking news about the  congressional elections even fairly closely,  with just 6% following this news very closely.  Nearly half of those ages 30 to 49 (47%) are  following news about the midterms very or  fairly closely, as are a majority of those 50 and  older (61%).",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136310",
+                "node_type": null,
+                "original_index": 147,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  63.0,
+                  389.0,
+                  293.0,
+                  517.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "Young people far less likely than older  adults to follow news about midterms",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136311",
+                "node_type": null,
+                "original_index": 148,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  313.5,
+                  164.0,
+                  532.0,
+                  189.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "% who say they have followed news about congressional  elections in their state or district …",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136312",
+                "node_type": null,
+                "original_index": 149,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  313.5,
+                  196.5,
+                  543.5,
+                  218.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "figure",
+              "text": "Very closely Fairly closely NET Total1950 White1853 Black3060 Hispanic1335 Ages 18-2963230-49174750-64256165+2461 Rep/Lean Rep1852 Conserv2260 Mod/Lib1136 Dem/Lean Dem2152 Cons/Mod1847 LiLibbeerraall2462",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136313",
+                "node_type": null,
+                "original_index": 150,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 12,
+                "bbox": [
+                  313.5,
+                  225.5,
+                  544.5,
+                  542.0
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart titled \"Young people far less likely than older adults to follow news about midterms,\" showing the percentage of people who say they have followed news about congressional elections in their state or district, categorized by age and political ideology.\n\n**Content Details**:\n- **Title**: \"Young people far less likely than older adults to follow news about midterms\"\n- **Subtitle**: \"% who say they have followed news about congressional elections in their state or district...\"\n- **Bar Chart**:\n  - **Axes**: X-axis shows age groups (18-29, 30-49, 50-64, 65+), Y-axis shows the percentage of people following news.\n  - **Bars**: Each bar is divided into two segments, one for \"Very closely\" and one for \"Fairly closely,\" with a \"NET\" label indicating the net percentage.\n  - **Data Points**:\n    - **Total**: 19% very closely, 50% fairly closely, net 50%.\n    - **White**: 18% very closely, 53% fairly closely, net 50%.\n    - **Black**: 13% very closely, 60% fairly closely, net 60%.\n    - **Hispanic**: 13% very closely, 35% fairly closely, net 35%.\n    - **Ages 18-29**: 6% very closely, 32% fairly closely, net 32%.\n    - **Ages 30-49**: 17% very closely, 47% fairly closely, net 47%.\n    - **Ages 50-64**: 25% very closely, 61% fairly closely, net 61%.\n    - **Ages 65+**: 24% very closely, 61% fairly closely, net 61%.\n    - **Rep/Lean Rep**: 18% very closely, 52% fairly closely, net 52%.\n    - **Conserv**: 22% very closely, 60% fairly closely, net 60%.\n    - **Mod/Lib**: 11% very closely, 36% fairly closely, net 36%.\n    - **Dem/Lean Dem**:"
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136314",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_13_figure_150.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_13_figure_150.png",
+              "data-page": "12"
+            },
+            {
+              "tag": "p",
+              "text": "LiLibbeerraall2462 Identical shares of Republicans and  Republican leaners and Democrats and Note: Don’t know responses not shown.  Democratic leaners (52% each) say they have Source: Survey of U.S. adults conducted April 25-May 1, 2018.  been following news about the upcoming PEW RESEARCH CENTER elections very or fairly closely. And liberal  Democrats (62%) are about as likely as conservative Republicans (60%) to say they have followed  news about the elections at least fairly closely.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136315",
+                "node_type": null,
+                "original_index": 151,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 12,
+                "bbox": [
+                  54.0,
+                  524.0,
+                  555.5,
+                  660.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136316",
+                "node_type": null,
+                "original_index": 152,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 12,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "12"
+            },
+            {
+              "tag": "header",
+              "text": "12 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136317",
+                "node_type": null,
+                "original_index": 153,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 13,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  353.5,
+                  62.5
+                ]
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "Currently, 48% of registered voters say they  would vote for the Democratic Party’s  candidate for Congress in their district,  compared with 43% who say they would vote  for or lean toward the Republican Party’s  candidate.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136318",
+                "node_type": null,
+                "original_index": 154,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  64.0,
+                  92.0,
+                  285.0,
+                  184.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "A majority of adults under 30 (58%) favor the  Democrat in their district. In contrast, those in older age groups are more divided.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136319",
+                "node_type": null,
+                "original_index": 155,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  65.0,
+                  205.5,
+                  293.5,
+                  250.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "There are sizable educational differences in  early midterm vote preferences: Those with a  postgraduate degree favor the Democratic  candidate over the Republican by roughly twoto-one (62% to 30%) and those with a fouryear college degree favor the Democrat, 53% to  40%. Preferences are more divided among  voters who do not have a college degree.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136320",
+                "node_type": null,
+                "original_index": 156,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  63.0,
+                  268.0,
+                  296.0,
+                  396.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "Divisions in congressional vote  preferences by gender, race, education",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136321",
+                "node_type": null,
+                "original_index": 157,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  314.0,
+                  106.5,
+                  537.0,
+                  135.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "% of registered voters who say they support or lean  toward the __ candidate for Congress in their district",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136322",
+                "node_type": null,
+                "original_index": 158,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  313.5,
+                  140.0,
+                  533.5,
+                  164.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "figure",
+              "text": "Democratic Republican All registered voters4843 Men4150 Women5537 White3953 Black857 Hispanic5933 18-29583130-49474350-64474865+4547 Postgrad6230 College grad5340 Some coll4944 HS or less4247 Rep/Lean Rep590 Dem/Lean Dem924 Among whites College grad +4944 No college degree3458",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136323",
+                "node_type": null,
+                "original_index": 159,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "figure",
+                "page_number": 13,
+                "bbox": [
+                  310.5,
+                  169.0,
+                  539.5,
+                  531.5
+                ],
+                "image_extracted": true,
+                "description_method": "full_page_region",
+                "ai_description": "**Summary**: The target region contains a bar chart titled \"Divisions in congressional vote preferences by gender, race, education,\" showing the percentage of registered voters who support or lean toward the Democratic or Republican candidate for Congress in their district, categorized by gender, race, and education level.\n\n**Content Details**:\n- **Title**: Divisions in congressional vote preferences by gender, race, education\n- **Subtitle**: % of registered voters who say they support or lean toward the ___ candidate for Congress in their district\n- **Bars**: Blue bars represent Democratic support, and red bars represent Republican support.\n- **Categories**:\n  - All registered voters\n  - Men\n  - Women\n  - White\n  - Black\n  - Hispanic\n  - 18-29\n  - 30-49\n  - 50-64\n  - 65+\n  - Postgrad\n  - College grad\n  - Some coll\n  - HS or less\n  - Rep/Lean Rep\n  - Dem/Lean Dem\n  - Among whites\n    - College grad +\n    - No college degree\n\n**Visual Features**:\n- The chart uses a color contrast between blue and red for easy differentiation.\n- The bars are aligned vertically, with percentages displayed on top of each bar.\n- The chart is accompanied by a legend explaining the color coding for Democratic and Republican support.\n\n**Context Integration**:\nThe bar chart complements the text on the left side of the page, which discusses the overall voting preferences among registered voters and the significant differences in support based on demographic and educational factors. The chart visually reinforces the text by providing a clear, comparative view of voter preferences across various categories.\n\n**Purpose**:\nThe purpose of this content is to provide a visual summary of the data presented in the text, allowing readers to quickly grasp the distribution of support for Democratic and Republican candidates among different groups of registered voters."
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136324",
+                    "node_type": null
+                  },
+                  "src": "05-03-18-political-release/page_14_figure_159.png"
+                }
+              ],
+              "src": "05-03-18-political-release/page_14_figure_159.png",
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "Notes: Based on registered voters. Whites and blacks include only  those who are not Hispanic; Hispanics are of any race. Other/Don’t  know responses not shown.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136325",
+                "node_type": null,
+                "original_index": 160,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  314.0,
+                  543.0,
+                  540.5,
+                  572.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "Source: Survey of U.S. adults conducted April 25-May 1, 2018.",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136326",
+                "node_type": null,
+                "original_index": 161,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  314.0,
+                  572.5,
+                  526.0,
+                  583.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "p",
+              "text": "PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136327",
+                "node_type": null,
+                "original_index": 162,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 13,
+                "bbox": [
+                  314.0,
+                  585.5,
+                  401.0,
+                  595.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136328",
+                "node_type": null,
+                "original_index": 163,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 13,
+                "bbox": [
+                  263.0,
+                  746.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "13"
+            },
+            {
+              "tag": "header",
+              "text": "13 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136329",
+                "node_type": null,
+                "original_index": 164,
+                "parent_chapter": 113,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 14,
+                "bbox": [
+                  258.0,
+                  38.5,
+                  353.5,
+                  62.5
+                ]
+              },
+              "data-page": "14"
+            }
+          ],
+          "data-page": "9"
+        }
+      ],
+      "data-page": "1"
+    },
+    {
+      "tag": "h4",
+      "text": "Acknowledgements",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136330",
+        "node_type": null,
+        "original_index": 165,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 14,
+        "bbox": [
+          65.0,
+          89.0,
+          222.0,
+          107.5
+        ],
+        "heading_level": 4
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "This report is a collaborative effort based on the input and analysis of the following individuals:",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136331",
+            "node_type": null,
+            "original_index": 166,
+            "parent_chapter": 165,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 14,
+            "bbox": [
+              65.5,
+              125.5,
+              527.5,
+              137.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "14"
+        },
+        {
+          "tag": "h1",
+          "text": "Research team",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136332",
+            "node_type": null,
+            "original_index": 167,
+            "parent_chapter": 165,
+            "is_chapter_title": true,
+            "element_type": "paragraph",
+            "page_number": 14,
+            "bbox": [
+              67.5,
+              155.5,
+              146.0,
+              164.0
+            ],
+            "heading_level": 1
+          },
+          "data-page": "14"
+        },
+        {
+          "tag": "h1",
+          "text": "Re",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136333",
+            "node_type": null,
+            "original_index": 168,
+            "parent_chapter": 165,
+            "is_chapter_title": true,
+            "element_type": "paragraph",
+            "page_number": 14,
+            "bbox": [
+              67.5,
+              156.0,
+              77.0,
+              163.0
+            ],
+            "heading_level": 1
+          },
+          "data-page": "14"
+        },
+        {
+          "tag": "h4",
+          "text": "Communications and editorial",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136334",
+            "node_type": null,
+            "original_index": 169,
+            "parent_chapter": 165,
+            "is_chapter_title": true,
+            "element_type": "paragraph",
+            "page_number": 14,
+            "bbox": [
+              330.5,
+              155.5,
+              488.0,
+              164.5
+            ],
+            "heading_level": 4
+          },
+          "children": [
+            {
+              "tag": "p",
+              "text": "Carroll Doherty, Director, Political Research",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136335",
+                "node_type": null,
+                "original_index": 170,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  67.1,
+                  178.2,
+                  277.2,
+                  188.4
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Bridget Johnson, Communications Associate",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136336",
+                "node_type": null,
+                "original_index": 171,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  331.0,
+                  174.0,
+                  543.0,
+                  183.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Jocelyn Kiley, Associate Director, Political Research",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136337",
+                "node_type": null,
+                "original_index": 172,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  66.6,
+                  194.1,
+                  315.8,
+                  204.4
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Graphic design and web publishing",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136338",
+                "node_type": null,
+                "original_index": 173,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  331.0,
+                  202.5,
+                  513.0,
+                  211.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Alec Tyson, Senior Researcher",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136339",
+                "node_type": null,
+                "original_index": 174,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  66.7,
+                  210.1,
+                  211.8,
+                  220.4
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Bradley Jones, Research AssociatePeter Bell, Design Director",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136340",
+                "node_type": null,
+                "original_index": 175,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  67.5,
+                  221.1,
+                  459.2,
+                  236.5
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Baxter Oliphant, Research AssociateAlissa Scheller, Information Graphics",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136341",
+                "node_type": null,
+                "original_index": 176,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  67.5,
+                  235.5,
+                  511.3,
+                  252.3
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Designer",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136342",
+                "node_type": null,
+                "original_index": 177,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  330.3,
+                  249.0,
+                  375.0,
+                  259.6
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Hannah Fingerhut, Research Analyst",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136343",
+                "node_type": null,
+                "original_index": 178,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  65.5,
+                  257.0,
+                  242.5,
+                  269.0
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "p",
+              "text": "Hannah Hartig, Research Analyst",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136344",
+                "node_type": null,
+                "original_index": 179,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "paragraph",
+                "page_number": 14,
+                "bbox": [
+                  67.5,
+                  274.2,
+                  226.3,
+                  284.9
+                ],
+                "heading_level": null
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "footer",
+              "text": "www.pewresearch.org",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136345",
+                "node_type": null,
+                "original_index": 180,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "page_footer",
+                "page_number": 14,
+                "bbox": [
+                  263.5,
+                  747.0,
+                  348.5,
+                  755.5
+                ]
+              },
+              "data-page": "14"
+            },
+            {
+              "tag": "header",
+              "text": "14 PEW RESEARCH CENTER",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136346",
+                "node_type": null,
+                "original_index": 181,
+                "parent_chapter": 169,
+                "is_chapter_title": false,
+                "element_type": "page_header",
+                "page_number": 15,
+                "bbox": [
+                  257.0,
+                  38.5,
+                  353.5,
+                  62.5
+                ]
+              },
+              "data-page": "15"
+            }
+          ],
+          "data-page": "14"
+        }
+      ],
+      "data-page": "14"
+    },
+    {
+      "tag": "h2",
+      "text": "Methodology",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136347",
+        "node_type": null,
+        "original_index": 182,
+        "parent_chapter": -1,
+        "is_chapter_title": true,
+        "element_type": "paragraph",
+        "page_number": 15,
+        "bbox": [
+          66.5,
+          93.0,
+          169.0,
+          109.0
+        ],
+        "heading_level": 2
+      },
+      "children": [
+        {
+          "tag": "p",
+          "text": "The analysis in this report is based on telephone interviews conducted April 25-May 1, 2018 among a national sample of 1,503 adults, 18 years of age or older, living in all 50 U.S. states and  the District of Columbia (376 respondents were interviewed on a landline telephone, and 1,127 were interviewed on a cell phone, including 740 who had no landline telephone). The survey was conducted by interviewers under the direction of Abt Associates. A combination of landline and  cell phone random digit dial samples were used; both samples were provided by Survey Sampling  International. Interviews were conducted in English and Spanish. Respondents in the landline  sample were selected by randomly asking for the youngest adult male or female who is now at  home. Interviews in the cell sample were conducted with the person who answered the phone, if  that person was an adult 18 years of age or older. For detailed information about our survey  methodology, see http://www.pewresearch.org/methodology/u-s-survey-research/",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136348",
+            "node_type": null,
+            "original_index": 183,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 15,
+            "bbox": [
+              65.0,
+              123.0,
+              538.5,
+              296.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "15"
+        },
+        {
+          "tag": "p",
+          "text": "The combined landline and cell phone sample are weighted using an iterative technique that  matches gender, age, education, race, Hispanic origin and nativity and region to parameters from  the 2016 Census Bureau's American Community Survey one-year estimates and population  density to parameters from the Decennial Census. The sample also is weighted to match current  patterns of telephone status (landline only, cell phone only, or both landline and cell phone), based  on extrapolations from the 2016 National Health Interview Survey. The weighting procedure also accounts for the fact that respondents with both landline and cell phones have a greater  probability of being included in the combined sample and adjusts for household size among  respondents with a landline phone. The margins of error reported and statistical tests of  significance are adjusted to account for the survey’s design effect, a measure of how much  efficiency is lost from the weighting procedures.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136349",
+            "node_type": null,
+            "original_index": 184,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 15,
+            "bbox": [
+              64.0,
+              327.0,
+              547.0,
+              502.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "15"
+        },
+        {
+          "tag": "footer",
+          "text": "www.pewresearch.org",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136350",
+            "node_type": null,
+            "original_index": 185,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "page_footer",
+            "page_number": 15,
+            "bbox": [
+              263.0,
+              746.0,
+              348.5,
+              755.5
+            ]
+          },
+          "data-page": "15"
+        },
+        {
+          "tag": "header",
+          "text": "15 PEW RESEARCH CENTER",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136351",
+            "node_type": null,
+            "original_index": 186,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "page_header",
+            "page_number": 16,
+            "bbox": [
+              257.0,
+              38.5,
+              354.0,
+              62.5
+            ]
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "The following table shows the unweighted sample sizes and the error attributable to sampling that would be expected at the 95% level of confidence for different groups in the survey:",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136352",
+            "node_type": null,
+            "original_index": 187,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              65.0,
+              94.0,
+              541.0,
+              121.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "Survey conducted April 25-May 1, 2018",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136353",
+            "node_type": null,
+            "original_index": 188,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              150.0,
+              158.5,
+              303.0,
+              169.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "table",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136354",
+            "node_type": null,
+            "original_index": 189,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "table",
+            "page_number": 16,
+            "bbox": [
+              150.0,
+              174.0,
+              459.0,
+              249.0
+            ],
+            "table_image_extracted": true
+          },
+          "children": [
+            {
+              "tag": "tr",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136355",
+                "node_type": null
+              },
+              "children": [
+                {
+                  "tag": "td",
+                  "text": "Group",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136356",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "Unweighted\nsample size",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136357",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "Plus or minus …",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136358",
+                    "node_type": null
+                  }
+                }
+              ]
+            },
+            {
+              "tag": "tr",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136359",
+                "node_type": null
+              },
+              "children": [
+                {
+                  "tag": "td",
+                  "text": "Total sample",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136360",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "1,503",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136361",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "2.9 percentage points",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136362",
+                    "node_type": null
+                  }
+                }
+              ]
+            },
+            {
+              "tag": "tr",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136363",
+                "node_type": null
+              },
+              "children": [
+                {
+                  "tag": "td",
+                  "text": "Rep/Lean Rep",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136364",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "644",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136365",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "4.5 percentage points",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136366",
+                    "node_type": null
+                  }
+                }
+              ]
+            },
+            {
+              "tag": "tr",
+              "metadata": {
+                "depth": 3,
+                "page_id": null,
+                "global_id": "doc_05-03-18-political-release_136367",
+                "node_type": null
+              },
+              "children": [
+                {
+                  "tag": "td",
+                  "text": "Dem/Lean Dem",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136368",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "710",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136369",
+                    "node_type": null
+                  }
+                },
+                {
+                  "tag": "td",
+                  "text": "4.3 percentage points",
+                  "metadata": {
+                    "depth": 4,
+                    "page_id": null,
+                    "global_id": "doc_05-03-18-political-release_136370",
+                    "node_type": null
+                  }
+                }
+              ]
+            }
+          ],
+          "src": "05-03-18-political-release/page_17_table_189.png",
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "Sample sizes and sampling errors for other subgroups are available upon request.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136371",
+            "node_type": null,
+            "original_index": 190,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              66.5,
+              269.5,
+              460.0,
+              281.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "In addition to sampling error, one should bear in mind that question wording and practical  difficulties in conducting surveys can introduce error or bias into the findings of opinion polls.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136372",
+            "node_type": null,
+            "original_index": 191,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              65.5,
+              301.5,
+              522.5,
+              329.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "Pew Research Center undertakes all polling activity, including calls to mobile telephone numbers, in compliance with the Telephone Consumer Protection Act and other applicable laws.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136373",
+            "node_type": null,
+            "original_index": 192,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              65.0,
+              350.0,
+              537.5,
+              377.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "Pew Research Center is a nonprofit, tax-exempt 501(c)(3) organization and a subsidiary of The Pew Charitable Trusts, its primary funder.",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136374",
+            "node_type": null,
+            "original_index": 193,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              65.5,
+              397.5,
+              524.0,
+              426.0
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        },
+        {
+          "tag": "p",
+          "text": "© Pew Research Center, 2018",
+          "metadata": {
+            "depth": 2,
+            "page_id": null,
+            "global_id": "doc_05-03-18-political-release_136375",
+            "node_type": null,
+            "original_index": 194,
+            "parent_chapter": 182,
+            "is_chapter_title": false,
+            "element_type": "paragraph",
+            "page_number": 16,
+            "bbox": [
+              65.5,
+              573.5,
+              211.5,
+              585.5
+            ],
+            "heading_level": null
+          },
+          "data-page": "16"
+        }
+      ],
+      "data-page": "15"
+    },
+    {
+      "tag": "footer",
+      "text": "www.pewresearch.org",
+      "metadata": {
+        "depth": 1,
+        "page_id": null,
+        "global_id": "doc_05-03-18-political-release_136376",
+        "node_type": null,
+        "original_index": 195,
+        "parent_chapter": -1,
+        "is_chapter_title": false,
+        "element_type": "page_footer",
+        "page_number": 16,
+        "bbox": [
+          263.0,
+          746.0,
+          348.5,
+          755.5
+        ]
+      },
+      "data-page": "16"
+    }
+  ]
+}
