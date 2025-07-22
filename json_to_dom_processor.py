@@ -35,12 +35,14 @@ def generate_output_dir_name(dataset_name: str = "MMLongBench-Doc",
     
     格式:
     - 禁用图像描述: MMLongBench-Doc_skip-images-description
-    - 启用图像描述: MMLongBench-Doc_skip-qwen2vl-250-256
+    - 启用图像描述: MMLongBench-Doc_qwen2vl-250-256
     """
     if not enable_image_description:
-        return f"{dataset_name}_skip-images-description"
+        prefer_model = 'skip'
+        min_image_size = 0
+        return f"{dataset_name}_{prefer_model}-{min_image_size}-{max_merge_chars}"
     else:
-        return f"{dataset_name}_skip-{prefer_model}-{min_image_size}-{max_merge_chars}"
+        return f"{dataset_name}_{prefer_model}-{min_image_size}-{max_merge_chars}"
 
 
 class DOMNode:
@@ -268,15 +270,18 @@ Use this context to better understand the purpose and meaning of the content in 
 class ImageDescriptionService:
     """图像描述服务，支持GPT和Qwen2VL两种模型"""
     
-    def __init__(self, openai_api_key: Optional[str] = None):
+    def __init__(self, openai_api_key: Optional[str] = None, prefer_model: str = "qwen2vl"):
         self.openai_api_key = openai_api_key
+        self.prefer_model = prefer_model
         self.qwen2vl_service = None
         
         if openai_api_key:
-            openai.api_key = openai_api_key
+            self.openai_client = openai.OpenAI(api_key=openai_api_key)
+        else:
+            self.openai_client = None
         
-        # 初始化Qwen2VL服务（延迟加载）
-        if STATIC_QWEN2VL_MODEL and QWEN2VL_AVAILABLE:
+        # 只在选择 qwen2vl 时初始化 Qwen2VL 服务
+        if prefer_model == "qwen2vl" and STATIC_QWEN2VL_MODEL and QWEN2VL_AVAILABLE:
             try:
                 self.qwen2vl_service = Qwen2VLService(
                     model_name=STATIC_QWEN2VL_MODEL,
@@ -303,6 +308,89 @@ class ImageDescriptionService:
             logger.error(f"Qwen2VL区域描述失败: {e}")
             return None
     
+    def describe_region_with_gpt(self, full_page_image_path: str, bbox: List[float], 
+                               page_context: str = "") -> Optional[str]:
+        """使用GPT基于整页图像和坐标描述区域"""
+        if not self.openai_client:
+            return None
+        
+        try:
+            # 读取整页图像并转换为base64
+            with open(full_page_image_path, "rb") as image_file:
+                image_data = base64.b64encode(image_file.read()).decode('utf-8')
+            
+            # 构建包含坐标信息的描述提示词
+            prompt = self._build_gpt_region_description_prompt(bbox, page_context)
+            
+            # 调用GPT-4 Vision API (新版本)
+            response = self.openai_client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{image_data}"
+                            }
+                        }
+                    ]
+                }],
+                max_tokens=500
+            )
+            
+            return response.choices[0].message.content.strip()
+            
+        except Exception as e:
+            logger.error(f"GPT区域描述失败: {e}")
+            return None
+    
+    def _build_gpt_region_description_prompt(self, bbox: List[float], page_context: str = "") -> str:
+        """构建GPT基于坐标区域的图像描述提示词"""
+        x1, y1, x2, y2 = bbox
+        
+        base_prompt = f"""Please analyze the content within the specified rectangular region in this document page image.
+
+**Target Region Coordinates:**
+- Top-left: ({x1:.1f}, {y1:.1f})  
+- Bottom-right: ({x2:.1f}, {y2:.1f})
+
+**Instructions:**
+1. Focus specifically on the content within these coordinates
+2. Describe what you see in this rectangular area
+3. Consider how this region relates to the surrounding page content
+4. Provide a structured analysis
+
+**Output Format:**
+1. **Summary**: One sentence describing what's in the target region
+2. **Content Details**: Bullet points of specific elements within the coordinates
+3. **Visual Features**: Colors, layout, text, graphics within the region
+4. **Context Integration**: How this region fits with the overall page layout
+5. **Purpose**: The likely function or meaning of this content
+
+Focus only on the specified coordinate region, but use the surrounding context to better understand its purpose."""
+        
+        if page_context.strip():
+            context_prompt = f"""
+
+**Document Context:**
+{page_context[:1000]}
+
+Use this context to better understand the purpose and meaning of the content in the target region."""
+            return base_prompt + context_prompt
+        
+        return base_prompt
+    
+    def describe_region(self, full_page_image_path: str, bbox: List[float], 
+                       page_context: str = "") -> Optional[str]:
+        """根据配置的模型描述图像区域"""
+        if self.prefer_model == "gpt":
+            return self.describe_region_with_gpt(full_page_image_path, bbox, page_context)
+        elif self.prefer_model == "qwen2vl":
+            return self.describe_region_with_qwen2vl(full_page_image_path, bbox, page_context)
+        else:
+            return None
     
     def cleanup(self):
         """清理资源"""
@@ -328,7 +416,7 @@ class JSONToDOMProcessor:
         
         # 初始化图像描述服务
         self.image_service = ImageDescriptionService(
-            openai_api_key
+            openai_api_key, prefer_model
         ) if enable_image_description else None
         
         # 存储元素索引映射
@@ -754,16 +842,16 @@ class JSONToDOMProcessor:
                     # 获取页面上下文用于图像描述
                     page_context = self._get_page_context(element)
                     
-                    # 只使用整页+坐标方法
+                    # 使用整页+坐标方法
                     page_num = element.get('page', 0)
                     full_page_image = self._get_full_page_image(pdf_path, page_num)
                     
                     if full_page_image and 'outline' in element:
                         bbox = element['outline']  # [x1, y1, x2, y2]
-                        description = self.image_service.describe_region_with_qwen2vl(
+                        description = self.image_service.describe_region(
                             full_page_image, bbox, page_context
                         )
-                        node.metadata['description_method'] = 'full_page_region'
+                        node.metadata['description_method'] = f'{self.prefer_model}_full_page_region'
                     else:
                         description = None
                         node.metadata['description_method'] = 'failed_no_full_page'
