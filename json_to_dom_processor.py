@@ -25,6 +25,24 @@ except ImportError:
     QWEN2VL_AVAILABLE = False
     logger.warning("Qwen2VL not available. Please install transformers and torch to use Qwen2VL.")
 
+
+def generate_output_dir_name(dataset_name: str = "MMLongBench-Doc",
+                            enable_image_description: bool = False,
+                            prefer_model: str = "qwen2vl", 
+                            min_image_size: int = 100,
+                            max_merge_chars: int = 128) -> str:
+    """生成输出目录名称
+    
+    格式:
+    - 禁用图像描述: MMLongBench-Doc_skip-images-description
+    - 启用图像描述: MMLongBench-Doc_skip-qwen2vl-250-256
+    """
+    if not enable_image_description:
+        return f"{dataset_name}_skip-images-description"
+    else:
+        return f"{dataset_name}_skip-{prefer_model}-{min_image_size}-{max_merge_chars}"
+
+
 class DOMNode:
     def __init__(self, tag: str, text: str = '', attrs: Optional[Dict] = None,
                  depth: int = 0, page_id: Optional[str] = None, parent: Optional['DOMNode'] = None):
@@ -1037,7 +1055,7 @@ def batch_process_documents(json_dir: str, pdf_dir: Optional[str] = None,
     return results
 
 
-def process_batch_documents(json_dir: str, pdf_dir: str, output_dir: str,
+def process_batch_documents(json_dir: str, pdf_dir: str, base_output_dir: str,
                            mode_name: str = "批量处理",
                            enable_image_description: bool = False,
                            prefer_model: str = "qwen2vl",
@@ -1046,6 +1064,16 @@ def process_batch_documents(json_dir: str, pdf_dir: str, output_dir: str,
                            max_merge_chars: int = 128):
     """通用批量处理文档函数"""
     print(f"=== {mode_name}模式: 处理所有PDF文档 ===")
+    
+    # 生成输出目录名称
+    output_dir_name = generate_output_dir_name(
+        dataset_name="MMLongBench-Doc",
+        enable_image_description=enable_image_description,
+        prefer_model=prefer_model,
+        min_image_size=min_image_size,
+        max_merge_chars=max_merge_chars
+    )
+    output_dir = os.path.join(base_output_dir, output_dir_name)
     
     # 确保输出目录存在
     os.makedirs(output_dir, exist_ok=True)
@@ -1108,7 +1136,7 @@ def process_test_documents(enable_image_description: bool = False,
     process_batch_documents(
         json_dir="test_data/dict/MMLongBench-Doc",
         pdf_dir="test_data/doc/MMLongBench-Doc",
-        output_dir="test_data/dom/MMLongBench-Doc",
+        base_output_dir="test_data/dom",
         mode_name="测试",
         enable_image_description=enable_image_description,
         prefer_model=prefer_model,
@@ -1129,6 +1157,16 @@ def process_single_document(enable_image_description: bool = False,
     
     print("=== 单文件模式: 处理 welcome-to-nus 文档 ===")
     
+    # 生成输出目录名称
+    output_dir_name = generate_output_dir_name(
+        dataset_name="MMLongBench-Doc",
+        enable_image_description=enable_image_description,
+        prefer_model=prefer_model,
+        min_image_size=min_image_size,
+        max_merge_chars=max_merge_chars
+    )
+    output_base_dir = os.path.join("test_data/dom", output_dir_name)
+    
     dom_tree = process_document(
         json_path,
         pdf_path,
@@ -1137,11 +1175,11 @@ def process_single_document(enable_image_description: bool = False,
         max_merge_chars=max_merge_chars,
         enable_image_description=enable_image_description,
         min_image_size=min_image_size,
-        output_base_dir="test_data/dom/MMLongBench-Doc"
+        output_base_dir=output_base_dir
     )
     
     # 保存测试结果
-    output_path = "test_data/dom/MMLongBench-Doc/welcome-to-nus.json"
+    output_path = os.path.join(output_base_dir, "welcome-to-nus.json")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -1188,7 +1226,7 @@ def process_all_documents(enable_image_description: bool = False,
     process_batch_documents(
         json_dir="data/dict/MMLongBench-Doc",
         pdf_dir="data/doc/MMLongBench-Doc",
-        output_dir="data/dom/MMLongBench-Doc",
+        base_output_dir="data/dom",
         mode_name="批量处理",
         enable_image_description=enable_image_description,
         prefer_model=prefer_model,
