@@ -338,14 +338,12 @@ Please consider this context when describing the image and explain how the image
 
 
 class ImageDescriptionService:
-    """图像描述服务，支持GPT、LLaMA和Qwen2VL三种模型"""
+    """图像描述服务，支持GPT和Qwen2VL两种模型"""
     
     def __init__(self, openai_api_key: Optional[str] = None, 
-                 llama_endpoint: Optional[str] = None,
                  qwen2vl_model: Optional[str] = None,
                  qwen2vl_device: int = 0):
         self.openai_api_key = openai_api_key
-        self.llama_endpoint = llama_endpoint
         self.qwen2vl_model = qwen2vl_model
         self.qwen2vl_service = None
         
@@ -420,50 +418,6 @@ Description:"""
             print(f"GPT图像描述失败: {e}")
             return None
     
-    def describe_image_with_llama(self, image_path: str, page_context: str = "") -> Optional[str]:
-        """使用LLaMA描述图像"""
-        if not self.llama_endpoint:
-            return None
-            
-        try:
-            # 将图像转换为base64
-            with open(image_path, "rb") as image_file:
-                base64_image = base64.b64encode(image_file.read()).decode('utf-8')
-            
-            prompt = self.get_image_description_prompt(page_context)
-            
-            # LLaMA API调用格式（根据实际API调整）
-            payload = {
-                "model": "llama-vision",  # 或其他支持视觉的LLaMA模型
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": prompt,
-                        "images": [base64_image]
-                    }
-                ],
-                "max_tokens": 500,
-                "temperature": 0.1
-            }
-            
-            response = requests.post(
-                self.llama_endpoint,
-                json=payload,
-                headers={"Content-Type": "application/json"},
-                timeout=30
-            )
-            
-            if response.status_code == 200:
-                result = response.json()
-                return result.get("choices", [{}])[0].get("message", {}).get("content", "")
-            else:
-                print(f"LLaMA API错误: {response.status_code}")
-                return None
-                
-        except Exception as e:
-            print(f"LLaMA图像描述失败: {e}")
-            return None
-    
     def describe_image_with_qwen2vl(self, image_path: str, page_context: str = "") -> Optional[str]:
         """使用Qwen2VL描述图像（裁剪方法）"""
         if not self.qwen2vl_service:
@@ -497,20 +451,10 @@ Description:"""
             description = self.describe_image_with_qwen2vl(image_path, page_context)
             if not description:
                 description = self.describe_image_with_gpt(image_path, page_context)
-                if not description:
-                    description = self.describe_image_with_llama(image_path, page_context)
         elif prefer_model.lower() == "gpt":
             description = self.describe_image_with_gpt(image_path, page_context)
             if not description:
                 description = self.describe_image_with_qwen2vl(image_path, page_context)
-                if not description:
-                    description = self.describe_image_with_llama(image_path, page_context)
-        else:  # llama
-            description = self.describe_image_with_llama(image_path, page_context)
-            if not description:
-                description = self.describe_image_with_qwen2vl(image_path, page_context)
-                if not description:
-                    description = self.describe_image_with_gpt(image_path, page_context)
         
         return description
     
@@ -525,7 +469,6 @@ class JSONToDOMProcessor:
     
     def __init__(self, max_merge_chars: int = 128, 
                  openai_api_key: Optional[str] = None,
-                 llama_endpoint: Optional[str] = None,
                  qwen2vl_model: Optional[str] = None,
                  qwen2vl_device: int = 0,
                  prefer_model: str = "qwen2vl",
@@ -541,7 +484,7 @@ class JSONToDOMProcessor:
         
         # 初始化图像描述服务
         self.image_service = ImageDescriptionService(
-            openai_api_key, llama_endpoint, qwen2vl_model, qwen2vl_device
+            openai_api_key, qwen2vl_model, qwen2vl_device
         ) if enable_image_description else None
         
         # 存储元素索引映射
@@ -1223,7 +1166,6 @@ class JSONToDOMProcessor:
 
 def process_document(json_path: str, pdf_path: Optional[str] = None, 
                     openai_api_key: Optional[str] = None,
-                    llama_endpoint: Optional[str] = None,
                     qwen2vl_model: Optional[str] = None,
                     qwen2vl_device: int = 0,
                     prefer_model: str = "qwen2vl",
@@ -1235,7 +1177,6 @@ def process_document(json_path: str, pdf_path: Optional[str] = None,
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        llama_endpoint=llama_endpoint,
         qwen2vl_model=qwen2vl_model,
         qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model,
@@ -1248,7 +1189,6 @@ def process_document(json_path: str, pdf_path: Optional[str] = None,
 
 def batch_process_documents(json_dir: str, pdf_dir: Optional[str] = None,
                            openai_api_key: Optional[str] = None,
-                           llama_endpoint: Optional[str] = None,
                            qwen2vl_model: Optional[str] = None,
                            qwen2vl_device: int = 0,
                            prefer_model: str = "qwen2vl",
@@ -1258,7 +1198,6 @@ def batch_process_documents(json_dir: str, pdf_dir: Optional[str] = None,
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        llama_endpoint=llama_endpoint,
         qwen2vl_model=qwen2vl_model,
         qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model
@@ -1291,7 +1230,6 @@ def process_single_document_test(enable_image_description: bool = False,
                                 qwen2vl_model: Optional[str] = None,
                                 qwen2vl_device: int = 0,
                                 openai_api_key: Optional[str] = None,
-                                llama_endpoint: Optional[str] = None,
                                 min_image_size: int = 100,
                                 max_merge_chars: int = 128,
                                 use_full_page_method: bool = False):
@@ -1305,7 +1243,6 @@ def process_single_document_test(enable_image_description: bool = False,
         json_path,
         pdf_path,
         openai_api_key=openai_api_key,
-        llama_endpoint=llama_endpoint,
         qwen2vl_model=qwen2vl_model,
         qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model,
@@ -1359,7 +1296,6 @@ def process_all_documents(enable_image_description: bool = False,
                          qwen2vl_model: Optional[str] = None,
                          qwen2vl_device: int = 0,
                          openai_api_key: Optional[str] = None,
-                         llama_endpoint: Optional[str] = None,
                          min_image_size: int = 100,
                          max_merge_chars: int = 128,
                          use_full_page_method: bool = False):
@@ -1381,7 +1317,6 @@ def process_all_documents(enable_image_description: bool = False,
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        llama_endpoint=llama_endpoint,
         qwen2vl_model=qwen2vl_model,
         qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model,
@@ -1433,12 +1368,11 @@ if __name__ == "__main__":
     parser.add_argument('--json', help='JSON file path (for single file processing)')
     parser.add_argument('--pdf', help='PDF file path (for single file processing)')
     parser.add_argument('--skip-images', action='store_true', help='Skip image descriptions completely (faster)')
-    parser.add_argument('--image-model', choices=['qwen2vl', 'gpt', 'llama'], default='qwen2vl', 
+    parser.add_argument('--image-model', choices=['qwen2vl', 'gpt'], default='qwen2vl', 
                        help='Model to use for image descriptions (ignored if --skip-images)')
     parser.add_argument('--qwen2vl-model', default='Qwen/Qwen2-VL-7B-Instruct', help='Qwen2VL model name')
     parser.add_argument('--qwen2vl-device', type=int, default=0, help='CUDA device for Qwen2VL')
     parser.add_argument('--openai-api-key', help='OpenAI API key for GPT model')
-    parser.add_argument('--llama-endpoint', help='LLaMA API endpoint')
     parser.add_argument('--use-full-page', action='store_true', help='Use full page + coordinates method for image description (Qwen2VL only)')
     parser.add_argument('--min-image-size', type=int, default=100, help='Minimum image size to describe (pixels, ignored if --skip-images)')
     parser.add_argument('--max-chars', type=int, default=128, help='Max characters for text merging')
@@ -1452,7 +1386,6 @@ if __name__ == "__main__":
     # 根据选择的模型准备参数
     qwen2vl_model_param = args.qwen2vl_model if (enable_image_description and args.image_model == 'qwen2vl') else None
     openai_key_param = args.openai_api_key if (enable_image_description and args.image_model == 'gpt') else None
-    llama_endpoint_param = args.llama_endpoint if (enable_image_description and args.image_model == 'llama') else None
     
     print(f"=== 处理配置 ===")
     print(f"图像描述: {'启用' if enable_image_description else '禁用'}")
@@ -1476,7 +1409,6 @@ if __name__ == "__main__":
             qwen2vl_model=qwen2vl_model_param,
             qwen2vl_device=args.qwen2vl_device,
             openai_api_key=openai_key_param,
-            llama_endpoint=llama_endpoint_param,
             min_image_size=args.min_image_size,
             max_merge_chars=args.max_chars,
             use_full_page_method=args.use_full_page
@@ -1488,7 +1420,6 @@ if __name__ == "__main__":
             qwen2vl_model=qwen2vl_model_param,
             qwen2vl_device=args.qwen2vl_device,
             openai_api_key=openai_key_param,
-            llama_endpoint=llama_endpoint_param,
             min_image_size=args.min_image_size,
             max_merge_chars=args.max_chars,
             use_full_page_method=args.use_full_page
@@ -1503,7 +1434,6 @@ if __name__ == "__main__":
             args.json,
             args.pdf,
             openai_api_key=openai_key_param,
-            llama_endpoint=llama_endpoint_param,
             qwen2vl_model=qwen2vl_model_param,
             qwen2vl_device=args.qwen2vl_device,
             prefer_model=prefer_model,

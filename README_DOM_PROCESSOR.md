@@ -34,7 +34,7 @@ Document (根节点)
 
 1. 从JSON中读取`outline`坐标
 2. 使用PyMuPDF从PDF提取图片
-3. 调用GPT/LLaMA生成图像描述
+3. 调用GPT生成图像描述
 4. 保存到 `data/dom/MMLongBench-Doc/文档名/图片名.png`
 
 ### 4. 表格处理
@@ -74,21 +74,12 @@ dom_tree = process_document(
     prefer_model="gpt"
 )
 
-# 使用LLaMA
+# 使用Qwen2VL
 dom_tree = process_document(
     json_path="document.json", 
     pdf_path="document.pdf",
-    llama_endpoint="http://localhost:8000/v1/chat/completions",
-    prefer_model="llama"
-)
-
-# 同时配置两个模型（自动降级）
-dom_tree = process_document(
-    json_path="document.json",
-    pdf_path="document.pdf", 
-    openai_api_key="your-openai-api-key",
-    llama_endpoint="http://localhost:8000/v1/chat/completions",
-    prefer_model="gpt"  # 优先使用GPT，失败时尝试LLaMA
+    qwen2vl_model="Qwen/Qwen2-VL-7B-Instruct",
+    prefer_model="qwen2vl"
 )
 ```
 
@@ -115,9 +106,9 @@ for doc_name, dom_tree in results.items():
 ### 核心参数
 
 - **max_merge_chars** (int, 默认128): 文本合并的最大字符数
-- **prefer_model** (str, "gpt"/"llama"): 优先使用的AI模型
+- **prefer_model** (str, "gpt"/"qwen2vl"): 优先使用的AI模型
 - **openai_api_key** (str): OpenAI API密钥
-- **llama_endpoint** (str): LLaMA API端点
+- **qwen2vl_model** (str): Qwen2VL模型名称
 
 ### 目录结构
 
@@ -213,18 +204,11 @@ pip install PyMuPDF Pillow openai requests
 openai_api_key = "sk-your-openai-api-key"
 ```
 
-### LLaMA (本地部署)
-
-```bash
-# 启动LLaMA服务
-python -m vllm.entrypoints.openai.api_server \
-    --model llava-hf/llava-1.5-7b-hf \
-    --host 0.0.0.0 \
-    --port 8000
-```
+### Qwen2VL (本地部署)
 
 ```python
-llama_endpoint = "http://localhost:8000/v1/chat/completions"
+qwen2vl_model = "Qwen/Qwen2-VL-7B-Instruct"
+qwen2vl_device = 0  # CUDA设备编号
 ```
 
 ## 性能优化建议
