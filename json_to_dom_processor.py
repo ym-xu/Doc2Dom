@@ -14,15 +14,16 @@ import logging
 # 设置日志
 logger = logging.getLogger(__name__)
 
+# 静态配置常量
+STATIC_QWEN2VL_MODEL = "Qwen/Qwen2-VL-7B-Instruct"
+STATIC_QWEN2VL_DEVICE = 0
+
 try:
     from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
     QWEN2VL_AVAILABLE = True
 except ImportError:
     QWEN2VL_AVAILABLE = False
     logger.warning("Qwen2VL not available. Please install transformers and torch to use Qwen2VL.")
-
-# 假设dom_node.py已经存在
-# from dom_node import DOMNode
 
 class DOMNode:
     def __init__(self, tag: str, text: str = '', attrs: Optional[Dict] = None,
@@ -126,71 +127,6 @@ class Qwen2VLService:
         image = Image.open(image_path)
         return image.convert('RGB') if image.mode != 'RGB' else image
     
-    def describe_image(self, image_path: str, page_context: str = "") -> str:
-        """使用Qwen2VL描述图像"""
-        if not self._model_loaded:
-            self._load_model()
-        
-        try:
-            # 准备图像
-            image = self._prepare_image(image_path)
-            
-            # 构建提示词，结合页面上下文
-            prompt = self._build_description_prompt(page_context)
-            
-            # 准备消息格式
-            messages = [{
-                "role": "user",
-                "content": [
-                    {"type": "image", "image": image},
-                    {"type": "text", "text": prompt}
-                ]
-            }]
-            
-            # 应用聊天模板
-            text = self.processor.apply_chat_template(
-                messages, tokenize=False, add_generation_prompt=True
-            )
-            
-            # 处理输入
-            inputs = self.processor(
-                text=text,
-                images=[image],
-                padding=True,
-                return_tensors="pt",
-            ).to(self.device)
-            
-            # 生成参数 - 使用确定性生成
-            generation_params = {
-                "max_new_tokens": 512,  # 减少token数量加快速度
-                "do_sample": False,     # 使用确定性生成，避免警告
-            }
-            
-            # 生成响应
-            with torch.no_grad():
-                generated_ids = self.model.generate(
-                    **inputs,
-                    **generation_params
-                )
-            
-            # 解码响应
-            generated_ids_trimmed = [
-                out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-            ]
-            
-            response = self.processor.batch_decode(
-                generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-            )[0]
-            
-            return response.strip()
-            
-        except Exception as e:
-            logger.error(f"Qwen2VL image description failed: {e}")
-            return f"Image description failed: {str(e)}"
-        finally:
-            # 清理GPU内存
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
     
     def describe_region_in_full_page(self, full_page_image_path: str, bbox: List[float], 
                                    page_context: str = "") -> str:
@@ -294,32 +230,6 @@ Use this context to better understand the purpose and meaning of the content in 
         
         return base_prompt
     
-    def _build_description_prompt(self, page_context: str = "") -> str:
-        """构建图像描述的提示词"""
-        base_prompt = """You are an expert document analyst. Please analyze the following image extracted from a PDF and provide a detailed structured description.
-
-Your output must contain the following five sections, clearly separated and well-organized:
-
-1. **Summary**: A brief one-sentence summary of what the image shows.
-2. **Scene Overview**: A bullet-point list of the main elements in the image, including subjects, background, actions, and overall composition.
-3. **Technical Details**: A bullet-point list of technical aspects such as visible text, graphical elements, lighting, colors, scale bars, overlays, or UI components.
-4. **Spatial Relationships**: Describe how the main visual elements are positioned relative to each other in terms of foreground/midground/background, symmetry, depth, and alignment.
-5. **Analysis**: Explain what the image likely represents, its communicative purpose in the document, and any thematic, contextual, or symbolic meaning it may carry.
-
-Use clear markdown-style formatting with bold section titles and bullet points for sub-details. Be objective and descriptive.
-
-"""
-        
-        if page_context.strip():
-            context_prompt = f"""
-
-Context from the document page:
-{page_context[:1000]}
-
-Please consider this context when describing the image and explain how the image relates to the surrounding text."""
-            return base_prompt + context_prompt
-        
-        return base_prompt
     
     def unload(self):
         """卸载模型释放内存"""
@@ -340,94 +250,26 @@ Please consider this context when describing the image and explain how the image
 class ImageDescriptionService:
     """图像描述服务，支持GPT和Qwen2VL两种模型"""
     
-    def __init__(self, openai_api_key: Optional[str] = None, 
-                 qwen2vl_model: Optional[str] = None,
-                 qwen2vl_device: int = 0):
+    def __init__(self, openai_api_key: Optional[str] = None):
         self.openai_api_key = openai_api_key
-        self.qwen2vl_model = qwen2vl_model
         self.qwen2vl_service = None
         
         if openai_api_key:
             openai.api_key = openai_api_key
         
         # 初始化Qwen2VL服务（延迟加载）
-        if qwen2vl_model and QWEN2VL_AVAILABLE:
+        if STATIC_QWEN2VL_MODEL and QWEN2VL_AVAILABLE:
             try:
                 self.qwen2vl_service = Qwen2VLService(
-                    model_name=qwen2vl_model,
-                    cuda_device=qwen2vl_device,
+                    model_name=STATIC_QWEN2VL_MODEL,
+                    cuda_device=STATIC_QWEN2VL_DEVICE,
                     temperature=0.0
                 )
-                logger.info(f"Qwen2VL service initialized with model: {qwen2vl_model}")
+                logger.info(f"Qwen2VL service initialized with model: {STATIC_QWEN2VL_MODEL}")
             except Exception as e:
                 logger.error(f"Failed to initialize Qwen2VL service: {e}")
                 self.qwen2vl_service = None
     
-    def get_image_description_prompt(self, page_context: str = "") -> str:
-        """生成图像描述的提示词"""
-        prompt = """You are an expert document analyst. Please analyze the image from a PDF document and provide a detailed, structured description.
-
-Context from the document page:
-{page_context}
-
-Please organize your output in the following five sections:
-
-1. **Summary**: One sentence summarizing the image content.
-2. **Scene Overview**: A bullet list describing the setting, main elements, composition, and perspective.
-3. **Technical Details**: A bullet list of visible text, annotations, image types, styles, lighting, etc.
-4. **Spatial Relationships**: Describe relative positions and depth of elements in the image.
-5. **Analysis**: Provide interpretation or function of the image in the context of the document.
-
-Description:"""
-        return prompt.format(page_context=page_context[:1000] if page_context else "No additional context available.")
-    
-    def describe_image_with_gpt(self, image_path: str, page_context: str = "") -> Optional[str]:
-        """使用GPT-4V描述图像"""
-        if not self.openai_api_key:
-            return None
-            
-        try:
-            # 将图像转换为base64
-            with open(image_path, "rb") as image_file:
-                base64_image = base64.b64encode(image_file.read()).decode('utf-8')
-            
-            prompt = self.get_image_description_prompt(page_context)
-            
-            response = openai.ChatCompletion.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {"type": "text", "text": prompt},
-                            {
-                                "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:image/png;base64,{base64_image}"
-                                }
-                            }
-                        ]
-                    }
-                ],
-                max_tokens=500
-            )
-            
-            return response.choices[0].message.content
-            
-        except Exception as e:
-            print(f"GPT图像描述失败: {e}")
-            return None
-    
-    def describe_image_with_qwen2vl(self, image_path: str, page_context: str = "") -> Optional[str]:
-        """使用Qwen2VL描述图像（裁剪方法）"""
-        if not self.qwen2vl_service:
-            return None
-        
-        try:
-            return self.qwen2vl_service.describe_image(image_path, page_context)
-        except Exception as e:
-            logger.error(f"Qwen2VL图像描述失败: {e}")
-            return None
     
     def describe_region_with_qwen2vl(self, full_page_image_path: str, bbox: List[float], 
                                    page_context: str = "") -> Optional[str]:
@@ -443,20 +285,6 @@ Description:"""
             logger.error(f"Qwen2VL区域描述失败: {e}")
             return None
     
-    def describe_image(self, image_path: str, page_context: str = "", prefer_model: str = "qwen2vl") -> Optional[str]:
-        """获取图像描述，优先使用指定模型"""
-        description = None
-        
-        if prefer_model.lower() == "qwen2vl":
-            description = self.describe_image_with_qwen2vl(image_path, page_context)
-            if not description:
-                description = self.describe_image_with_gpt(image_path, page_context)
-        elif prefer_model.lower() == "gpt":
-            description = self.describe_image_with_gpt(image_path, page_context)
-            if not description:
-                description = self.describe_image_with_qwen2vl(image_path, page_context)
-        
-        return description
     
     def cleanup(self):
         """清理资源"""
@@ -469,22 +297,20 @@ class JSONToDOMProcessor:
     
     def __init__(self, max_merge_chars: int = 128, 
                  openai_api_key: Optional[str] = None,
-                 qwen2vl_model: Optional[str] = None,
-                 qwen2vl_device: int = 0,
                  prefer_model: str = "qwen2vl",
                  enable_image_description: bool = True,
                  min_image_size: int = 50,
-                 use_full_page_method: bool = False):
+                 output_base_dir: str = "data/dom/MMLongBench-Doc"):
         self.max_merge_chars = max_merge_chars
-        self.output_base_dir = "data/dom/MMLongBench-Doc"
+        self.output_base_dir = output_base_dir
         self.prefer_model = prefer_model
         self.enable_image_description = enable_image_description
         self.min_image_size = min_image_size  # 最小图片尺寸（像素）
-        self.use_full_page_method = use_full_page_method  # 是否使用整页+坐标方法
+        self.use_full_page_method = True  # 默认使用整页+坐标方法
         
         # 初始化图像描述服务
         self.image_service = ImageDescriptionService(
-            openai_api_key, qwen2vl_model, qwen2vl_device
+            openai_api_key
         ) if enable_image_description else None
         
         # 存储元素索引映射
@@ -910,33 +736,25 @@ class JSONToDOMProcessor:
                     # 获取页面上下文用于图像描述
                     page_context = self._get_page_context(element)
                     
-                    if self.use_full_page_method and self.prefer_model.lower() == "qwen2vl":
-                        # 使用整页+坐标方法（仅支持Qwen2VL）
-                        page_num = element.get('page', 0)
-                        full_page_image = self._get_full_page_image(pdf_path, page_num)
-                        
-                        if full_page_image and 'outline' in element:
-                            bbox = element['outline']  # [x1, y1, x2, y2]
-                            description = self.image_service.describe_region_with_qwen2vl(
-                                full_page_image, bbox, page_context
-                            )
-                            node.metadata['description_method'] = 'full_page_region'
-                        else:
-                            # 回退到裁剪方法
-                            description = self.image_service.describe_image(
-                                image_path, page_context, self.prefer_model
-                            )
-                            node.metadata['description_method'] = 'cropped_fallback'
-                    else:
-                        # 使用传统裁剪方法
-                        description = self.image_service.describe_image(
-                            image_path, page_context, self.prefer_model
+                    # 只使用整页+坐标方法
+                    page_num = element.get('page', 0)
+                    full_page_image = self._get_full_page_image(pdf_path, page_num)
+                    
+                    if full_page_image and 'outline' in element:
+                        bbox = element['outline']  # [x1, y1, x2, y2]
+                        description = self.image_service.describe_region_with_qwen2vl(
+                            full_page_image, bbox, page_context
                         )
-                        node.metadata['description_method'] = 'cropped_image'
+                        node.metadata['description_method'] = 'full_page_region'
+                    else:
+                        description = None
+                        node.metadata['description_method'] = 'failed_no_full_page'
                     
                     if description:
                         node.image_context['caption'] = description
                         node.metadata['ai_description'] = description
+                    else:
+                        node.metadata['ai_description'] = 'Failed to generate description'
                 else:
                     node.metadata['ai_description'] = 'Skipped (disabled or too small)'
                 
@@ -1166,41 +984,35 @@ class JSONToDOMProcessor:
 
 def process_document(json_path: str, pdf_path: Optional[str] = None, 
                     openai_api_key: Optional[str] = None,
-                    qwen2vl_model: Optional[str] = None,
-                    qwen2vl_device: int = 0,
                     prefer_model: str = "qwen2vl",
                     max_merge_chars: int = 128,
                     enable_image_description: bool = True,
                     min_image_size: int = 50,
-                    use_full_page_method: bool = False) -> DOMNode:
+                    output_base_dir: str = "data/dom/MMLongBench-Doc") -> DOMNode:
     """处理单个文档的便捷函数"""
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        qwen2vl_model=qwen2vl_model,
-        qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model,
         enable_image_description=enable_image_description,
         min_image_size=min_image_size,
-        use_full_page_method=use_full_page_method
+        output_base_dir=output_base_dir
     )
     return processor.process_json_file(json_path, pdf_path)
 
 
 def batch_process_documents(json_dir: str, pdf_dir: Optional[str] = None,
                            openai_api_key: Optional[str] = None,
-                           qwen2vl_model: Optional[str] = None,
-                           qwen2vl_device: int = 0,
                            prefer_model: str = "qwen2vl",
-                           max_merge_chars: int = 128) -> Dict[str, DOMNode]:
+                           max_merge_chars: int = 128,
+                           output_base_dir: str = "data/dom/MMLongBench-Doc") -> Dict[str, DOMNode]:
     """批量处理文档"""
     results = {}
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        qwen2vl_model=qwen2vl_model,
-        qwen2vl_device=qwen2vl_device,
-        prefer_model=prefer_model
+        prefer_model=prefer_model,
+        output_base_dir=output_base_dir
     )
     
     json_files = Path(json_dir).glob("*.json")
@@ -1225,104 +1037,32 @@ def batch_process_documents(json_dir: str, pdf_dir: Optional[str] = None,
     return results
 
 
-def process_single_document_test(enable_image_description: bool = False,
-                                prefer_model: str = "qwen2vl",
-                                qwen2vl_model: Optional[str] = None,
-                                qwen2vl_device: int = 0,
-                                openai_api_key: Optional[str] = None,
-                                min_image_size: int = 100,
-                                max_merge_chars: int = 128,
-                                use_full_page_method: bool = False):
-    """处理单个文档作为测试"""
-    json_path = "data/dict/MMLongBench-Doc/welcome-to-nus.json"
-    pdf_path = "data/doc/MMLongBench-Doc/welcome-to-nus.pdf"
-    
-    print("=== 测试模式: 处理 welcome-to-nus 文档 ===")
-    
-    dom_tree = process_document(
-        json_path,
-        pdf_path,
-        openai_api_key=openai_api_key,
-        qwen2vl_model=qwen2vl_model,
-        qwen2vl_device=qwen2vl_device,
-        prefer_model=prefer_model,
-        max_merge_chars=max_merge_chars,
-        enable_image_description=enable_image_description,
-        min_image_size=min_image_size,
-        use_full_page_method=use_full_page_method
-    )
-    
-    # 保存测试结果
-    output_path = "data/dom/MMLongBench-Doc/welcome-to-nus.json"
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(dom_tree.to_json_dict(), f, indent=2, ensure_ascii=False)
-        
-    print(f"测试DOM树已保存到: {output_path}")
-    
-    # 统计信息
-    def count_stats(node, stats=None):
-        if stats is None:
-            stats = {'headings': {}, 'merged': 0, 'images': 0, 'described': 0, 'skipped': 0}
-        
-        if node.tag.startswith('h'):
-            stats['headings'][node.tag] = stats['headings'].get(node.tag, 0) + 1
-        elif 'merged_count' in node.metadata:
-            stats['merged'] += 1
-        elif node.tag == 'figure':
-            stats['images'] += 1
-            ai_desc = node.metadata.get('ai_description', '')
-            if ai_desc and ai_desc != 'Skipped (disabled or too small)':
-                stats['described'] += 1
-            else:
-                stats['skipped'] += 1
-        
-        for child in node.children:
-            count_stats(child, stats)
-        return stats
-    
-    stats = count_stats(dom_tree)
-    print(f"\n=== 测试统计 ===")
-    print(f"标题: {dict(sorted(stats['headings'].items()))}")
-    print(f"合并节点: {stats['merged']}")
-    print(f"图片总数: {stats['images']}")
-    print(f"AI描述: {stats['described']}")
-    print(f"跳过描述: {stats['skipped']}")
-
-
-def process_all_documents(enable_image_description: bool = False,
-                         prefer_model: str = "qwen2vl",
-                         qwen2vl_model: Optional[str] = None,
-                         qwen2vl_device: int = 0,
-                         openai_api_key: Optional[str] = None,
-                         min_image_size: int = 100,
-                         max_merge_chars: int = 128,
-                         use_full_page_method: bool = False):
-    """处理所有文档"""
-    json_dir = "data/dict/MMLongBench-Doc"
-    pdf_dir = "data/doc/MMLongBench-Doc"
-    output_dir = "data/dom/MMLongBench-Doc-50"
-    
-    print("=== 批量处理模式: 处理所有PDF文档 ===")
+def process_batch_documents(json_dir: str, pdf_dir: str, output_dir: str,
+                           mode_name: str = "批量处理",
+                           enable_image_description: bool = False,
+                           prefer_model: str = "qwen2vl",
+                           openai_api_key: Optional[str] = None,
+                           min_image_size: int = 100,
+                           max_merge_chars: int = 128):
+    """通用批量处理文档函数"""
+    print(f"=== {mode_name}模式: 处理所有PDF文档 ===")
     
     # 确保输出目录存在
     os.makedirs(output_dir, exist_ok=True)
     
     # 获取所有JSON文件
     json_files = list(Path(json_dir).glob("*.json"))
-    print(f"发现 {len(json_files)} 个JSON文件")
+    file_type = "测试" if "test_data" in json_dir else ""
+    print(f"发现 {len(json_files)} 个{file_type}JSON文件")
     
     # 配置处理器
     processor = JSONToDOMProcessor(
         max_merge_chars=max_merge_chars,
         openai_api_key=openai_api_key,
-        qwen2vl_model=qwen2vl_model,
-        qwen2vl_device=qwen2vl_device,
         prefer_model=prefer_model,
         enable_image_description=enable_image_description,
         min_image_size=min_image_size,
-        use_full_page_method=use_full_page_method
+        output_base_dir=output_dir
     )
     
     processed_count = 0
@@ -1353,29 +1093,123 @@ def process_all_documents(enable_image_description: bool = False,
             print(f"  ❌ 处理失败: {e}")
             failed_count += 1
     
-    print(f"\n=== 批量处理完成 ===")
+    print(f"\n=== {mode_name}模式处理完成 ===")
     print(f"成功处理: {processed_count} 个文档")
     print(f"处理失败: {failed_count} 个文档")
     print(f"输出目录: {output_dir}")
+
+
+def process_test_documents(enable_image_description: bool = False,
+                          prefer_model: str = "qwen2vl",
+                          openai_api_key: Optional[str] = None,
+                          min_image_size: int = 100,
+                          max_merge_chars: int = 128):
+    """处理test_data中的所有文档"""
+    process_batch_documents(
+        json_dir="test_data/dict/MMLongBench-Doc",
+        pdf_dir="test_data/doc/MMLongBench-Doc",
+        output_dir="test_data/dom/MMLongBench-Doc",
+        mode_name="测试",
+        enable_image_description=enable_image_description,
+        prefer_model=prefer_model,
+        openai_api_key=openai_api_key,
+        min_image_size=min_image_size,
+        max_merge_chars=max_merge_chars
+    )
+
+
+def process_single_document(enable_image_description: bool = False,
+                           prefer_model: str = "qwen2vl",
+                           openai_api_key: Optional[str] = None,
+                           min_image_size: int = 100,
+                           max_merge_chars: int = 128):
+    """处理单个welcome-to-nus文档"""
+    json_path = "test_data/dict/MMLongBench-Doc/welcome-to-nus.json"
+    pdf_path = "test_data/doc/MMLongBench-Doc/welcome-to-nus.pdf"
+    
+    print("=== 单文件模式: 处理 welcome-to-nus 文档 ===")
+    
+    dom_tree = process_document(
+        json_path,
+        pdf_path,
+        openai_api_key=openai_api_key,
+        prefer_model=prefer_model,
+        max_merge_chars=max_merge_chars,
+        enable_image_description=enable_image_description,
+        min_image_size=min_image_size,
+        output_base_dir="test_data/dom/MMLongBench-Doc"
+    )
+    
+    # 保存测试结果
+    output_path = "test_data/dom/MMLongBench-Doc/welcome-to-nus.json"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(dom_tree.to_json_dict(), f, indent=2, ensure_ascii=False)
+        
+    print(f"单文件DOM树已保存到: {output_path}")
+    
+    # 统计信息
+    def count_stats(node, stats=None):
+        if stats is None:
+            stats = {'headings': {}, 'merged': 0, 'images': 0, 'described': 0, 'skipped': 0}
+        
+        if node.tag.startswith('h'):
+            stats['headings'][node.tag] = stats['headings'].get(node.tag, 0) + 1
+        elif 'merged_count' in node.metadata:
+            stats['merged'] += 1
+        elif node.tag == 'figure':
+            stats['images'] += 1
+            ai_desc = node.metadata.get('ai_description', '')
+            if ai_desc and ai_desc != 'Skipped (disabled or too small)':
+                stats['described'] += 1
+            else:
+                stats['skipped'] += 1
+        
+        for child in node.children:
+            count_stats(child, stats)
+        return stats
+    
+    stats = count_stats(dom_tree)
+    print(f"\n=== 单文件统计 ===")
+    print(f"标题: {dict(sorted(stats['headings'].items()))}")
+    print(f"合并节点: {stats['merged']}")
+    print(f"图片总数: {stats['images']}")
+    print(f"AI描述: {stats['described']}")
+    print(f"跳过描述: {stats['skipped']}")
+
+
+def process_all_documents(enable_image_description: bool = False,
+                         prefer_model: str = "qwen2vl",
+                         openai_api_key: Optional[str] = None,
+                         min_image_size: int = 100,
+                         max_merge_chars: int = 128):
+    """处理所有文档"""
+    process_batch_documents(
+        json_dir="data/dict/MMLongBench-Doc",
+        pdf_dir="data/doc/MMLongBench-Doc",
+        output_dir="data/dom/MMLongBench-Doc",
+        mode_name="批量处理",
+        enable_image_description=enable_image_description,
+        prefer_model=prefer_model,
+        openai_api_key=openai_api_key,
+        min_image_size=min_image_size,
+        max_merge_chars=max_merge_chars
+    )
 
 
 if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description='JSON to DOM processor')
-    parser.add_argument('--mode', choices=['test', 'batch'], default='batch', 
-                       help='Processing mode: test (welcome-to-nus only) or batch (all documents)')
-    parser.add_argument('--json', help='JSON file path (for single file processing)')
-    parser.add_argument('--pdf', help='PDF file path (for single file processing)')
+    parser.add_argument('--mode', choices=['test', 'batch', 'single'], default='batch', 
+                       help='Processing mode: test (test_data files), batch (data files), or single (welcome-to-nus only)')
     parser.add_argument('--skip-images', action='store_true', help='Skip image descriptions completely (faster)')
     parser.add_argument('--image-model', choices=['qwen2vl', 'gpt'], default='qwen2vl', 
                        help='Model to use for image descriptions (ignored if --skip-images)')
-    parser.add_argument('--qwen2vl-model', default='Qwen/Qwen2-VL-7B-Instruct', help='Qwen2VL model name')
-    parser.add_argument('--qwen2vl-device', type=int, default=0, help='CUDA device for Qwen2VL')
     parser.add_argument('--openai-api-key', help='OpenAI API key for GPT model')
-    parser.add_argument('--use-full-page', action='store_true', help='Use full page + coordinates method for image description (Qwen2VL only)')
-    parser.add_argument('--min-image-size', type=int, default=100, help='Minimum image size to describe (pixels, ignored if --skip-images)')
-    parser.add_argument('--max-chars', type=int, default=128, help='Max characters for text merging')
+    parser.add_argument('--min-image-size', type=int, default=150, help='Minimum image size to describe (pixels, ignored if --skip-images)')
+    parser.add_argument('--max-chars', type=int, default=512, help='Max characters for text merging')
     
     args = parser.parse_args()
     
@@ -1384,73 +1218,48 @@ if __name__ == "__main__":
     prefer_model = args.image_model if enable_image_description else "none"
     
     # 根据选择的模型准备参数
-    qwen2vl_model_param = args.qwen2vl_model if (enable_image_description and args.image_model == 'qwen2vl') else None
     openai_key_param = args.openai_api_key if (enable_image_description and args.image_model == 'gpt') else None
     
     print(f"=== 处理配置 ===")
     print(f"图像描述: {'启用' if enable_image_description else '禁用'}")
     if enable_image_description:
         print(f"选择模型: {args.image_model}")
-        if args.image_model == 'qwen2vl' and args.use_full_page:
+        if args.image_model == 'qwen2vl':
             print(f"描述方法: 整页图像+坐标定位")
+            print(f"Qwen2VL模型: {STATIC_QWEN2VL_MODEL}")
+            print(f"CUDA设备: {STATIC_QWEN2VL_DEVICE}")
         else:
             print(f"描述方法: 图像裁剪")
         print(f"最小图像尺寸: {args.min_image_size}px")
-        if args.image_model == 'qwen2vl':
-            print(f"Qwen2VL模型: {args.qwen2vl_model}")
-            print(f"CUDA设备: {args.qwen2vl_device}")
     print(f"文本合并限制: {args.max_chars} 字符")
     print()
     
     if args.mode == 'test':
-        process_single_document_test(
+        process_test_documents(
             enable_image_description=enable_image_description,
             prefer_model=prefer_model,
-            qwen2vl_model=qwen2vl_model_param,
-            qwen2vl_device=args.qwen2vl_device,
             openai_api_key=openai_key_param,
             min_image_size=args.min_image_size,
-            max_merge_chars=args.max_chars,
-            use_full_page_method=args.use_full_page
+            max_merge_chars=args.max_chars
         )
     elif args.mode == 'batch':
         process_all_documents(
             enable_image_description=enable_image_description,
             prefer_model=prefer_model,
-            qwen2vl_model=qwen2vl_model_param,
-            qwen2vl_device=args.qwen2vl_device,
             openai_api_key=openai_key_param,
             min_image_size=args.min_image_size,
-            max_merge_chars=args.max_chars,
-            use_full_page_method=args.use_full_page
+            max_merge_chars=args.max_chars
         )
-    elif args.json and args.pdf:
-        # 单文件处理模式
-        print(f"=== 单文件处理模式 ===")
-        print(f"JSON: {args.json}")
-        print(f"PDF: {args.pdf}")
-        
-        dom_tree = process_document(
-            args.json,
-            args.pdf,
-            openai_api_key=openai_key_param,
-            qwen2vl_model=qwen2vl_model_param,
-            qwen2vl_device=args.qwen2vl_device,
-            prefer_model=prefer_model,
-            max_merge_chars=args.max_chars,
+    elif args.mode == 'single':
+        process_single_document(
             enable_image_description=enable_image_description,
+            prefer_model=prefer_model,
+            openai_api_key=openai_key_param,
             min_image_size=args.min_image_size,
-            use_full_page_method=args.use_full_page
+            max_merge_chars=args.max_chars
         )
-        
-        # 保存结果
-        output_path = f"data/dom/MMLongBench-Doc/{Path(args.json).stem}.json"
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(dom_tree.to_json_dict(), f, indent=2, ensure_ascii=False)
-            
-        print(f"DOM树已保存到: {output_path}")
     else:
-        print("请指定处理模式: --mode test 或 --mode batch")
-        print("或提供 --json 和 --pdf 参数进行单文件处理")
+        print("请指定处理模式:")
+        print("  --mode test   : 处理test_data中的所有文件")
+        print("  --mode batch  : 处理data中的所有文件")  
+        print("  --mode single : 处理welcome-to-nus单个文件")
