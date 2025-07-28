@@ -21,7 +21,7 @@ class SimpleRetrievalEvaluator:
     """简化检索评估器"""
     
     def __init__(self, samples_path: str = "samples.json", 
-                 data_dir: str = "./data/dom/MMLongBench-Doc-Best"):
+                 data_dir: str = "./data/dom/MMLongBench-Doc_qwen2vl-25-512"):
         self.samples_path = samples_path
         self.data_dir = data_dir
         self.samples = []
@@ -117,16 +117,19 @@ class SimpleRetrievalEvaluator:
                     # 编码节点
                     result = self.embedder.encode_subtree(node, max_depth=2)
                     
-                    # 提取内容预览
-                    text = node.get('text', '').strip()
-                    ai_desc = metadata.get('ai_description', '')
-                    content_preview = text[:100] if text else f"[{element_type}]"
+                    # 提取完整子树内容（不截断）
+                    full_text_content = self._collect_subtree_text(node)
+                    
+                    # 为了向后兼容，保留100字符预览
+                    content_preview = full_text_content[:100] if full_text_content else f"[{element_type}]"
                     
                     node_embeddings[node_id] = {
                         'embedding': result['embedding'],
                         'page_number': page_number,
                         'element_type': element_type,
                         'content_preview': content_preview,
+                        'full_text_content': full_text_content,  # 完整子树文本内容
+                        'original_node': node,  # 新增：保存原始节点完整信息
                         'metadata': metadata
                     }
                     
@@ -166,7 +169,7 @@ class SimpleRetrievalEvaluator:
         similarities.sort(key=lambda x: x['score'], reverse=True)
         return similarities[:k]
     
-    def _extract_nodes_content(self, top_k_results: List[Dict], node_embeddings: Dict[str, Dict], original_nodes: List[Dict] = None) -> List[Dict]:
+    def _extract_nodes_content(self, top_k_results: List[Dict], node_embeddings: Dict[str, Dict]) -> List[Dict]:
         """提取检索到的nodes的原始内容，供agents系统使用"""
         nodes_content = []
         
@@ -177,6 +180,7 @@ class SimpleRetrievalEvaluator:
                 
             node_data = node_embeddings[node_id]
             metadata = node_data.get('metadata', {})
+            original_node = node_data.get('original_node', {})
             
             # 构建agents可用的节点内容
             node_content = {
@@ -186,8 +190,11 @@ class SimpleRetrievalEvaluator:
                 'page_number': result['page_number'],
                 'element_type': result['element_type'],
                 
-                # 原始子树文本内容（完整版）
-                'text_content': self._get_subtree_full_content(node_id, original_nodes) if original_nodes else self._get_node_text_content(node_data, metadata),
+                # 文本内容
+                'text_content': node_data.get('full_text_content', ''),
+                
+                # 完整子树结构信息
+                'subtree_structure': self._extract_subtree_structure(original_node),
                 
                 # 位置信息
                 'bbox': metadata.get('bbox'),
@@ -199,38 +206,16 @@ class SimpleRetrievalEvaluator:
                 'parent_chapter': metadata.get('parent_chapter'),
                 'depth': metadata.get('depth', 0),
                 
-                # 如果是图片，提取图片相关内容
-                'image_info': self._extract_image_content(metadata) if result['element_type'] == 'figure' else None,
+                # 如果是图片，提取图片相关内容（包括链接）
+                'image_info': self._extract_enhanced_image_content(original_node, metadata) if result['element_type'] == 'figure' else None,
                 
-                # 如果是表格，提取表格内容
-                'table_info': self._extract_table_content(metadata) if result['element_type'] == 'table' else None,
+                # 如果是表格，提取表格内容（包括完整表格数据）
+                'table_info': self._extract_enhanced_table_content(original_node, metadata) if result['element_type'] == 'table' else None,
             }
             
             nodes_content.append(node_content)
         
         return nodes_content
-    
-    def _get_node_text_content(self, node_data: Dict, metadata: Dict) -> str:
-        """获取节点的完整子树文本内容"""
-        # 尝试从原始node_embeddings中获取完整的子树内容
-        # 这里的node_data来自于_embed_nodes_batch，可能只包含预览
-        text_content = node_data.get('content_preview', '') or metadata.get('text', '')
-        return text_content.strip()
-    
-    def _get_subtree_full_content(self, node_id: str, all_nodes: List[Dict]) -> str:
-        """获取子树的完整内容（包括子节点）"""
-        # 找到对应的原始DOM节点
-        target_node = None
-        for node in all_nodes:
-            if isinstance(node, dict) and node.get('metadata', {}).get('global_id') == node_id:
-                target_node = node
-                break
-        
-        if not target_node:
-            return ""
-        
-        # 递归收集子树的所有文本内容
-        return self._collect_subtree_text(target_node)
     
     def _collect_subtree_text(self, node: Dict) -> str:
         """递归收集子树的所有文本内容"""
@@ -287,6 +272,154 @@ class SimpleRetrievalEvaluator:
             'col_count': metadata.get('col_count'),
         }
     
+    def _extract_subtree_structure(self, node: Dict) -> Dict:
+        """提取子树结构信息"""
+        if not isinstance(node, dict):
+            return {}
+        
+        def extract_node_info(n):
+            if not isinstance(n, dict):
+                return None
+            
+            info = {
+                'text': n.get('text', '').strip(),
+                'metadata': n.get('metadata', {}),
+                'children': []
+            }
+            
+            # 递归处理子节点
+            children = n.get('children', [])
+            for child in children:
+                child_info = extract_node_info(child)
+                if child_info:
+                    info['children'].append(child_info)
+            
+            return info
+        
+        return extract_node_info(node)
+    
+    def _extract_enhanced_image_content(self, node: Dict, metadata: Dict) -> Dict:
+        """提取增强的图片内容信息"""
+        image_info = {
+            'ai_description': metadata.get('ai_description', ''),
+            'description_method': metadata.get('description_method', ''),
+            'image_extracted': metadata.get('image_extracted', False),
+            'image_links': [],
+            'image_path': '',
+            'image_src': '',
+        }
+        
+        # 提取图片src路径
+        image_src = node.get('src', '')
+        if image_src:
+            image_info['image_src'] = image_src
+            image_info['image_path'] = image_src  # 向后兼容
+        
+        # 从子树中提取图片链接和src信息
+        def find_image_info(n):
+            links = []
+            src_paths = []
+            
+            if isinstance(n, dict):
+                # 检查img标签的src
+                if n.get('tag') == 'img' and n.get('src'):
+                    src_paths.append(n['src'])
+                
+                # 检查节点自身的src
+                if n.get('src'):
+                    src_paths.append(n['src'])
+                
+                # 检查是否有链接信息
+                if n.get('metadata', {}).get('href'):
+                    links.append({
+                        'href': n['metadata']['href'],
+                        'text': n.get('text', '').strip()
+                    })
+                
+                # 递归子节点
+                for child in n.get('children', []):
+                    child_links, child_srcs = find_image_info(child)
+                    links.extend(child_links)
+                    src_paths.extend(child_srcs)
+            
+            return links, src_paths
+        
+        links, src_paths = find_image_info(node)
+        image_info['image_links'] = links
+        
+        # 如果没有直接的src，尝试从子节点获取
+        if not image_info['image_src'] and src_paths:
+            image_info['image_src'] = src_paths[0]  # 取第一个
+            image_info['image_path'] = src_paths[0]
+            
+        # 保存所有找到的src路径
+        image_info['all_image_sources'] = src_paths
+        
+        return image_info
+    
+    def _extract_enhanced_table_content(self, node: Dict, metadata: Dict) -> Dict:
+        """提取增强的表格内容信息"""
+        table_info = {
+            'table_image_extracted': metadata.get('table_image_extracted', False),
+            'row_count': metadata.get('row_count'),
+            'col_count': metadata.get('col_count'),
+            'table_data': [],
+            'table_text': '',
+            'table_src': '',
+            'table_links': [],
+        }
+        
+        # 提取表格src路径
+        table_src = node.get('src', '')
+        if table_src:
+            table_info['table_src'] = table_src
+        
+        # 从子树中提取表格数据和链接
+        def extract_table_info(n):
+            if not isinstance(n, dict):
+                return [], [], []
+            
+            rows = []
+            table_text_parts = []
+            src_paths = []
+            
+            # 检查src信息
+            if n.get('src'):
+                src_paths.append(n['src'])
+            
+            # 如果是表格行
+            if n.get('metadata', {}).get('element_type') == 'table-row':
+                row_cells = []
+                for child in n.get('children', []):
+                    if child.get('metadata', {}).get('element_type') == 'table-cell':
+                        cell_text = self._collect_subtree_text(child)
+                        row_cells.append(cell_text)
+                        table_text_parts.append(cell_text)
+                if row_cells:
+                    rows.append(row_cells)
+            
+            # 递归处理子节点
+            for child in n.get('children', []):
+                child_rows, child_text, child_srcs = extract_table_info(child)
+                rows.extend(child_rows)
+                table_text_parts.extend(child_text)
+                src_paths.extend(child_srcs)
+            
+            return rows, table_text_parts, src_paths
+        
+        table_data, text_parts, src_paths = extract_table_info(node)
+        table_info['table_data'] = table_data
+        table_info['table_text'] = ' | '.join(text_parts)
+        
+        # 如果没有直接的src，尝试从子节点获取
+        if not table_info['table_src'] and src_paths:
+            table_info['table_src'] = src_paths[0]
+            
+        # 保存所有找到的src路径
+        table_info['all_table_sources'] = src_paths
+        
+        return table_info
+    
     def _save_retrieved_nodes_for_agents(self, doc_id: str, question: str, nodes_content: List[Dict]):
         """保存检索到的nodes内容供agents系统使用"""
         # 创建保存目录
@@ -315,7 +448,7 @@ class SimpleRetrievalEvaluator:
         print(f"   💾 保存检索内容供agents使用: {filepath}")
         return filepath
     
-    def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict], original_nodes: List[Dict] = None) -> Dict[str, Any]:
+    def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict]) -> Dict[str, Any]:
         """评估单个问题"""
         # 解析证据页面
         try:
@@ -367,7 +500,7 @@ class SimpleRetrievalEvaluator:
             hit_at_5 = any(p in evidence_pages or (p + 1) in evidence_pages for p in pages_5)
         
         # 提取并保存检索到的nodes内容供agents使用（包含完整子树内容）
-        nodes_content = self._extract_nodes_content(top_10_results, node_embeddings, original_nodes)
+        nodes_content = self._extract_nodes_content(top_10_results, node_embeddings)
         agents_file = self._save_retrieved_nodes_for_agents(sample['doc_id'], sample['question'], nodes_content)
         
         return {
@@ -456,7 +589,7 @@ class SimpleRetrievalEvaluator:
                     print(f"   评估进度: {sample_idx+1}/{len(doc_samples)}")
                 
                 try:
-                    result = self._evaluate_question(sample, node_embeddings, nodes)
+                    result = self._evaluate_question(sample, node_embeddings)
                     
                     if result is None:
                         continue
