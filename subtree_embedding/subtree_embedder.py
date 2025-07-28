@@ -1,7 +1,7 @@
 from typing import List, Dict, Any
 import logging
 from .encoders.text_encoder import TextEncoder
-from .encoders.image_encoder_new import ImageEncoder
+from .encoders.image_encoder import ImageEncoder
 from .encoders.table_encoder import TableEncoder
 from .aggregator import Aggregator
 from .utils import NodeTypeClassifier, StructuralPromptGenerator

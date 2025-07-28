@@ -1,0 +1,64 @@
+{
+  "doc_id": "example_document.pdf",
+  "question": "What are the main findings about climate change impacts?",
+  "retrieval_timestamp": 1703123456.789,
+  "total_nodes": 10,
+  "nodes_content": [
+    {
+      "node_id": "node_123",
+      "rank": 1,
+      "similarity_score": 0.892,
+      "page_number": 3,
+      "element_type": "text",
+      "text_content": "Climate change has significant impacts on global temperature patterns, with average temperatures rising by 1.2°C since pre-industrial times. This warming trend is causing widespread environmental and economic disruptions.",
+      "bbox": [120, 250, 480, 320],
+      "dom_path": "Page 4 > text[node_123]",
+      "heading_level": null,
+      "is_chapter_title": false,
+      "parent_chapter": "Climate Impact Analysis",
+      "depth": 2,
+      "image_info": null,
+      "table_info": null
+    },
+    {
+      "node_id": "node_456",
+      "rank": 2,
+      "similarity_score": 0.854,
+      "page_number": 5,
+      "element_type": "figure",
+      "text_content": "Figure 2: Temperature anomaly trends 1900-2023",
+      "bbox": [80, 150, 520, 450],
+      "dom_path": "Page 6 > figure[node_456]",
+      "heading_level": null,
+      "is_chapter_title": false,
+      "parent_chapter": "Climate Data Visualization",
+      "depth": 1,
+      "image_info": {
+        "ai_description": "A line graph showing global temperature anomalies over the past 123 years, with a clear upward trend especially pronounced after 1980. The graph shows temperature deviations from the 1901-2000 average, with recent years showing anomalies of +0.8 to +1.2°C.",
+        "description_method": "full_page_region",
+        "image_extracted": true
+      },
+      "table_info": null
+    },
+    {
+      "node_id": "node_789",
+      "rank": 3,
+      "similarity_score": 0.823,
+      "page_number": 7,
+      "element_type": "table",
+      "text_content": "Regional climate impact data by continent",
+      "bbox": [60, 180, 540, 380],
+      "dom_path": "Page 8 > table[node_789]",
+      "heading_level": null,
+      "is_chapter_title": false,
+      "parent_chapter": "Regional Analysis",
+      "depth": 1,
+      "image_info": null,
+      "table_info": {
+        "table_image_extracted": true,
+        "row_count": 6,
+        "col_count": 4
+      }
+    }
+  ]
+}

@@ -26,3 +26,5 @@ env/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+retrieved_nodes_for_agents/

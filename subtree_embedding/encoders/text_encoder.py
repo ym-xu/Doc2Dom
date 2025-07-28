@@ -65,8 +65,8 @@ class TextEncoder:
             # 处理文本输入
             inputs = self.processor(text=text, return_tensors="pt", 
                                   padding=True, truncation=True)
-            # 将输入移动到正确的设备
-            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            # 将输入移动到正确的设备，确保只处理tensor
+            inputs = {k: v.to(self.device) if hasattr(v, 'to') else v for k, v in inputs.items()}
             
             with torch.no_grad():
                 # 根据模型类型选择合适的方法
@@ -88,7 +88,7 @@ class TextEncoder:
                         text_features = outputs.pooler_output
             
             # 转换为numpy
-            embeddings = text_features.detach().cpu().numpy()
+            embeddings = text_features.cpu().detach().numpy()
             
             # 确保维度正确
             if embeddings.shape[-1] != self.target_dim:

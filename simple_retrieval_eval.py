@@ -21,7 +21,7 @@ class SimpleRetrievalEvaluator:
     """简化检索评估器"""
     
     def __init__(self, samples_path: str = "samples.json", 
-                 data_dir: str = "./data/dom/MMLongBench-Doc"):
+                 data_dir: str = "./data/dom/MMLongBench-Doc-Best"):
         self.samples_path = samples_path
         self.data_dir = data_dir
         self.samples = []
@@ -166,7 +166,156 @@ class SimpleRetrievalEvaluator:
         similarities.sort(key=lambda x: x['score'], reverse=True)
         return similarities[:k]
     
-    def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict]) -> Dict[str, Any]:
+    def _extract_nodes_content(self, top_k_results: List[Dict], node_embeddings: Dict[str, Dict], original_nodes: List[Dict] = None) -> List[Dict]:
+        """提取检索到的nodes的原始内容，供agents系统使用"""
+        nodes_content = []
+        
+        for result in top_k_results:
+            node_id = result['node_id']
+            if node_id not in node_embeddings:
+                continue
+                
+            node_data = node_embeddings[node_id]
+            metadata = node_data.get('metadata', {})
+            
+            # 构建agents可用的节点内容
+            node_content = {
+                'node_id': node_id,
+                'rank': len(nodes_content) + 1,
+                'similarity_score': result['score'],
+                'page_number': result['page_number'],
+                'element_type': result['element_type'],
+                
+                # 原始子树文本内容（完整版）
+                'text_content': self._get_subtree_full_content(node_id, original_nodes) if original_nodes else self._get_node_text_content(node_data, metadata),
+                
+                # 位置信息
+                'bbox': metadata.get('bbox'),
+                'dom_path': self._construct_dom_path(metadata),
+                
+                # 结构信息
+                'heading_level': metadata.get('heading_level'),
+                'is_chapter_title': metadata.get('is_chapter_title', False),
+                'parent_chapter': metadata.get('parent_chapter'),
+                'depth': metadata.get('depth', 0),
+                
+                # 如果是图片，提取图片相关内容
+                'image_info': self._extract_image_content(metadata) if result['element_type'] == 'figure' else None,
+                
+                # 如果是表格，提取表格内容
+                'table_info': self._extract_table_content(metadata) if result['element_type'] == 'table' else None,
+            }
+            
+            nodes_content.append(node_content)
+        
+        return nodes_content
+    
+    def _get_node_text_content(self, node_data: Dict, metadata: Dict) -> str:
+        """获取节点的完整子树文本内容"""
+        # 尝试从原始node_embeddings中获取完整的子树内容
+        # 这里的node_data来自于_embed_nodes_batch，可能只包含预览
+        text_content = node_data.get('content_preview', '') or metadata.get('text', '')
+        return text_content.strip()
+    
+    def _get_subtree_full_content(self, node_id: str, all_nodes: List[Dict]) -> str:
+        """获取子树的完整内容（包括子节点）"""
+        # 找到对应的原始DOM节点
+        target_node = None
+        for node in all_nodes:
+            if isinstance(node, dict) and node.get('metadata', {}).get('global_id') == node_id:
+                target_node = node
+                break
+        
+        if not target_node:
+            return ""
+        
+        # 递归收集子树的所有文本内容
+        return self._collect_subtree_text(target_node)
+    
+    def _collect_subtree_text(self, node: Dict) -> str:
+        """递归收集子树的所有文本内容"""
+        if not isinstance(node, dict):
+            return ""
+        
+        text_parts = []
+        
+        # 添加当前节点的文本
+        node_text = node.get('text', '').strip()
+        if node_text:
+            text_parts.append(node_text)
+        
+        # 如果是图片，添加AI描述
+        metadata = node.get('metadata', {})
+        if metadata.get('element_type') == 'figure':
+            ai_desc = metadata.get('ai_description', '')
+            if ai_desc and ai_desc not in ['Skipped (disabled or too small)', 'Failed']:
+                text_parts.append(f"[图片描述: {ai_desc}]")
+        
+        # 递归处理子节点
+        children = node.get('children', [])
+        for child in children:
+            child_text = self._collect_subtree_text(child)
+            if child_text:
+                text_parts.append(child_text)
+        
+        return " ".join(text_parts)
+    
+    def _construct_dom_path(self, metadata: Dict) -> str:
+        """构建DOM路径信息"""
+        page = metadata.get('page_number', '?')
+        if page != '?' and page is not None:
+            page += 1  # 转换为1-based索引
+        
+        element_type = metadata.get('element_type', 'unknown')
+        node_id = metadata.get('global_id', 'unknown')
+        
+        return f"Page {page} > {element_type}[{node_id}]"
+    
+    def _extract_image_content(self, metadata: Dict) -> Dict:
+        """提取图片相关内容"""
+        return {
+            'ai_description': metadata.get('ai_description', ''),
+            'description_method': metadata.get('description_method', ''),
+            'image_extracted': metadata.get('image_extracted', False),
+        }
+    
+    def _extract_table_content(self, metadata: Dict) -> Dict:
+        """提取表格相关内容"""
+        return {
+            'table_image_extracted': metadata.get('table_image_extracted', False),
+            'row_count': metadata.get('row_count'),
+            'col_count': metadata.get('col_count'),
+        }
+    
+    def _save_retrieved_nodes_for_agents(self, doc_id: str, question: str, nodes_content: List[Dict]):
+        """保存检索到的nodes内容供agents系统使用"""
+        # 创建保存目录
+        agents_dir = "./retrieved_nodes_for_agents"
+        os.makedirs(agents_dir, exist_ok=True)
+        
+        # 生成文件名（基于文档ID和问题hash）
+        import hashlib
+        question_hash = hashlib.md5(question.encode()).hexdigest()[:8]
+        filename = f"{doc_id.replace('.pdf', '')}_{question_hash}.json"
+        filepath = os.path.join(agents_dir, filename)
+        
+        # 构建保存的数据结构
+        agents_data = {
+            'doc_id': doc_id,
+            'question': question,
+            'retrieval_timestamp': time.time(),
+            'total_nodes': len(nodes_content),
+            'nodes_content': nodes_content
+        }
+        
+        # 保存到JSON文件
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(agents_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"   💾 保存检索内容供agents使用: {filepath}")
+        return filepath
+    
+    def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict], original_nodes: List[Dict] = None) -> Dict[str, Any]:
         """评估单个问题"""
         # 解析证据页面
         try:
@@ -175,6 +324,8 @@ class SimpleRetrievalEvaluator:
                 evidence_pages = [evidence_pages]
         except:
             evidence_pages = []
+        
+        # 执行检索（即使没有证据页面，也要检索供问答系统使用）
         
         # 执行检索
         query = sample['question']
@@ -191,15 +342,18 @@ class SimpleRetrievalEvaluator:
         # 计算覆盖情况
         evidence_pages_set = set(evidence_pages)
         covered_pages = evidence_pages_set.intersection(retrieved_pages)
-        coverage_ratio = len(covered_pages) / len(evidence_pages_set) if evidence_pages_set else 0.0
-        all_pages_covered = coverage_ratio == 1.0
         
-        # 计算Hit@1, Hit@3, Hit@5
+        # 如果没有证据页面，标记为不参与统计，但仍然提供检索结果
+        has_evidence = len(evidence_pages_set) > 0
+        coverage_ratio = len(covered_pages) / len(evidence_pages_set) if has_evidence else 0.0
+        all_pages_covered = coverage_ratio == 1.0 if has_evidence else False
+        
+        # 计算Hit@1, Hit@3, Hit@5 (只有有证据页面时才计算)
         hit_at_1 = False
         hit_at_3 = False  
         hit_at_5 = False
         
-        if top_10_results:
+        if has_evidence and top_10_results:
             # 检查前1个
             page_1 = top_10_results[0]['page_number']
             hit_at_1 = page_1 in evidence_pages or (page_1 + 1) in evidence_pages
@@ -211,6 +365,10 @@ class SimpleRetrievalEvaluator:
             # 检查前5个
             pages_5 = [r['page_number'] for r in top_10_results[:5]]
             hit_at_5 = any(p in evidence_pages or (p + 1) in evidence_pages for p in pages_5)
+        
+        # 提取并保存检索到的nodes内容供agents使用（包含完整子树内容）
+        nodes_content = self._extract_nodes_content(top_10_results, node_embeddings, original_nodes)
+        agents_file = self._save_retrieved_nodes_for_agents(sample['doc_id'], sample['question'], nodes_content)
         
         return {
             'doc_id': sample['doc_id'],
@@ -224,7 +382,9 @@ class SimpleRetrievalEvaluator:
             'hit_at_1': hit_at_1,
             'hit_at_3': hit_at_3,
             'hit_at_5': hit_at_5,
-            'top_10_results': top_10_results
+            'top_10_results': top_10_results,
+            'agents_file': agents_file,  # 新增：保存的agents文件路径
+            'has_evidence': has_evidence  # 新增：是否有证据页面（用于统计筛选）
         }
     
     def run_full_evaluation(self):
@@ -251,6 +411,7 @@ class SimpleRetrievalEvaluator:
         total_hit_1 = 0
         total_hit_3 = 0
         total_hit_5 = 0
+        total_skipped = 0  # 跳过的无证据页面样本数
         
         # 逐文档处理
         for doc_idx, (doc_id, doc_samples) in enumerate(samples_by_doc.items()):
@@ -295,20 +456,28 @@ class SimpleRetrievalEvaluator:
                     print(f"   评估进度: {sample_idx+1}/{len(doc_samples)}")
                 
                 try:
-                    result = self._evaluate_question(sample, node_embeddings)
+                    result = self._evaluate_question(sample, node_embeddings, nodes)
+                    
+                    if result is None:
+                        continue
+                    
                     doc_results.append(result)
                     self.results['per_question_results'].append(result)
                     
-                    # 累计统计
-                    doc_coverage += result['coverage_ratio']
-                    if result['all_pages_covered']:
-                        doc_all_covered += 1
-                    if result['hit_at_1']:
-                        doc_hit_1 += 1
-                    if result['hit_at_3']:
-                        doc_hit_3 += 1
-                    if result['hit_at_5']:
-                        doc_hit_5 += 1
+                    # 只有有证据页面的样本才参与统计计算
+                    if result['has_evidence']:
+                        doc_coverage += result['coverage_ratio']
+                        if result['all_pages_covered']:
+                            doc_all_covered += 1
+                        if result['hit_at_1']:
+                            doc_hit_1 += 1
+                        if result['hit_at_3']:
+                            doc_hit_3 += 1
+                        if result['hit_at_5']:
+                            doc_hit_5 += 1
+                    else:
+                        total_skipped += 1
+                        print(f"   ⚠️  跳过统计（无证据页面）: {sample['question'][:50]}...")
                     
                 except Exception as e:
                     print(f"   ❌ 问题评估失败: {e}")
@@ -316,18 +485,23 @@ class SimpleRetrievalEvaluator:
             
             # 文档级别统计
             if doc_results:
+                # 计算有证据页面的样本数量
+                doc_valid_count = sum(1 for r in doc_results if r['has_evidence'])
+                
                 doc_stats = {
                     'questions_count': len(doc_results),
-                    'avg_coverage': doc_coverage / len(doc_results),
-                    'all_pages_covered_rate': doc_all_covered / len(doc_results),
-                    'hit_at_1_rate': doc_hit_1 / len(doc_results),
-                    'hit_at_3_rate': doc_hit_3 / len(doc_results),
-                    'hit_at_5_rate': doc_hit_5 / len(doc_results)
+                    'valid_questions_count': doc_valid_count,
+                    'skipped_questions_count': len(doc_results) - doc_valid_count,
+                    'avg_coverage': doc_coverage / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'all_pages_covered_rate': doc_all_covered / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'hit_at_1_rate': doc_hit_1 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'hit_at_3_rate': doc_hit_3 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'hit_at_5_rate': doc_hit_5 / doc_valid_count if doc_valid_count > 0 else 0.0
                 }
                 self.results['per_document_stats'][doc_id] = doc_stats
                 
-                # 累计到总体统计
-                total_questions += len(doc_results)
+                # 累计到总体统计（只计算有证据页面的样本）
+                total_questions += doc_valid_count
                 total_coverage += doc_coverage
                 total_all_covered += doc_all_covered
                 total_hit_1 += doc_hit_1
@@ -343,6 +517,8 @@ class SimpleRetrievalEvaluator:
             self.results['overall_stats'] = {
                 'total_questions': total_questions,
                 'total_documents': len(self.results['per_document_stats']),
+                'total_skipped': total_skipped,
+                'total_samples': len(self.samples),
                 'avg_coverage': total_coverage / total_questions,
                 'all_pages_covered_rate': total_all_covered / total_questions,
                 'hit_at_1_rate': total_hit_1 / total_questions,
@@ -358,6 +534,16 @@ class SimpleRetrievalEvaluator:
         
         # 保存结果
         self._save_results()
+        
+        # 显示agents文件保存信息
+        agents_files_count = sum(1 for r in self.results['per_question_results'] if r.get('agents_file'))
+        valid_agents_count = sum(1 for r in self.results['per_question_results'] if r.get('agents_file') and r['has_evidence'])
+        no_evidence_agents_count = sum(1 for r in self.results['per_question_results'] if r.get('agents_file') and not r['has_evidence'])
+        
+        print(f"\n💾 已为 {agents_files_count} 个问题保存检索内容到 ./retrieved_nodes_for_agents/ 目录")
+        print(f"   - 有证据页面: {valid_agents_count} 个")
+        print(f"   - 无证据页面: {no_evidence_agents_count} 个")
+        print("   所有文件都可供agents系统使用（问答系统可据此判断是否有足够信息回答）")
     
     def _display_results(self):
         """显示评估结果"""
@@ -371,7 +557,9 @@ class SimpleRetrievalEvaluator:
         print("="*80)
         
         print(f"\n📊 总体统计:")
-        print(f"   总问题数: {stats['total_questions']}")
+        print(f"   总样本数: {stats['total_samples']}")
+        print(f"   有效问题数: {stats['total_questions']} (有证据页面)")
+        print(f"   跳过样本数: {stats['total_skipped']} (无证据页面，但已检索)")
         print(f"   处理文档数: {stats['total_documents']}")
         print(f"   评估时间: {self.results['evaluation_time']:.1f}秒")
         
@@ -382,9 +570,11 @@ class SimpleRetrievalEvaluator:
         print(f"   Hit@3: {stats['hit_at_3_rate']:.3f}")
         print(f"   Hit@5: {stats['hit_at_5_rate']:.3f}")
         
-        # 显示一些成功和失败案例
-        success_cases = [r for r in self.results['per_question_results'] if r['all_pages_covered']]
-        fail_cases = [r for r in self.results['per_question_results'] if not r['all_pages_covered']]
+        # 显示一些成功和失败案例（只考虑有证据页面的样本）
+        valid_results = [r for r in self.results['per_question_results'] if r['has_evidence']]
+        success_cases = [r for r in valid_results if r['all_pages_covered']]
+        fail_cases = [r for r in valid_results if not r['all_pages_covered']]
+        no_evidence_cases = [r for r in self.results['per_question_results'] if not r['has_evidence']]
         
         if success_cases:
             print(f"\n✅ 成功案例 ({len(success_cases)}个):")
@@ -403,6 +593,15 @@ class SimpleRetrievalEvaluator:
                 print(f"   证据页面: {case['evidence_pages']}")
                 print(f"   检索页面: {sorted(list(set(case['retrieved_pages'])))[:10]}")
                 print(f"   覆盖率: {case['coverage_ratio']:.3f}")
+                print()
+        
+        if no_evidence_cases:
+            print(f"\n⚠️  无证据页面案例 ({len(no_evidence_cases)}个，已检索但未参与统计):")
+            for case in no_evidence_cases[:2]:
+                print(f"   文档: {case['doc_id']}")
+                print(f"   问题: {case['question'][:60]}...")
+                print(f"   检索页面: {sorted(list(set(case['retrieved_pages'])))[:10]}")
+                print(f"   agents文件: {case.get('agents_file', 'N/A')}")
                 print()
     
     def _save_results(self):

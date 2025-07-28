@@ -134,18 +134,20 @@ class ImageEncoder:
         """
         # 图像编码
         image_inputs = self.processor(images=image, return_tensors="pt")
+        image_inputs = {k: v.to(self.device) if hasattr(v, 'to') else v for k, v in image_inputs.items()}
         with torch.no_grad():
             image_features = self.model.get_image_features(**image_inputs)
         
         # 文本编码
         text_inputs = self.processor(text=text_context, return_tensors="pt", 
                                    padding=True, truncation=True)
+        text_inputs = {k: v.to(self.device) if hasattr(v, 'to') else v for k, v in text_inputs.items()}
         with torch.no_grad():
             text_features = self.model.get_text_features(**text_inputs)
         
         # 智能融合：根据文本质量自适应权重
-        image_emb = image_features.squeeze().detach().numpy()
-        text_emb = text_features.squeeze().detach().numpy()
+        image_emb = image_features.squeeze().cpu().detach().numpy()
+        text_emb = text_features.squeeze().cpu().detach().numpy()
         
         # 确保维度匹配
         if image_emb.shape[-1] != self.target_dim:
@@ -166,6 +168,7 @@ class ImageEncoder:
         # BLIP2的联合处理
         inputs = self.processor(images=image, text=text_context, 
                               return_tensors="pt", padding=True, truncation=True)
+        inputs = {k: v.to(self.device) if hasattr(v, 'to') else v for k, v in inputs.items()}
         
         with torch.no_grad():
             # BLIP2的联合特征提取
@@ -182,7 +185,7 @@ class ImageEncoder:
                 # 回退方案
                 joint_features = outputs.pooler_output if hasattr(outputs, 'pooler_output') else outputs.logits
         
-        joint_emb = joint_features.squeeze().detach().numpy()
+        joint_emb = joint_features.squeeze().cpu().detach().numpy()
         
         # 维度适配
         if joint_emb.shape[-1] != self.target_dim:
@@ -200,6 +203,7 @@ class ImageEncoder:
         try:
             inputs = self.processor(text=text_context, return_tensors="pt", 
                                   padding=True, truncation=True)
+            inputs = {k: v.to(self.device) if hasattr(v, 'to') else v for k, v in inputs.items()}
             with torch.no_grad():
                 if hasattr(self.model, 'get_text_features'):
                     features = self.model.get_text_features(**inputs)
@@ -207,7 +211,7 @@ class ImageEncoder:
                     outputs = self.model(**inputs)
                     features = outputs.last_hidden_state.mean(dim=1)
             
-            emb = features.squeeze().detach().numpy()
+            emb = features.squeeze().cpu().detach().numpy()
             
             if emb.shape[-1] != self.target_dim:
                 emb = self._adapt_dimension(emb)
