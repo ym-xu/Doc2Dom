@@ -15,8 +15,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 # 静态配置常量
-STATIC_QWEN2VL_MODEL = "Qwen/Qwen2-VL-7B-Instruct"
-STATIC_QWEN2VL_DEVICE = 0
+# STATIC_QWEN2VL_MODEL = "Qwen/Qwen2-VL-7B-Instruct"
+# STATIC_QWEN2VL_DEVICE = 0
 
 try:
     from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
@@ -97,18 +97,56 @@ class DOMNode:
                 data[k] = self.attrs[k]
 
         return {k: v for k, v in data.items() if v is not None and v != []}
+    
+    @classmethod
+    def from_dict(cls, data: Dict) -> 'DOMNode':
+        """从字典数据重构 DOMNode 对象"""
+        # 创建节点
+        metadata = data.get('metadata', {})
+        
+        # 提取属性
+        attrs = {}
+        for k in ['class', 'src', 'href', 'data-page', 'data-id', 'style']:
+            if k in data:
+                attrs[k] = data[k]
+        
+        # 创建节点实例
+        node = cls(
+            tag=data['tag'],
+            text=data.get('text', ''),
+            attrs=attrs,
+            depth=metadata.get('depth', 0),
+            page_id=metadata.get('page_id'),
+            parent=None
+        )
+        
+        # 设置其他属性
+        node.global_id = metadata.get('global_id')
+        node.node_type = metadata.get('node_type')
+        
+        # 恢复完整的 metadata，过滤掉已经设置的基本字段
+        node.metadata = {k: v for k, v in metadata.items() 
+                        if k not in ['depth', 'page_id', 'global_id', 'node_type']}
+        
+        # 递归创建子节点
+        children_data = data.get('children', [])
+        for child_data in children_data:
+            child_node = cls.from_dict(child_data)
+            node.add_child(child_node)
+        
+        return node
 
 
 class Qwen2VLService:
     """Qwen2VL视觉语言模型服务，用于图像描述"""
     
     def __init__(self, model_name: str = "Qwen/Qwen2-VL-7B-Instruct", 
-                 cuda_device: int = 0, temperature: float = 0.0, seed: int = 42):
+                 cuda_device: int = 0, seed: int = 42):
         if not QWEN2VL_AVAILABLE:
             raise ImportError("Qwen2VL dependencies not available. Please install transformers and torch.")
         
         self.model_name = model_name
-        self.temperature = temperature
+        # self.temperature = temperature
         self.seed = seed
         self.device = f"cuda:{cuda_device}" if torch.cuda.is_available() else "cpu"
         
@@ -286,7 +324,7 @@ class ImageDescriptionService:
                 self.qwen2vl_service = Qwen2VLService(
                     model_name=STATIC_QWEN2VL_MODEL,
                     cuda_device=STATIC_QWEN2VL_DEVICE,
-                    temperature=0.0
+                    # temperature=0.0
                 )
                 logger.info(f"Qwen2VL service initialized with model: {STATIC_QWEN2VL_MODEL}")
             except Exception as e:

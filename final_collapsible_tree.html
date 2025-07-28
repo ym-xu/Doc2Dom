@@ -22,6 +22,31 @@
         .container {
             max-width: none;
             background: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            overflow: hidden;
+        }
+        
+        .pdf-panel {
+            flex: 1;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tree-panel {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
         }
         
         .file-selector {
@@ -83,6 +108,43 @@
         
         .tree {
             font-size: 14px;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: auto;
+        }
+        
+        .pdf-canvas {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        
+        .bbox-overlay {
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .bbox-rect {
+            position: absolute;
+            border: 3px solid #ff0000;
+            background: rgba(255, 0, 0, 0.2);
+            pointer-events: none;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            z-index: 20;
+        }
+        
+        .pdf-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-size: 16px;
         }
         
         .tree-node {
@@ -242,6 +304,7 @@
             white-space: pre-wrap;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -259,8 +322,19 @@
             <button onclick="collapseAll()">Collapse</button>
         </div>
         
-        <div class="tree" id="treeContainer">
-            <!-- Tree structure will be generated here -->
+        <div class="main-content" id="mainContent" style="display: none;">
+            <div class="pdf-panel">
+                <div class="pdf-viewer" id="pdfViewer">
+                    <div class="pdf-loading">Select a JSON file to load PDF</div>
+                    <canvas id="pdfCanvas" class="pdf-canvas" style="display: none;"></canvas>
+                    <div id="bboxOverlay" class="bbox-overlay"></div>
+                </div>
+            </div>
+            <div class="tree-panel">
+                <div class="tree" id="treeContainer">
+                    <!-- Tree structure will be generated here -->
+                </div>
+            </div>
         </div>
     </div>
     
@@ -279,6 +353,11 @@
         let treeData = null;
         let expandedNodes = new Set();
         let selectedNode = null;
+        let pdfDoc = null;
+        let currentPage = 1;
+        let pdfScale = 1.0;
+        let canvas = null;
+        let ctx = null;
         
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
@@ -414,11 +493,182 @@
         
         function initializeTree() {
             const controls = document.getElementById('controls');
+            const mainContent = document.getElementById('mainContent');
             if (controls) {
                 controls.style.display = 'block';
             }
+            if (mainContent) {
+                mainContent.style.display = 'flex';
+            }
+            
+            // Initialize PDF canvas
+            canvas = document.getElementById('pdfCanvas');
+            ctx = canvas.getContext('2d');
+            
+            // Try to load PDF from metadata
+            loadPDFFromMetadata();
+            
             renderTree();
             expandAll(); // Default expand all nodes
+        }
+        
+        function loadPDFFromMetadata() {
+            if (!treeData || !treeData.metadata) return;
+            
+            const documentName = treeData.metadata.document_name;
+            if (documentName) {
+                const pdfPath = `./data/doc/MMLongBench-Doc/${documentName}`;
+                loadPDF(pdfPath);
+            }
+        }
+        
+        async function loadPDF(url) {
+            try {
+                const loadingDiv = document.querySelector('.pdf-loading');
+                loadingDiv.textContent = 'Loading PDF...';
+                
+                // Configure PDF.js worker
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                
+                pdfDoc = await pdfjsLib.getDocument(url).promise;
+                currentPage = 1;
+                
+                canvas.style.display = 'block';
+                loadingDiv.style.display = 'none';
+                
+                await renderPDFPage(currentPage);
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+                const loadingDiv = document.querySelector('.pdf-loading');
+                loadingDiv.textContent = `Error loading PDF: ${error.message}`;
+            }
+        }
+        
+        async function renderPDFPage(pageNum) {
+            if (!pdfDoc) return;
+            
+            try {
+                const page = await pdfDoc.getPage(pageNum);
+                const viewport = page.getViewport({ scale: pdfScale });
+                
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                
+                await page.render(renderContext).promise;
+                
+                // Update overlay size and position
+                const overlay = document.getElementById('bboxOverlay');
+                const canvasRect = canvas.getBoundingClientRect();
+                const pdfViewer = document.getElementById('pdfViewer');
+                const viewerRect = pdfViewer.getBoundingClientRect();
+                
+                overlay.style.width = canvas.width + 'px';
+                overlay.style.height = canvas.height + 'px';
+                overlay.style.left = (canvas.offsetLeft - pdfViewer.scrollLeft) + 'px';
+                overlay.style.top = (canvas.offsetTop - pdfViewer.scrollTop) + 'px';
+                
+                return viewport; // Return viewport for bbox calculations
+                
+            } catch (error) {
+                console.error('Error rendering PDF page:', error);
+                throw error;
+            }
+        }
+        
+        function showBoundingBox(node) {
+            if (!node || !node.metadata || !node.metadata.bbox || !canvas || !pdfDoc) return;
+            
+            const overlay = document.getElementById('bboxOverlay');
+            overlay.innerHTML = ''; // Clear previous bboxes
+            
+            const bbox = node.metadata.bbox;
+            const pageNum = node.metadata.page_number || 0; // Note: page_number is 0-based in JSON
+            
+            // Switch to the correct page if necessary (convert to 1-based for PDF.js)
+            const targetPage = pageNum + 1;
+            if (targetPage !== currentPage) {
+                currentPage = targetPage;
+                renderPDFPage(currentPage).then(() => {
+                    // Render bbox after page is loaded
+                    renderBoundingBox(bbox);
+                });
+            } else {
+                renderBoundingBox(bbox);
+            }
+        }
+        
+        async function renderBoundingBox(bbox) {
+            if (!pdfDoc || !canvas) return;
+            
+            try {
+                const page = await pdfDoc.getPage(currentPage);
+                const viewport = page.getViewport({ scale: pdfScale });
+                
+                const overlay = document.getElementById('bboxOverlay');
+                const bboxRect = document.createElement('div');
+                bboxRect.className = 'bbox-rect';
+                
+                const [x1, y1, x2, y2] = bbox;
+                console.log('=== BBOX DEBUG ===');
+                console.log('Original bbox:', bbox);
+                console.log('Viewport:', { width: viewport.width, height: viewport.height });
+                console.log('Canvas:', { width: canvas.width, height: canvas.height });
+                console.log('Scale:', pdfScale);
+                
+                // Try method 1: Direct scaling without coordinate conversion
+                console.log('--- Method 1: Direct scaling ---');
+                const method1 = {
+                    left: x1 * pdfScale,
+                    top: y1 * pdfScale,
+                    width: (x2 - x1) * pdfScale,
+                    height: (y2 - y1) * pdfScale
+                };
+                console.log('Method 1 result:', method1);
+                
+                // Try method 2: Y-axis flip
+                console.log('--- Method 2: Y-axis flip ---');
+                const pageHeight = viewport.height;
+                const method2 = {
+                    left: x1 * pdfScale,
+                    top: pageHeight - y2 * pdfScale,
+                    width: (x2 - x1) * pdfScale,
+                    height: (y2 - y1) * pdfScale
+                };
+                console.log('Method 2 result:', method2);
+                
+                // Try method 3: Complete flip
+                console.log('--- Method 3: Complete flip ---');
+                const method3 = {
+                    left: x1 * pdfScale,
+                    top: pageHeight - y1 * pdfScale,
+                    width: (x2 - x1) * pdfScale,
+                    height: (y1 - y2) * pdfScale  // Note: height might be negative
+                };
+                console.log('Method 3 result:', method3);
+                
+                // Use method 1 for now (direct scaling without coordinate conversion)
+                const { left, top, width, height } = method1;
+                
+                bboxRect.style.left = left + 'px';
+                bboxRect.style.top = top + 'px';
+                bboxRect.style.width = Math.abs(width) + 'px';
+                bboxRect.style.height = Math.abs(height) + 'px';
+                
+                overlay.appendChild(bboxRect);
+                
+            } catch (error) {
+                console.error('Error rendering bounding box:', error);
+            }
+        }
+        
+        function hideBoundingBox() {
+            const overlay = document.getElementById('bboxOverlay');
+            overlay.innerHTML = '';
         }
         
         function renderTree() {
@@ -446,7 +696,10 @@
             
             let html = `
                 <div class="tree-node ${nodeClass} ${isClickable ? 'clickable' : ''}" 
-                     data-id="${nodeId}" onclick="selectNode('${nodeId}', event)">
+                     data-id="${nodeId}" 
+                     onclick="selectNode('${nodeId}', event)"
+                     onmouseenter="hoverNode('${nodeId}')"
+                     onmouseleave="unhoverNode()">
                     <span class="toggle" onclick="${canToggle ? `toggleNode('${nodeId}', event)` : ''}" 
                           style="${hasChildren && canToggle ? 'cursor: pointer;' : hasChildren ? 'cursor: default; color: #ccc;' : 'visibility: hidden;'}">${isExpanded ? '▼' : '▶'}</span>
                     <span class="node-icon">${icon}</span>
@@ -536,10 +789,31 @@
                 nodeElement.classList.add('selected');
                 selectedNode = findNodeById(treeData, nodeId);
                 
+                // Show bounding box for selected node
+                if (selectedNode) {
+                    showBoundingBox(selectedNode);
+                }
+                
                 // Show content if it's a content node
                 if (selectedNode && isContentNode(selectedNode)) {
                     showContent(selectedNode);
                 }
+            }
+        }
+        
+        function hoverNode(nodeId) {
+            const node = findNodeById(treeData, nodeId);
+            if (node && node.metadata && node.metadata.bbox) {
+                showBoundingBox(node);
+            }
+        }
+        
+        function unhoverNode() {
+            // Only hide bbox if no node is selected, or show selected node's bbox
+            if (selectedNode && selectedNode.metadata && selectedNode.metadata.bbox) {
+                showBoundingBox(selectedNode);
+            } else {
+                hideBoundingBox();
             }
         }
         
