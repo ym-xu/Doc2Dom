@@ -21,7 +21,7 @@ class SimpleRetrievalEvaluator:
     """简化检索评估器"""
     
     def __init__(self, samples_path: str = "samples.json", 
-                 data_dir: str = "./data/dom/MMLongBench-Doc_qwen2vl-25-512"):
+                 data_dir: str = "/data/users/yiming/dox2dom/dom/MMLongBench-Doc_qwen2vl-25-512"):
         self.samples_path = samples_path
         self.data_dir = data_dir
         self.samples = []
@@ -423,7 +423,7 @@ class SimpleRetrievalEvaluator:
     def _save_retrieved_nodes_for_agents(self, doc_id: str, question: str, nodes_content: List[Dict]):
         """保存检索到的nodes内容供agents系统使用"""
         # 创建保存目录
-        agents_dir = "./retrieved_nodes_for_agents"
+        agents_dir = "/data/users/yiming/dox2dom/retrieved_nodes/" + self.data_dir.split("/")[-1]
         os.makedirs(agents_dir, exist_ok=True)
         
         # 生成文件名（基于文档ID和问题hash）
@@ -895,7 +895,7 @@ class SimpleRetrievalEvaluator:
     
     def _save_results(self):
         """保存评估结果"""
-        output_file = "retrieval_evaluation_results.json"
+        output_file = "/data/users/yiming/dox2dom/retrieved_nodes/" + self.data_dir.split("/")[-1] + "/domretrieval_evaluation_results.json"
         
         # 为了JSON序列化，转换numpy数组等
         serializable_results = {
