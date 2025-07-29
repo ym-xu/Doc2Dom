@@ -448,6 +448,46 @@ class SimpleRetrievalEvaluator:
         print(f"   💾 保存检索内容供agents使用: {filepath}")
         return filepath
     
+    def _get_retrieval_metric(self, gt_pages: List[int], pred_pages: List[int]) -> float:
+        """计算检索指标 - 页面级别的精度"""
+        if not gt_pages or not pred_pages:
+            return 0.0
+        
+        # 转换为集合进行交集计算
+        gt_set = set(gt_pages)
+        pred_set = set(pred_pages)
+        
+        # 计算精度 = 检索到的正确页面数 / 总检索页面数
+        intersection = gt_set.intersection(pred_set)
+        precision = len(intersection) / len(pred_set) if pred_set else 0.0
+        
+        return precision
+    
+    def _calculate_chunk_score(self, top_10_results: List[Dict]) -> float:
+        """计算chunk分数 - 基于语义相似度和排名的综合得分"""
+        if not top_10_results:
+            return 0.0
+        
+        total_score = 0.0
+        
+        # 对每个检索到的chunk计算得分
+        for rank, result in enumerate(top_10_results):
+            # 基础相似度得分
+            similarity_score = result['score']
+            
+            # 排名权重 (排名越前权重越高)
+            rank_weight = 1.0 / (rank + 1)
+            
+            # 组合得分
+            chunk_score = similarity_score * rank_weight
+            total_score += chunk_score
+        
+        # 归一化：除以最大可能得分（假设所有chunk都有1.0的相似度）
+        max_possible_score = sum(1.0 / (i + 1) for i in range(len(top_10_results)))
+        normalized_score = total_score / max_possible_score if max_possible_score > 0 else 0.0
+        
+        return normalized_score
+    
     def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict]) -> Dict[str, Any]:
         """评估单个问题"""
         # 解析证据页面
@@ -458,28 +498,59 @@ class SimpleRetrievalEvaluator:
         except:
             evidence_pages = []
         
-        # 执行检索（即使没有证据页面，也要检索供问答系统使用）
+        # 解析证据来源
+        try:
+            evidence_sources = ast.literal_eval(sample.get('evidence_sources', '[]'))
+            if not isinstance(evidence_sources, list):
+                evidence_sources = [evidence_sources]
+        except:
+            evidence_sources = []
         
-        # 执行检索
+        # 执行检索（即使没有证据页面，也要检索供问答系统使用）
         query = sample['question']
         top_10_results = self._retrieve_top_k(query, node_embeddings, k=10)
         
         # 检查前10个节点中是否包含所有证据页面
         retrieved_pages = set()
+        retrieved_sources = set()
         for result in top_10_results:
             page_num = result['page_number']
             # 添加0-based和1-based页面（兼容性检查）
-            # retrieved_pages.add(page_num)
             retrieved_pages.add(page_num + 1)
+            
+            # 根据element_type分类source
+            element_type = result['element_type']
+            if element_type == 'figure':
+                retrieved_sources.add('Figure')
+            elif element_type == 'table':
+                retrieved_sources.add('Table')
+            elif element_type in ['paragraph', 'text_block']:
+                retrieved_sources.add('Pure-text (Plain-text)')
+            elif element_type in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'heading']:
+                retrieved_sources.add('Generalized-text (Layout)')
+            else:
+                retrieved_sources.add('Pure-text (Plain-text)')
         
-        # 计算覆盖情况
+        # 计算页面覆盖情况
         evidence_pages_set = set(evidence_pages)
         covered_pages = evidence_pages_set.intersection(retrieved_pages)
+        
+        # 计算源类型覆盖情况
+        evidence_sources_set = set(evidence_sources)
+        covered_sources = evidence_sources_set.intersection(retrieved_sources)
         
         # 如果没有证据页面，标记为不参与统计，但仍然提供检索结果
         has_evidence = len(evidence_pages_set) > 0
         coverage_ratio = len(covered_pages) / len(evidence_pages_set) if has_evidence else 0.0
         all_pages_covered = coverage_ratio == 1.0 if has_evidence else False
+        
+        # 计算源类型指标
+        if evidence_sources_set:
+            source_precision = len(covered_sources) / len(retrieved_sources) if retrieved_sources else 0
+            source_recall = len(covered_sources) / len(evidence_sources_set)
+            source_f1 = 2 * source_precision * source_recall / (source_precision + source_recall) if (source_precision + source_recall) > 0 else 0
+        else:
+            source_precision = source_recall = source_f1 = 0
         
         # 计算Hit@1, Hit@3, Hit@5 (只有有证据页面时才计算)
         hit_at_1 = False
@@ -499,6 +570,21 @@ class SimpleRetrievalEvaluator:
             pages_5 = [r['page_number'] for r in top_10_results[:5]]
             hit_at_5 = any(p in evidence_pages or (p + 1) in evidence_pages for p in pages_5)
         
+        # 计算新增指标
+        # 1. Page hit rate: 是否有任何证据页面被检索到
+        page_hit_rate = 1.0 if (evidence_pages_set & retrieved_pages) else 0.0 if has_evidence else 0.0
+        
+        # 2. Retrieval precision (page-based)
+        gt_pages = list(evidence_pages_set)
+        pred_pages = list(retrieved_pages)
+        retrieval_precision = self._get_retrieval_metric(gt_pages, pred_pages) if gt_pages and pred_pages else 0
+        
+        # 3. Chunk score
+        chunk_score = self._calculate_chunk_score(top_10_results)
+        
+        # 4. Top score (最高相似度分数)
+        top_score = top_10_results[0]['score'] if top_10_results else 0
+        
         # 提取并保存检索到的nodes内容供agents使用（包含完整子树内容）
         nodes_content = self._extract_nodes_content(top_10_results, node_embeddings)
         agents_file = self._save_retrieved_nodes_for_agents(sample['doc_id'], sample['question'], nodes_content)
@@ -508,13 +594,22 @@ class SimpleRetrievalEvaluator:
             'question': sample['question'],
             'answer': sample['answer'],
             'evidence_pages': evidence_pages,
-            'evidence_sources': sample.get('evidence_sources', ''),
+            'evidence_sources': evidence_sources,
             'retrieved_pages': list(retrieved_pages),
+            'retrieved_sources': list(retrieved_sources),
             'coverage_ratio': coverage_ratio,
             'all_pages_covered': all_pages_covered,
             'hit_at_1': hit_at_1,
             'hit_at_3': hit_at_3,
             'hit_at_5': hit_at_5,
+            # 新增指标
+            'source_precision': source_precision,
+            'source_recall': source_recall,
+            'source_f1': source_f1,
+            'page_hit_rate': page_hit_rate,
+            'retrieval_precision': retrieval_precision,
+            'chunk_score': chunk_score,
+            'top_score': top_score,
             'top_10_results': top_10_results,
             'agents_file': agents_file,  # 新增：保存的agents文件路径
             'has_evidence': has_evidence  # 新增：是否有证据页面（用于统计筛选）
@@ -545,6 +640,15 @@ class SimpleRetrievalEvaluator:
         total_hit_3 = 0
         total_hit_5 = 0
         total_skipped = 0  # 跳过的无证据页面样本数
+        
+        # 新增指标的总计
+        total_source_precision = 0
+        total_source_recall = 0
+        total_source_f1 = 0
+        total_page_hit_rate = 0
+        total_retrieval_precision = 0
+        total_chunk_score = 0
+        total_top_score = 0
         
         # 逐文档处理
         for doc_idx, (doc_id, doc_samples) in enumerate(samples_by_doc.items()):
@@ -584,6 +688,15 @@ class SimpleRetrievalEvaluator:
             doc_hit_3 = 0
             doc_hit_5 = 0
             
+            # 文档级别的新增指标
+            doc_source_precision = 0
+            doc_source_recall = 0
+            doc_source_f1 = 0
+            doc_page_hit_rate = 0
+            doc_retrieval_precision = 0
+            doc_chunk_score = 0
+            doc_top_score = 0
+            
             for sample_idx, sample in enumerate(doc_samples):
                 if sample_idx % 10 == 0:
                     print(f"   评估进度: {sample_idx+1}/{len(doc_samples)}")
@@ -608,6 +721,15 @@ class SimpleRetrievalEvaluator:
                             doc_hit_3 += 1
                         if result['hit_at_5']:
                             doc_hit_5 += 1
+                            
+                        # 累计新增指标
+                        doc_source_precision += result['source_precision']
+                        doc_source_recall += result['source_recall']
+                        doc_source_f1 += result['source_f1']
+                        doc_page_hit_rate += result['page_hit_rate']
+                        doc_retrieval_precision += result['retrieval_precision']
+                        doc_chunk_score += result['chunk_score']
+                        doc_top_score += result['top_score']
                     else:
                         total_skipped += 1
                         print(f"   ⚠️  跳过统计（无证据页面）: {sample['question'][:50]}...")
@@ -629,7 +751,15 @@ class SimpleRetrievalEvaluator:
                     'all_pages_covered_rate': doc_all_covered / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'hit_at_1_rate': doc_hit_1 / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'hit_at_3_rate': doc_hit_3 / doc_valid_count if doc_valid_count > 0 else 0.0,
-                    'hit_at_5_rate': doc_hit_5 / doc_valid_count if doc_valid_count > 0 else 0.0
+                    'hit_at_5_rate': doc_hit_5 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    # 新增指标
+                    'avg_source_precision': doc_source_precision / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_source_recall': doc_source_recall / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_source_f1': doc_source_f1 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_page_hit_rate': doc_page_hit_rate / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_retrieval_precision': doc_retrieval_precision / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_chunk_score': doc_chunk_score / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_top_score': doc_top_score / doc_valid_count if doc_valid_count > 0 else 0.0
                 }
                 self.results['per_document_stats'][doc_id] = doc_stats
                 
@@ -640,6 +770,15 @@ class SimpleRetrievalEvaluator:
                 total_hit_1 += doc_hit_1
                 total_hit_3 += doc_hit_3
                 total_hit_5 += doc_hit_5
+                
+                # 累计新增指标
+                total_source_precision += doc_source_precision
+                total_source_recall += doc_source_recall
+                total_source_f1 += doc_source_f1
+                total_page_hit_rate += doc_page_hit_rate
+                total_retrieval_precision += doc_retrieval_precision
+                total_chunk_score += doc_chunk_score
+                total_top_score += doc_top_score
                 
                 print(f"   📊 文档统计: 覆盖率={doc_stats['avg_coverage']:.3f}, "
                       f"完全覆盖={doc_stats['all_pages_covered_rate']:.3f}, "
@@ -656,7 +795,15 @@ class SimpleRetrievalEvaluator:
                 'all_pages_covered_rate': total_all_covered / total_questions,
                 'hit_at_1_rate': total_hit_1 / total_questions,
                 'hit_at_3_rate': total_hit_3 / total_questions,
-                'hit_at_5_rate': total_hit_5 / total_questions
+                'hit_at_5_rate': total_hit_5 / total_questions,
+                # 新增指标
+                'avg_source_precision': total_source_precision / total_questions,
+                'avg_source_recall': total_source_recall / total_questions,
+                'avg_source_f1': total_source_f1 / total_questions,
+                'avg_page_hit_rate': total_page_hit_rate / total_questions,
+                'avg_retrieval_precision': total_retrieval_precision / total_questions,
+                'avg_chunk_score': total_chunk_score / total_questions,
+                'avg_top_score': total_top_score / total_questions
             }
         
         # 记录评估时间
@@ -702,6 +849,15 @@ class SimpleRetrievalEvaluator:
         print(f"   Hit@1: {stats['hit_at_1_rate']:.3f}")
         print(f"   Hit@3: {stats['hit_at_3_rate']:.3f}")
         print(f"   Hit@5: {stats['hit_at_5_rate']:.3f}")
+        
+        print(f"\n📊 增强评估指标:")
+        print(f"   源类型精度: {stats['avg_source_precision']:.3f}")
+        print(f"   源类型召回: {stats['avg_source_recall']:.3f}")
+        print(f"   源类型F1: {stats['avg_source_f1']:.3f}")
+        print(f"   页面命中率: {stats['avg_page_hit_rate']:.3f}")
+        print(f"   检索精度: {stats['avg_retrieval_precision']:.3f}")
+        print(f"   块得分: {stats['avg_chunk_score']:.3f}")
+        print(f"   最高得分: {stats['avg_top_score']:.3f}")
         
         # 显示一些成功和失败案例（只考虑有证据页面的样本）
         valid_results = [r for r in self.results['per_question_results'] if r['has_evidence']]
