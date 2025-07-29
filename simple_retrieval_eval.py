@@ -449,44 +449,75 @@ class SimpleRetrievalEvaluator:
         return filepath
     
     def _get_retrieval_metric(self, gt_pages: List[int], pred_pages: List[int]) -> float:
-        """计算检索指标 - 页面级别的精度"""
-        if not gt_pages or not pred_pages:
+        """计算检索指标 - MMLongBench风格的检索精度"""
+        if not gt_pages:
             return 0.0
         
-        # 转换为集合进行交集计算
-        gt_set = set(gt_pages)
-        pred_set = set(pred_pages)
+        # 对于每个ground truth页面，检查是否在预测页面中
+        retrieval_precision_scores = []
+        for gt_page in gt_pages:
+            if gt_page in pred_pages:
+                retrieval_precision_scores.append(1.0)
+            else:
+                retrieval_precision_scores.append(0.0)
         
-        # 计算精度 = 检索到的正确页面数 / 总检索页面数
-        intersection = gt_set.intersection(pred_set)
-        precision = len(intersection) / len(pred_set) if pred_set else 0.0
-        
-        return precision
+        # 返回平均得分
+        return sum(retrieval_precision_scores) / len(retrieval_precision_scores) if retrieval_precision_scores else 0.0
     
-    def _calculate_chunk_score(self, top_10_results: List[Dict]) -> float:
-        """计算chunk分数 - 基于语义相似度和排名的综合得分"""
-        if not top_10_results:
+    def _get_similarity_score(self, chunk: str, answer: str) -> float:
+        """计算chunk和答案之间的相似度分数"""
+        chunk_lower = chunk.lower()
+        answer_lower = answer.lower()
+        
+        # 精确匹配
+        if answer_lower in chunk_lower:
+            return 1.0
+        
+        # 词汇重叠分数
+        chunk_words = set(chunk_lower.split())
+        answer_words = set(answer_lower.split())
+        
+        if not answer_words:
             return 0.0
         
-        total_score = 0.0
+        overlap = len(chunk_words & answer_words)
+        return overlap / len(answer_words)
+    
+    def _eval_retrieval(self, gt_answers: List[str], retrieved_chunks: List[str]) -> Dict[str, float]:
+        """使用chunk分数评估检索结果"""
+        if not retrieved_chunks:
+            return {"chunk_score": 0.0}
         
-        # 对每个检索到的chunk计算得分
-        for rank, result in enumerate(top_10_results):
-            # 基础相似度得分
-            similarity_score = result['score']
-            
-            # 排名权重 (排名越前权重越高)
-            rank_weight = 1.0 / (rank + 1)
-            
-            # 组合得分
-            chunk_score = similarity_score * rank_weight
-            total_score += chunk_score
+        scores = []
+        for ans in gt_answers:
+            ans_scores = [self._get_similarity_score(chunk, ans) for chunk in retrieved_chunks]
+            best_score = max(ans_scores + [0])
+            scores.append(np.log(best_score + 1) / np.log(2))
         
-        # 归一化：除以最大可能得分（假设所有chunk都有1.0的相似度）
-        max_possible_score = sum(1.0 / (i + 1) for i in range(len(top_10_results)))
-        normalized_score = total_score / max_possible_score if max_possible_score > 0 else 0.0
+        return {
+            "chunk_score": max(scores) if scores else 0.0
+        }
+    
+    def _calculate_chunk_score(self, question_answer: str, top_10_results: List[Dict], node_embeddings: Dict[str, Dict]) -> float:
+        """计算chunk分数 - 基于文本匹配的MMLongBench风格评估"""
+        if not top_10_results or not question_answer or question_answer == "Not answerable":
+            return 0.0
         
-        return normalized_score
+        # 提取检索到的chunks的文本内容
+        retrieved_chunks = []
+        for result in top_10_results:
+            node_id = result['node_id']
+            if node_id in node_embeddings:
+                node_data = node_embeddings[node_id]
+                chunk_text = node_data.get('full_text_content', '')
+                if chunk_text.strip():
+                    retrieved_chunks.append(chunk_text)
+        
+        # 使用ground truth答案评估
+        gt_answers = [question_answer]
+        chunk_metrics = self._eval_retrieval(gt_answers, retrieved_chunks)
+        
+        return chunk_metrics["chunk_score"]
     
     def _evaluate_question(self, sample: Dict, node_embeddings: Dict[str, Dict]) -> Dict[str, Any]:
         """评估单个问题"""
@@ -535,6 +566,14 @@ class SimpleRetrievalEvaluator:
         evidence_pages_set = set(evidence_pages)
         covered_pages = evidence_pages_set.intersection(retrieved_pages)
         
+        # 计算页面级别的精确度、召回率和F1分数
+        if evidence_pages_set and retrieved_pages:
+            page_precision = len(covered_pages) / len(retrieved_pages)
+            page_recall = len(covered_pages) / len(evidence_pages_set)
+            page_f1 = 2 * page_precision * page_recall / (page_precision + page_recall) if (page_precision + page_recall) > 0 else 0.0
+        else:
+            page_precision = page_recall = page_f1 = 0.0
+        
         # 计算源类型覆盖情况
         evidence_sources_set = set(evidence_sources)
         covered_sources = evidence_sources_set.intersection(retrieved_sources)
@@ -580,7 +619,7 @@ class SimpleRetrievalEvaluator:
         retrieval_precision = self._get_retrieval_metric(gt_pages, pred_pages) if gt_pages and pred_pages else 0
         
         # 3. Chunk score
-        chunk_score = self._calculate_chunk_score(top_10_results)
+        chunk_score = self._calculate_chunk_score(sample['answer'], top_10_results, node_embeddings)
         
         # 4. Top score (最高相似度分数)
         top_score = top_10_results[0]['score'] if top_10_results else 0
@@ -602,10 +641,15 @@ class SimpleRetrievalEvaluator:
             'hit_at_1': hit_at_1,
             'hit_at_3': hit_at_3,
             'hit_at_5': hit_at_5,
-            # 新增指标
+            # 页面级别指标
+            'page_precision': page_precision,
+            'page_recall': page_recall,
+            'page_f1': page_f1,
+            # 源类型指标
             'source_precision': source_precision,
             'source_recall': source_recall,
             'source_f1': source_f1,
+            # 其他指标
             'page_hit_rate': page_hit_rate,
             'retrieval_precision': retrieval_precision,
             'chunk_score': chunk_score,
@@ -642,6 +686,9 @@ class SimpleRetrievalEvaluator:
         total_skipped = 0  # 跳过的无证据页面样本数
         
         # 新增指标的总计
+        total_page_precision = 0
+        total_page_recall = 0
+        total_page_f1 = 0
         total_source_precision = 0
         total_source_recall = 0
         total_source_f1 = 0
@@ -689,6 +736,9 @@ class SimpleRetrievalEvaluator:
             doc_hit_5 = 0
             
             # 文档级别的新增指标
+            doc_page_precision = 0
+            doc_page_recall = 0
+            doc_page_f1 = 0
             doc_source_precision = 0
             doc_source_recall = 0
             doc_source_f1 = 0
@@ -723,6 +773,9 @@ class SimpleRetrievalEvaluator:
                             doc_hit_5 += 1
                             
                         # 累计新增指标
+                        doc_page_precision += result['page_precision']
+                        doc_page_recall += result['page_recall']
+                        doc_page_f1 += result['page_f1']
                         doc_source_precision += result['source_precision']
                         doc_source_recall += result['source_recall']
                         doc_source_f1 += result['source_f1']
@@ -752,10 +805,15 @@ class SimpleRetrievalEvaluator:
                     'hit_at_1_rate': doc_hit_1 / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'hit_at_3_rate': doc_hit_3 / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'hit_at_5_rate': doc_hit_5 / doc_valid_count if doc_valid_count > 0 else 0.0,
-                    # 新增指标
+                    # 页面级别指标
+                    'avg_page_precision': doc_page_precision / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_page_recall': doc_page_recall / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    'avg_page_f1': doc_page_f1 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    # 源类型指标
                     'avg_source_precision': doc_source_precision / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'avg_source_recall': doc_source_recall / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'avg_source_f1': doc_source_f1 / doc_valid_count if doc_valid_count > 0 else 0.0,
+                    # 其他指标
                     'avg_page_hit_rate': doc_page_hit_rate / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'avg_retrieval_precision': doc_retrieval_precision / doc_valid_count if doc_valid_count > 0 else 0.0,
                     'avg_chunk_score': doc_chunk_score / doc_valid_count if doc_valid_count > 0 else 0.0,
@@ -772,6 +830,9 @@ class SimpleRetrievalEvaluator:
                 total_hit_5 += doc_hit_5
                 
                 # 累计新增指标
+                total_page_precision += doc_page_precision
+                total_page_recall += doc_page_recall
+                total_page_f1 += doc_page_f1
                 total_source_precision += doc_source_precision
                 total_source_recall += doc_source_recall
                 total_source_f1 += doc_source_f1
@@ -796,10 +857,15 @@ class SimpleRetrievalEvaluator:
                 'hit_at_1_rate': total_hit_1 / total_questions,
                 'hit_at_3_rate': total_hit_3 / total_questions,
                 'hit_at_5_rate': total_hit_5 / total_questions,
-                # 新增指标
+                # 页面级别指标
+                'avg_page_precision': total_page_precision / total_questions,
+                'avg_page_recall': total_page_recall / total_questions,
+                'avg_page_f1': total_page_f1 / total_questions,
+                # 源类型指标
                 'avg_source_precision': total_source_precision / total_questions,
                 'avg_source_recall': total_source_recall / total_questions,
                 'avg_source_f1': total_source_f1 / total_questions,
+                # 其他指标
                 'avg_page_hit_rate': total_page_hit_rate / total_questions,
                 'avg_retrieval_precision': total_retrieval_precision / total_questions,
                 'avg_chunk_score': total_chunk_score / total_questions,
@@ -850,11 +916,18 @@ class SimpleRetrievalEvaluator:
         print(f"   Hit@3: {stats['hit_at_3_rate']:.3f}")
         print(f"   Hit@5: {stats['hit_at_5_rate']:.3f}")
         
-        print(f"\n📊 增强评估指标:")
+        print(f"\n📊 页面级别指标:")
+        print(f"   页面精确度: {stats['avg_page_precision']:.3f}")
+        print(f"   页面召回率: {stats['avg_page_recall']:.3f}")
+        print(f"   页面F1分数: {stats['avg_page_f1']:.3f}")
+        print(f"   页面命中率: {stats['avg_page_hit_rate']:.3f}")
+        
+        print(f"\n📊 源类型指标:")
         print(f"   源类型精度: {stats['avg_source_precision']:.3f}")
         print(f"   源类型召回: {stats['avg_source_recall']:.3f}")
         print(f"   源类型F1: {stats['avg_source_f1']:.3f}")
-        print(f"   页面命中率: {stats['avg_page_hit_rate']:.3f}")
+        
+        print(f"\n📊 其他评估指标:")
         print(f"   检索精度: {stats['avg_retrieval_precision']:.3f}")
         print(f"   块得分: {stats['avg_chunk_score']:.3f}")
         print(f"   最高得分: {stats['avg_top_score']:.3f}")
