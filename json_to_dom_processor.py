@@ -655,8 +655,9 @@ class JSONToDOMProcessor:
             # 两个都是列表项，检查空间是否连续
             return self._are_elements_spatially_close(elem1, elem2)
         
-        # 检查是否都是短句
-        if len(text1) < 50 and len(text2) < 50:
+        # 检查是否都是短句 - 基于max_merge_chars动态计算
+        short_limit = self.max_merge_chars // 2  # 单个段落不超过总限制的一半
+        if len(text1) < short_limit and len(text2) < short_limit:
             # 检查空间是否连续
             return self._are_elements_spatially_close(elem1, elem2)
         
@@ -708,9 +709,10 @@ class JSONToDOMProcessor:
         if all_list_items and len(text_elements) >= 2:
             return True
             
-        # 检查是否都是短句（疑似列表项）
+        # 检查是否都是短句 - 基于max_merge_chars动态计算
         avg_chars = total_chars / len(text_elements)
-        if avg_chars < 30:  # 平均每个元素少于30字符，可能是列表项
+        avg_limit = self.max_merge_chars // 4  # 平均长度不超过总限制的1/4
+        if avg_chars < avg_limit:  # 短段落可以合并
             return True
             
         return False
